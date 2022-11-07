@@ -1,6 +1,3 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Quintessential&display=swap');
-
 header {
     box-sizing: border-box;
     position: fixed;
@@ -33,6 +30,7 @@ a:after {
     z-index: -1;
     position: absolute;
     width: 100%;
+    transform: scaleX(0);
     -webkit-transform: scaleX(0);
     height: 8px;
     bottom: 0px;
@@ -43,6 +41,7 @@ a:after {
 }
 
 a:hover:after {
+    transform: scaleX(1);
     -webkit-transform: scaleX(1);
     transform-origin: bottom left;
 }
