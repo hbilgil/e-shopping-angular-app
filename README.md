@@ -1,18 +1,21 @@
-# EShoppingAngularApp
+# E-Shopping Angular App
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.8.
+The main goal of this project is to use Angular basics, components, directives, router or lifecycle methods to create a shopping website.
 
-## Development server
+[Live Demo](https://hbilgil.github.io/e-shopping-angular-app/):point_left:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Getting Started
+### `ng serve`
 
-## Code scaffolding
+```
+git clone https://github.com/hbilgil/e-shopping-angular-app.git
+cd e-shopping-angular-app
+npm install -g @angular/cli
+ng serve
+```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Built with
+- [Angular](https://angular.io/)
 
 ## Running unit tests
 
