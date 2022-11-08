@@ -6,11 +6,13 @@ import { AppComponent } from './app.component';
 import { HeaderContainerComponent } from './header-container/header-container.component';
 import { defineElement } from 'lord-icon-element';
 import lottie from 'lottie-web';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderContainerComponent
+    HeaderContainerComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
