@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderContainerComponent } from './header-container/header-container.component';
+import { HeaderComponent } from './header/header.component';
 import { defineElement } from 'lord-icon-element';
 import lottie from 'lottie-web';
 import { FooterComponent } from './footer/footer.component';
@@ -11,7 +11,7 @@ import { FooterComponent } from './footer/footer.component';
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderContainerComponent,
+    HeaderComponent,
     FooterComponent
   ],
   imports: [
