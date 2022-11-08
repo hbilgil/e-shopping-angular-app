@@ -1,0 +1,86 @@
+footer {
+    box-sizing: border-box;
+    width: 100%;
+    background: #f7f7f7;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    cursor: default;
+    font-family: 'BenchNine', sans-serif;
+}
+
+.subscribe {
+    grid-column: 1 / 3;
+}
+
+.subscribe div {
+    padding: 2rem;
+}
+
+.form {
+    height: 2.2rem;
+    padding: 0;
+    display: flex;
+}
+
+.form input {
+    border: #aaaaaa solid 1px;
+    outline: none;
+}
+
+input::placeholder {
+    padding: 0.4rem;
+}
+
+button {
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 0.2rem 1rem;
+    background: #ff613a;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 800;
+}
+
+h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+p,
+a {
+    color: #646464;
+    font-size: 1rem;
+    font-weight: 100;
+}
+
+.links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+    flex-direction: column;
+    padding: 0;
+}
+
+@media only screen and (max-width: 640px) {
+    footer {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        height: auto;
+        align-items: center;
+    }
+    .subscribe {
+        grid-column: 1 / 3;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
