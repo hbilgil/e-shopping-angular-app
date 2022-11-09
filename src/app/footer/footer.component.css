@@ -6,6 +6,7 @@ footer {
     grid-template-columns: repeat(4, 1fr);
     cursor: default;
     font-family: 'BenchNine', sans-serif;
+    padding: 0.5rem 2rem;
 }
 
 .subscribe {
@@ -13,7 +14,7 @@ footer {
 }
 
 .subscribe div {
-    padding: 2rem;
+   margin-top: 0.5rem;
 }
 
 .form {
@@ -25,10 +26,11 @@ footer {
 .form input {
     border: #aaaaaa solid 1px;
     outline: none;
+    padding-left: 0.5rem;
 }
 
 input::placeholder {
-    padding: 0.4rem;
+    opacity: 0.5;
 }
 
 button {
