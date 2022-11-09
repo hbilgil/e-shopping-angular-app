@@ -7,12 +7,14 @@ import { HeaderComponent } from './header/header.component';
 import { defineElement } from 'lord-icon-element';
 import lottie from 'lottie-web';
 import { FooterComponent } from './footer/footer.component';
+import { ContainerComponent } from './container/container.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    ContainerComponent
   ],
   imports: [
     BrowserModule,
