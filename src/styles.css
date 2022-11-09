@@ -1,1 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
+
+*,
+  *::before,
+  *::after {
+    padding: 0;
+    margin: 0;
+    word-wrap: break-word;
+}
+
+html {
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+button {
+    cursor: pointer;
+}
