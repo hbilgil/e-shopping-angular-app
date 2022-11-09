@@ -1,0 +1,5 @@
+.wrapper {
+    margin: 0px auto; 
+    box-sizing: border-box;
+    min-height: 100vh;
+}
