@@ -8,13 +8,19 @@ import { defineElement } from 'lord-icon-element';
 import lottie from 'lottie-web';
 import { FooterComponent } from './footer/footer.component';
 import { ContainerComponent } from './container/container.component';
+import { HomeComponent } from './home/home.component';
+import { HomeDiv1Component } from './home-div1/home-div1.component';
+import { HomeDiv2Component } from './home-div2/home-div2.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    ContainerComponent
+    ContainerComponent,
+    HomeComponent,
+    HomeDiv1Component,
+    HomeDiv2Component
   ],
   imports: [
     BrowserModule,
