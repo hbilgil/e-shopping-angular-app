@@ -1,0 +1,92 @@
+.section1 {
+    font-family: 'Dosis', sans-serif;
+    box-sizing: border-box;
+    position: relative;
+    height: 45rem;
+    max-width: 100%;
+    padding: 0 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    color: white;
+    transition: 1000ms;
+    overflow: hidden;
+}
+.section1::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: #0000006c;
+}
+
+img {
+    position: absolute;
+    object-fit: cover;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    transform: scale(1.05);
+    transition: transform 1000ms;
+}
+
+.section1:hover > img {
+    transform: scale(1);
+}
+
+.sub-section {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    z-index: 2;
+    max-width: 35rem;
+}
+
+a {
+    font-weight: 400;
+    margin: 0;
+    text-decoration: none;
+}
+
+h1 {
+    font-weight: 400;
+    margin: 0;
+    font-size: 3.5rem;
+    text-shadow: black 0 0 15px;
+}
+
+h3 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 300;
+    text-shadow: black 0 0 15px;
+    
+}
+
+.shop-button {
+    font-weight: 400;
+    margin: 0;
+    margin-top: 1rem;
+    font-size: 1.5rem;
+    text-decoration: none;
+    background: white;
+    color: #000000;
+    box-shadow: #ff613a 3px 3px 0px 1px;
+    width: 12rem;
+    padding: 0.5rem 1rem;
+    text-align: center;
+    transition: 400ms;
+}
+.shop-button:hover {
+    background-color:blanchedalmond;
+}
+
+@media only screen and (max-width: 850px) {
+    .section1 {
+        align-items: center;
+    }
+}
