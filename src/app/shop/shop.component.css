@@ -2,7 +2,6 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
     width: 100%;
     box-sizing: border-box;
     color: black;
@@ -14,7 +13,7 @@
     flex-wrap: wrap;
     gap: 2rem;
     justify-content: center;
-    align-items: center;
+    align-self: center;
     max-width: 60rem;
     list-style: none;
 }
