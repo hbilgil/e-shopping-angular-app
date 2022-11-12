@@ -4,4 +4,6 @@
     flex: 1;
     width: 100%;
     cursor: default;
+    margin-top: 10px;
+    font-family: 'Dosis', sans-serif;
 }
