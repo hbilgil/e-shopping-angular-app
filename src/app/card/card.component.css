@@ -1,0 +1,47 @@
+a {
+    text-decoration: none;
+    color: black;
+}
+
+li {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-container {
+    position: relative;
+    background-color: #f7f7f7;
+    height: 15rem;
+    width: 15rem;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+img {
+    object-position: center;
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: cover;
+    transition: 1000ms;
+}
+
+.image-container:hover > img {
+    transform: scale(0.95);
+}
+
+p {
+    max-width: 15rem;
+    justify-self: flex-start;
+    align-self: flex-start;
+    margin: 0;
+    font-weight: 300;
+}
+
+.name {
+    height: 2.5rem;
+}
