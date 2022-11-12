@@ -46,12 +46,9 @@ a:hover:after {
     -webkit-transform: scaleX(1);
     transform-origin: bottom left;
 }
+
 a:nth-of-type(4)::after {
     display: none;
-}
-
-a:nth-of-type(4):hover {
-    color: #ff613a;
 }
 
 h1 {
@@ -64,18 +61,31 @@ h1 {
   font-family: 'Monoton', cursive;
 }
 
+h1:hover {
+    color:gray;
+}
+
+.left a::after {
+    display: none;
+}
+
 .right {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 1rem;
 }
+
 .right .cart {
     position: relative;
 }
 
 .right a {
     font-family: 'BenchNine', sans-serif;
+}
+
+.right a.active {
+    color:#ff613a;
 }
 
 .cart p {
@@ -96,17 +106,17 @@ h1 {
 }
 
 @media only screen and (max-width: 680px) {
-header h1 {
-    font-size: 1.7rem;
-}
+    header h1 {
+        font-size: 1.6rem;
+    }
 
-.right a {
-    font-size: 1rem;
-}
+    .right a {
+        font-size: 1rem;
+    }
 }
 
 @media only screen and (max-width: 480px) {
-header {
-  padding: 0;
-}
+    header {
+        padding: 0;
+    }
 }
