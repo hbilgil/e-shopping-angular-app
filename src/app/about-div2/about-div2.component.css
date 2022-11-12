@@ -1,5 +1,4 @@
 .about-div2 {
-    font-family: 'Courier New', Courier, monospace;
     height: auto;
     max-width: 100%;
     padding: 4rem 3rem;
@@ -60,7 +59,7 @@ p:hover {
     grid-row: 3 / 4;
     grid-column: 1 / 4;
     background-color: #b0d3fa;
-    box-shadow: #583a27 12px 12px 0 2px;
+    box-shadow: #2b425c 12px 12px 0 2px;
 }
 
 .text3:hover {
