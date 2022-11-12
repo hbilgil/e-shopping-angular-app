@@ -1,39 +1,32 @@
 .shopping-cart {
-    height: auto;
-    max-width: 30rem;
     display: flex;
-    flex: 1;
+    flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
-    margin: 0;
+    align-items: center;
     gap: 2rem;
-    box-sizing: border-box;
     padding: 3rem 0rem;
+    margin-top: 10px;
+    font-family: 'Dosis', sans-serif;
 }
 
 .empty-cart {
-    box-sizing: border-box;
-    align-self: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
     background-color: #f7f7f7;
+    margin-top: 20px;
     padding: 5rem;
     gap: 1rem;
+    font-size: 1.5rem;
+    border-radius: 4px;
     box-shadow: #0000002f 0 5px 5px;
 }
 
-.empty-cart p {
-    margin: 0;
-    font-size: 1.5rem;
-    font-weight: 200;
-}
 
 .empty-cart a {
     margin-top: 1rem;
-    font-size: 1.5rem;
     text-decoration: none;
     color: white;
     background: #ff613a;
@@ -41,17 +34,17 @@
     padding: 0.5rem 1rem;
     text-align: center;
     transition: 400ms;
+    border-radius: 6px;
 }
 
 .empty-cart a:hover {
-    background: #ff896c89;
+    background: #ff8567;
 }
 
 h1 {
-    font-weight: 400;
-    font-size: 1.7rem;
-    margin: 0;
+    font-size: 2rem;
 }
+
 a {
     text-decoration: none;
     color: black;
@@ -61,11 +54,9 @@ ul {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;
+    width: 26rem;
     list-style: none;
-    padding: 0;
     gap: 1rem;
-    margin: 0;
 }
 
 li {
@@ -81,6 +72,7 @@ li {
     background-color: #f7f7f7;
     font-weight: 200;
     gap: 2rem;
+    border-radius: 4px;
 }
 
 .description {
@@ -90,7 +82,7 @@ li {
     flex: 1;
 }
 
-ul img {
+li img {
     height: 5rem;
     width: 5rem;
     background-color: white;
@@ -123,25 +115,11 @@ ul img {
     color: #ff613a;
 }
 
-ul p {
-    margin: 0;
-}
-
 .name {
     max-width: 12rem;
 }
 
-.size {
-    font-weight: 400;
-}
-
-.delete {
-    display: flex;
-    gap: 0.2rem;
-    background: none;
-    font-weight: 100;
-    font-size: 0.8rem;
-    border: none;
+lord-icon {
     cursor: pointer;
 }
 
@@ -158,12 +136,9 @@ ul p {
     width: 100%;
     padding: 2rem;
     box-shadow: #0000002f 0 5px 5px;
+    border-radius: 4px;
 }
-.total-price p,
-.total-price h3,
-.payment-method h3 {
-    margin: 0;
-}
+
 .total-price h3,
 .payment-method h3 {
     align-self: flex-start;
@@ -184,7 +159,7 @@ ul p {
 }
 
 .total {
-    font-weight: 700;
+    font-weight: 800;
     margin-top: 0.5rem;
 }
       
@@ -197,6 +172,7 @@ ul p {
     transition: 300ms;
     cursor: pointer;
     width: 100%;
+    border-radius: 6px;
 }
 
 .total-price a:hover {
@@ -211,6 +187,11 @@ ul p {
 
 .payment-method img {
     height: 2rem;
+    width: auto;
+}
+
+.bold {
+    font-weight: 800;
 }
 
 @media only screen and (max-width: 850px) {

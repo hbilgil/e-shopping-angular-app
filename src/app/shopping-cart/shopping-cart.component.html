@@ -2,7 +2,7 @@
     <div class="empty-cart">
         <p>Your cart is empty</p>
         <p>Fill it up with our collection!</p>
-        <a href="/shop">Shop</a>
+        <a [routerLink]="['/Shop']">Shop</a>
     </div>
     <ul>
         <h1>My cart 2 items</h1>
@@ -12,23 +12,20 @@
             </a>
             <div class="description">
                 <a href ="">
-                  <p class="name">product.name</p>
+                  <p class="name">name</p>
                 </a>
-                <p class="size">product.size</p>
-                <div class="delete">
-                    <lord-icon
-                    src="https://cdn.lordicon.com/qjwkduhc.json"
+                <p class="size">size</p>
+                <lord-icon
+                    src="https://cdn.lordicon.com/gsqxdxog.json"
                     trigger="hover"
-                    style="width:20px;height:20px">
-                    </lord-icon>
-                    <p>Remove</p>
-                </div>
+                    style="width:25px;height:25px">
+                </lord-icon>
             </div>
             <div class="add-and-remove">
                 <button>
                   -
                 </button>
-                <p>product.quantity</p>
+                <p class="bold">1</p>
                 <button>
                   +
                 </button>
@@ -48,7 +45,7 @@
                 <p>Total (VAT incl.)</p>
                 <div>EU totalPrice</div>
             </div>
-            <a href to="/404">ORDER</a>
+            <a [routerLink]="['/ErrorPage']">ORDER</a>
         </div>
         <div class="payment-method">
             <h3>We accept</h3>
