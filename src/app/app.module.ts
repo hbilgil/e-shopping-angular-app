@@ -21,6 +21,7 @@ import { AboutDiv1Component } from './about-div1/about-div1.component';
 import { AboutDiv2Component } from './about-div2/about-div2.component';
 import { ErrorPageComponent } from './error-page/error-page.component';
 import { ProductViewComponent } from './product-view/product-view.component';
+import { ErrorNotFoundComponent } from './error-not-found/error-not-found.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { ProductViewComponent } from './product-view/product-view.component';
     AboutDiv1Component,
     AboutDiv2Component,
     ErrorPageComponent,
-    ProductViewComponent
+    ProductViewComponent,
+    ErrorNotFoundComponent
   ],
   imports: [
     BrowserModule,
