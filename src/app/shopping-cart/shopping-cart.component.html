@@ -8,11 +8,11 @@
         <h1>My cart 2 items</h1>
         <li>
             <a href="">
-                <img src="#" alt="product-image" />
+                <img src="{{product.image1}}" alt="{{product.name}}" />
             </a>
             <div class="description">
-                <a href ="">
-                  <p class="name">name</p>
+                <a [routerLink]="['/Shop/Product/{{product.id}}']">
+                  <p class="name">{{product.name}}</p>
                 </a>
                 <p class="size">size</p>
                 <lord-icon
