@@ -2,28 +2,36 @@
     <h1>Items on Sale</h1>
     <div class="cards">
         <div class="card">
-          <a href="#">
-            <img src="" alt="" />
+          <a routerLink="/Shop/Product/3">
+            <img [src]="products[2].src || products[2].image1"
+            (mouseover)="products[2].src = products[2].image2"
+            (mouseout)="products[2].src = products[2].image1" alt="{{products[2].name}}" />
           </a>
-          <p>products[31].name</p>
+          <p>{{products[2].name}}</p>
         </div>
         <div class="card">
-            <a href="#">
-              <img src="" alt="" />
+            <a routerLink="/Shop/Product/5">
+              <img [src]="products[4].src || products[4].image1"
+              (mouseover)="products[4].src = products[4].image2"
+              (mouseout)="products[4].src = products[4].image1" alt="{{products[4].name}}"/>
             </a>
-            <p>products[50].name</p>
+            <p>{{products[4].name}}</p>
         </div>
         <div class="card">
-            <a href="#">
-              <img src="" alt="" />
+            <a routerLink="/Shop/Product/2">
+              <img [src]="products[1].src || products[1].image1"
+              (mouseover)="products[1].src = products[1].image2"
+              (mouseout)="products[1].src = products[1].image1" alt="{{products[1].name}}" />
             </a>
-            <p>products[55].name</p>
+            <p>{{products[1].name}}</p>
         </div>
         <div class="card">
-            <a href="#">
-              <img src="" alt="" />
+            <a routerLink="/Shop/Product/4">
+              <img [src]="products[3].src || products[3].image1"
+              (mouseover)="products[3].src = products[3].image2"
+              (mouseout)="products[3].src = products[3].image1" alt="{{products[3].name}}" />
             </a>
-            <p>products[62].name</p>
+            <p>{{products[3].name}}</p>
         </div>
     </div>
 </div>
