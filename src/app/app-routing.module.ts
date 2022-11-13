@@ -18,7 +18,6 @@ const routes: Routes = [
   {path: "ErrorPage", component: ErrorPageComponent},
   {path: "Shop/Product/:id", component: ProductViewComponent},
   {path: "**", component: ErrorNotFoundComponent},
- 
 ];
 
 @NgModule({
