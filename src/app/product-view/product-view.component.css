@@ -4,6 +4,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin-top: 10px;
     font-family: 'Dosis', sans-serif;
 }
 
@@ -42,7 +43,6 @@ a:hover {
 }
 
 img {
-    background-color: #e7e7e7;
     object-fit: cover;
 }
 
@@ -102,7 +102,7 @@ button {
 }
 
 button:hover {
-    background-color: #1d1d1d66;
+    background-color: #1d1d1db4;
 }
 
 button.active {
