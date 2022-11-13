@@ -1,3 +1,13 @@
+.cards {
+    padding: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    max-width: 60rem;
+    list-style: none;
+}
+
 a {
     text-decoration: none;
     color: black;
