@@ -1,9 +1,13 @@
-<li>
-    <a href="">
-        <div class="image-container">
-            <img src="#" alt="" />
-        </div>
-        <p class="price">2 €</p>
-        <p class="name">name</p>
-    </a>
-</li>
+<ul class="cards" *ngFor="let product of products">
+    <li>
+        <a routerLink="/Shop/Product/{{product.id}}">
+            <div class="image-container">
+                <img [src]="product.src || product.image1"
+                (mouseover)="product.src = product.image2"
+                (mouseout)="product.src = product.image1" alt={{product.name}}/>
+            </div>
+            <p class="price">€ {{product.price}}</p>
+            <p class="name">{{product.name}}</p>
+        </a>
+    </li>
+</ul>
