@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ProductsService } from './Services/products.service';
 import { defineElement } from 'lord-icon-element';
 import lottie from 'lottie-web';
 
@@ -48,7 +49,9 @@ import { ErrorNotFoundComponent } from './error-not-found/error-not-found.compon
     AppRoutingModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  providers: [],
+  providers: [
+    ProductsService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { 
