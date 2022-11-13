@@ -5,13 +5,15 @@
     <div class="main">
         <div class="left">
             <div class="product-img">
-                <img src="" alt="product.name" />
+                <img [src]="product.src || product.image1"
+                (mouseover)="product.src = product.image2"
+                (mouseout)="product.src = product.image1" alt={{product.name}} />
             </div>
         </div>
         <div class="right">
-            <h1>product.name</h1>
+            <h1>{{product.name}}</h1>
             <h3>
-                EU 2 <p>VAT included</p>
+                € {{product.price}} <p>VAT included</p>
             </h3>
             <select>
                 <option value="Small">EU - Small</option>
