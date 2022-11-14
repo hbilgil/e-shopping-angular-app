@@ -15,15 +15,35 @@
             <h3>
                 € {{product.price}} <p>VAT included</p>
             </h3>
-            <select>
-                <option value="Small">EU - Small</option>
-                <option value="Medium">EU - Medium</option>
-                <option value="Large">EU - Large</option>
-                <option value="XL">EU - XL</option>
+            <select *ngIf="product.category === 'sneakers'; else nonSneakersSelection">
+                <option value="" disabled selected>-- Select Size --</option>
+                <option [disabled]="product.stock.num37 === 0" value="37">EU - 37</option>
+                <option [disabled]="product.stock.num38 === 0" value="38">EU - 38</option>
+                <option [disabled]="product.stock.num39 === 0" value="39">EU - 39</option>
+                <option [disabled]="product.stock.num40 === 0" value="40">EU - 40</option>
+                <option [disabled]="product.stock.num41 === 0" value="41">EU - 41</option>
+                <option [disabled]="product.stock.num42 === 0" value="42">EU - 42</option>
+                <option [disabled]="product.stock.num43 === 0" value="43">EU - 43</option>
+                <option [disabled]="product.stock.num44 === 0" value="44">EU - 44</option>
+                <option [disabled]="product.stock.num45 === 0" value="45">EU - 45</option>
+                <option [disabled]="product.stock.num46 === 0" value="46">EU - 46</option>
             </select>
-            <button>
+            <ng-template #nonSneakersSelection>
+                <select>
+                    <option value="" disabled selected>-- Select Size --</option>
+                    <option [disabled]="product.stock.S === 0" value="Small">EU - S</option>
+                    <option [disabled]="product.stock.M === 0" value="Medium">EU - M</option>
+                    <option [disabled]="product.stock.L === 0" value="Large">EU - L</option>
+                    <option [disabled]="product.stock.XL === 0" value="XLarge">EU - XL</option>
+                </select>
+            </ng-template>
+            <button *ngIf="stockTotal !== 0; else notifyMe">
                 Add to cart
             </button>
+            <ng-template #notifyMe>
+                <p class="grey">All sizes are out of stock!</p>
+                <button class="red-button">Notify Me</button>
+            </ng-template>
         </div>
     </div>
 </div>
