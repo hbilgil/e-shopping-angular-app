@@ -9,6 +9,12 @@ export class ProductsService {
             image1: 'assets/products/men/tshirts/adidas_grey_1.png',
             image2: 'assets/products/men/tshirts/adidas_grey_2.png',
             src: '',
+            stock: {
+                S: 0,
+                M: 3,
+                L: 1,
+                XL: 2,
+            }
         },
         {
             id: 2,
@@ -19,6 +25,12 @@ export class ProductsService {
             image1: "assets/products/men/tshirts/adidas_red_1.png",
             image2: "assets/products/men/tshirts/adidas_red_2.png",
             src: '',
+            stock: {
+                S: 1,
+                M: 0,
+                L: 1,
+                XL: 0,
+            }
         },
         {
             id: 3,
@@ -29,6 +41,12 @@ export class ProductsService {
             image1: "assets/products/men/tshirts/adidas_long_sleeve_1.png",
             image2: "assets/products/men/tshirts/adidas_long_sleeve_2.png",
             src: '',
+            stock: {
+                S: 0,
+                M: 2,
+                L: 0,
+                XL: 0,
+            }
         },
         {
             id: 4,
@@ -39,6 +57,12 @@ export class ProductsService {
             image1: "assets/products/men/tshirts/nike_air_black_1.png",
             image2: "assets/products/men/tshirts/nike_air_black_2.png",
             src: '',
+            stock: {
+                S: 1,
+                M: 2,
+                L: 2,
+                XL: 1,
+            }
         },
         {
             id: 5,
@@ -49,6 +73,12 @@ export class ProductsService {
             image1: "assets/products/men/tshirts/air_jordan_grey_1.png",
             image2: "assets/products/men/tshirts/air_jordan_grey_2.png",
             src: '',
+            stock: {
+                S: 1,
+                M: 2,
+                L: 0,
+                XL: 2,
+            }
         },
         {
             id: 6,
@@ -59,6 +89,12 @@ export class ProductsService {
             image1: "assets/products/men/tshirts/nike_long_sleeve_1.png",
             image2: "assets/products/men/tshirts/nike_long_sleeve_2.png",
             src: '',
+            stock: {
+                S: 0,
+                M: 0,
+                L: 0,
+                XL: 0,
+            }
         },{
             id: 7,
             name: 'Adidas Essential Big Logo Sweatshirt',
@@ -68,6 +104,12 @@ export class ProductsService {
             image1: 'assets/products/men/sweaters/adidas_ess_big_logo_1.png',
             image2: 'assets/products/men/sweaters/adidas_ess_big_logo_2.png',
             src: '',
+            stock: {
+                S: 1,
+                M: 2,
+                L: 2,
+                XL: 0,
+            }
         },
         {
             id: 8,
@@ -78,6 +120,12 @@ export class ProductsService {
             image1: "assets/products/men/sweaters/adidas_essential_hoodie_1.png",
             image2: "assets/products/men/sweaters/adidas_essential_hoodie_2.png",
             src: '',
+            stock: {
+                S: 2,
+                M: 2,
+                L: 1,
+                XL: 1,
+            }
         },
         {
             id: 9,
@@ -88,6 +136,12 @@ export class ProductsService {
             image1: "assets/products/men/sweaters/adidas_zipped_1.png",
             image2: "assets/products/men/sweaters/adidas_zipped_2.png",
             src: '',
+            stock: {
+                S: 1,
+                M: 2,
+                L: 0,
+                XL: 0,
+            }
         },
         {
             id: 10,
@@ -98,6 +152,12 @@ export class ProductsService {
             image1: "assets/products/men/sweaters/nike_air_big_logo_1.png",
             image2: "assets/products/men/sweaters/nike_air_big_logo_2.png",
             src: '',
+            stock: {
+                S: 0,
+                M: 0,
+                L: 0,
+                XL: 0,
+            }
         },
         {
             id: 11,
@@ -108,6 +168,12 @@ export class ProductsService {
             image1: "assets/products/men/sweaters/nike_air_jordan_1.png",
             image2: "assets/products/men/sweaters/nike_air_jordan_2.png",
             src: '',
+            stock: {
+                S: 0,
+                M: 0,
+                L: 0,
+                XL: 2,
+            }
         },
         {
             id: 12,
@@ -118,6 +184,12 @@ export class ProductsService {
             image1: "assets/products/men/sweaters/nike_zipped_1.png",
             image2: "assets/products/men/sweaters/nike_zipped_2.png",
             src: '',
+            stock: {
+                S: 0,
+                M: 2,
+                L: 2,
+                XL: 0,
+            }
         },
         {
             id: 13,
@@ -128,6 +200,18 @@ export class ProductsService {
             image1: 'assets/products/men/sneakers/adidas_duramo_1.png',
             image2: 'assets/products/men/sneakers/adidas_duramo_2.png',
             src: '',
+            stock: {
+                num37: 0,
+                num38: 2,
+                num39: 0,
+                num40: 1,
+                num41: 0,
+                num42: 2,
+                num43: 0,
+                num44: 1,
+                num45: 0,
+                num46: 2,
+            }
         },
         {
             id: 14,
@@ -138,6 +222,18 @@ export class ProductsService {
             image1: "assets/products/men/sneakers/adidas_fluidflow_1.png",
             image2: "assets/products/men/sneakers/adidas_fluidflow_2.png",
             src: '',
+            stock: {
+                num37: 1,
+                num38: 2,
+                num39: 1,
+                num40: 1,
+                num41: 0,
+                num42: 2,
+                num43: 0,
+                num44: 1,
+                num45: 0,
+                num46: 0,
+            }
         },
         {
             id: 15,
@@ -148,6 +244,18 @@ export class ProductsService {
             image1: "assets/products/men/sneakers/adidas_response_1.png",
             image2: "assets/products/men/sneakers/adidas_response_2.png",
             src: '',
+            stock: {
+                num37: 1,
+                num38: 2,
+                num39: 1,
+                num40: 1,
+                num41: 1,
+                num42: 2,
+                num43: 1,
+                num44: 1,
+                num45: 1,
+                num46: 2,
+            }
         },
         {
             id: 16,
@@ -158,6 +266,18 @@ export class ProductsService {
             image1: "assets/products/men/sneakers/adidas_ultra_4d_1.png",
             image2: "assets/products/men/sneakers/adidas_ultra_4d_2.png",
             src: '',
+            stock: {
+                num37: 0,
+                num38: 0,
+                num39: 0,
+                num40: 0,
+                num41: 0,
+                num42: 2,
+                num43: 0,
+                num44: 1,
+                num45: 0,
+                num46: 2,
+            }
         },
         {
             id: 17,
@@ -168,6 +288,18 @@ export class ProductsService {
             image1: "assets/products/men/sneakers/nike_air_jordan_1.png",
             image2: "assets/products/men/sneakers/nike_air_jordan_2.png",
             src: '',
+            stock: {
+                num37: 0,
+                num38: 0,
+                num39: 0,
+                num40: 0,
+                num41: 0,
+                num42: 0,
+                num43: 0,
+                num44: 0,
+                num45: 0,
+                num46: 0,
+            }
         },
         {
             id: 18,
@@ -178,6 +310,18 @@ export class ProductsService {
             image1: "assets/products/men/sneakers/nike_air_zoom_1.png",
             image2: "assets/products/men/sneakers/nike_air_zoom_2.png",
             src: '',
+            stock: {
+                num37: 1,
+                num38: 2,
+                num39: 0,
+                num40: 1,
+                num41: 1,
+                num42: 2,
+                num43: 0,
+                num44: 0,
+                num45: 0,
+                num46: 0,
+            }
         },
         {
             id: 19,
@@ -188,6 +332,18 @@ export class ProductsService {
             image1: "assets/products/men/sneakers/nike_lebron_1.png",
             image2: "assets/products/men/sneakers/nike_lebron_2.png",
             src: '',
+            stock: {
+                num37: 0,
+                num38: 0,
+                num39: 1,
+                num40: 1,
+                num41: 2,
+                num42: 2,
+                num43: 0,
+                num44: 1,
+                num45: 0,
+                num46: 2,
+            }
         },
         {
             id: 20,
@@ -198,6 +354,18 @@ export class ProductsService {
             image1: "assets/products/men/sneakers/nike_pegasus_1.png",
             image2: "assets/products/men/sneakers/nike_pegasus_2.png",
             src: '',
+            stock: {
+                num37: 0,
+                num38: 2,
+                num39: 1,
+                num40: 1,
+                num41: 1,
+                num42: 2,
+                num43: 0,
+                num44: 0,
+                num45: 0,
+                num46: 1,
+            }
         },
         {
             id: 21,
@@ -208,6 +376,18 @@ export class ProductsService {
             image1: "assets/products/men/sneakers/nike_react_1.png",
             image2: "assets/products/men/sneakers/nike_react_2.png",
             src: '',
+            stock: {
+                num37: 1,
+                num38: 2,
+                num39: 1,
+                num40: 1,
+                num41: 0,
+                num42: 2,
+                num43: 1,
+                num44: 1,
+                num45: 1,
+                num46: 2,
+            }
         },
         {
             id: 22,
@@ -218,6 +398,12 @@ export class ProductsService {
             image1: 'assets/products/women/tshirts/adidas_big_logo_tshirt_1.png',
             image2: 'assets/products/women/tshirts/adidas_big_logo_tshirt_2.png',
             src: '',
+            stock: {
+                S: 1,
+                M: 1,
+                L: 2,
+                XL: 0,
+            }
         },
         {
             id: 23,
@@ -228,6 +414,12 @@ export class ProductsService {
             image1: "assets/products/women/tshirts/adidas_floral_1.png",
             image2: "assets/products/women/tshirts/adidas_floral_2.png",
             src: '',
+            stock: {
+                S: 1,
+                M: 2,
+                L: 2,
+                XL: 1,
+            }
         },
         {
             id: 24,
@@ -238,6 +430,12 @@ export class ProductsService {
             image1: "assets/products/women/tshirts/adidas_long_sleeve_1.png",
             image2: "assets/products/women/tshirts/adidas_long_sleeve_2.png",
             src: '',
+            stock: {
+                S: 0,
+                M: 0,
+                L: 2,
+                XL: 1,
+            }
         },
         {
             id: 25,
@@ -248,6 +446,12 @@ export class ProductsService {
             image1: "assets/products/women/tshirts/nike_white_tshirt_1.png",
             image2: "assets/products/women/tshirts/nike_white_tshirt_2.png",
             src: '',
+            stock: {
+                S: 1,
+                M: 1,
+                L: 2,
+                XL: 0,
+            }
         },
         {
             id: 26,
@@ -258,6 +462,12 @@ export class ProductsService {
             image1: "assets/products/women/tshirts/nike_running_black_1.png",
             image2: "assets/products/women/tshirts/nike_running_black_2.png",
             src: '',
+            stock: {
+                S: 0,
+                M: 1,
+                L: 1,
+                XL: 0,
+            }
         },
         {
             id: 27,
@@ -268,6 +478,12 @@ export class ProductsService {
             image1: "assets/products/women/tshirts/nike_long_sleeve_tshirt_1.png",
             image2: "assets/products/women/tshirts/nike_long_sleeve_tshirt_2.png",
             src: '',
+            stock: {
+                S: 0,
+                M: 0,
+                L: 0,
+                XL: 0,
+            }
         },{
             id: 28,
             name: 'Adidas Essential Big Logo Sweatshirt',
@@ -277,6 +493,12 @@ export class ProductsService {
             image1: 'assets/products/women/sweaters/adidas_black_sweatshirt_1.png',
             image2: 'assets/products/women/sweaters/adidas_black_sweatshirt_2.png',
             src: '',
+            stock: {
+                S: 1,
+                M: 2,
+                L: 2,
+                XL: 0,
+            }
         },
         {
             id: 29,
@@ -287,6 +509,12 @@ export class ProductsService {
             image1: "assets/products/women/sweaters/adidas_hoodie_1.png",
             image2: "assets/products/women/sweaters/adidas_hoodie_2.png",
             src: '',
+            stock: {
+                S: 0,
+                M: 1,
+                L: 2,
+                XL: 1,
+            }
         },
         {
             id: 30,
@@ -297,6 +525,12 @@ export class ProductsService {
             image1: "assets/products/women/sweaters/adidas_zipped_1.png",
             image2: "assets/products/women/sweaters/adidas_zipped_2.png",
             src: '',
+            stock: {
+                S: 0,
+                M: 0,
+                L: 1,
+                XL: 0,
+            }
         },
         {
             id: 31,
@@ -307,6 +541,12 @@ export class ProductsService {
             image1: "assets/products/women/sweaters/nike_big_logo_sweatshirt_1.png",
             image2: "assets/products/women/sweaters/nike_big_logo_sweatshirt_2.png",
             src: '',
+            stock: {
+                S: 0,
+                M: 1,
+                L: 1,
+                XL: 1,
+            }
         },
         {
             id: 32,
@@ -317,6 +557,12 @@ export class ProductsService {
             image1: "assets/products/women/sweaters/nike_air_hoodie_1.png",
             image2: "assets/products/women/sweaters/nike_air_hoodie_2.png",
             src: '',
+            stock: {
+                S: 0,
+                M: 0,
+                L: 0,
+                XL: 0,
+            }
         },
         {
             id: 33,
@@ -327,6 +573,12 @@ export class ProductsService {
             image1: "assets/products/women/sweaters/nike_zipped_1.png",
             image2: "assets/products/women/sweaters/nike_zipped_2.png",
             src: '',
+            stock: {
+                S: 1,
+                M: 1,
+                L: 1,
+                XL: 0,
+            }
         },
         {
             id: 34,
@@ -337,6 +589,18 @@ export class ProductsService {
             image1: 'assets/products/women/sneakers/adidas_fluidflow_1.png',
             image2: 'assets/products/women/sneakers/adidas_fluidflow_2.png',
             src: '',
+            stock: {
+                num37: 0,
+                num38: 0,
+                num39: 1,
+                num40: 1,
+                num41: 2,
+                num42: 2,
+                num43: 0,
+                num44: 1,
+                num45: 0,
+                num46: 2,
+            }
         },
         {
             id: 35,
@@ -347,6 +611,18 @@ export class ProductsService {
             image1: "assets/products/women/sneakers/adidas_grand_court_base_1.png",
             image2: "assets/products/women/sneakers/adidas_grand_court_base_2.png",
             src: '',
+            stock: {
+                num37: 0,
+                num38: 0,
+                num39: 0,
+                num40: 0,
+                num41: 1,
+                num42: 1,
+                num43: 1,
+                num44: 1,
+                num45: 1,
+                num46: 2,
+            }
         },
         {
             id: 36,
@@ -357,6 +633,18 @@ export class ProductsService {
             image1: "assets/products/women/sneakers/adidas_response_1.png",
             image2: "assets/products/women/sneakers/adidas_response_2.png",
             src: '',
+            stock: {
+                num37: 0,
+                num38: 0,
+                num39: 0,
+                num40: 0,
+                num41: 2,
+                num42: 0,
+                num43: 0,
+                num44: 1,
+                num45: 0,
+                num46: 0,
+            }
         },
         {
             id: 37,
@@ -367,6 +655,18 @@ export class ProductsService {
             image1: "assets/products/women/sneakers/adidas_ultra_4D_1.png",
             image2: "assets/products/women/sneakers/adidas_ultra_4D_2.png",
             src: '',
+            stock: {
+                num37: 0,
+                num38: 0,
+                num39: 0,
+                num40: 0,
+                num41: 0,
+                num42: 0,
+                num43: 0,
+                num44: 0,
+                num45: 0,
+                num46: 0,
+            }
         },
         {
             id: 38,
@@ -377,6 +677,18 @@ export class ProductsService {
             image1: "assets/products/women/sneakers/nike_air_zoom_1.png",
             image2: "assets/products/women/sneakers/nike_air_zoom_2.png",
             src: '',
+            stock: {
+                num37: 1,
+                num38: 1,
+                num39: 0,
+                num40: 0,
+                num41: 0,
+                num42: 2,
+                num43: 1,
+                num44: 1,
+                num45: 1,
+                num46: 2,
+            }
         },
         {
             id: 39,
@@ -387,6 +699,18 @@ export class ProductsService {
             image1: "assets/products/women/sneakers/nike_free_run_1.png",
             image2: "assets/products/women/sneakers/nike_free_run_2.png",
             src: '',
+            stock: {
+                num37: 1,
+                num38: 1,
+                num39: 1,
+                num40: 1,
+                num41: 0,
+                num42: 1,
+                num43: 0,
+                num44: 0,
+                num45: 0,
+                num46: 0,
+            }
         },
         {
             id: 40,
@@ -397,6 +721,18 @@ export class ProductsService {
             image1: "assets/products/women/sneakers/nike_juniper_1.png",
             image2: "assets/products/women/sneakers/nike_juniper_2.png",
             src: '',
+            stock: {
+                num37: 0,
+                num38: 1,
+                num39: 1,
+                num40: 1,
+                num41: 1,
+                num42: 1,
+                num43: 0,
+                num44: 1,
+                num45: 0,
+                num46: 2,
+            }
         },
         {
             id: 41,
@@ -407,6 +743,18 @@ export class ProductsService {
             image1: "assets/products/women/sneakers/nike_pegasus_1.png",
             image2: "assets/products/women/sneakers/nike_pegasus_2.png",
             src: '',
+            stock: {
+                num37: 0,
+                num38: 1,
+                num39: 1,
+                num40: 1,
+                num41: 1,
+                num42: 1,
+                num43: 1,
+                num44: 0,
+                num45: 0,
+                num46: 0,
+            }
         },
         {
             id: 42,
@@ -417,6 +765,18 @@ export class ProductsService {
             image1: "assets/products/women/sneakers/nike_react_1.png",
             image2: "assets/products/women/sneakers/nike_react_2.png",
             src: '',
+            stock: {
+                num37: 0,
+                num38: 0,
+                num39: 0,
+                num40: 0,
+                num41: 0,
+                num42: 0,
+                num43: 0,
+                num44: 0,
+                num45: 0,
+                num46: 0,
+            }
         },
     ];
 }
