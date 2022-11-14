@@ -80,10 +80,15 @@ select {
     padding: 0 0.2rem;
     height: 3rem;
     font-size: 1rem;
+    cursor: pointer;
 }
 
 select:hover {
     background-color: #d3e6ffe4;
+}
+
+select*:disabled {
+    color: red;
 }
 
 button {
@@ -110,7 +115,17 @@ button.active {
     color: rgb(255, 255, 255);
     transition: 600ms;
 }
+
+.red-button {
+    background-color: crimson;
+}
   
+.grey {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    color: crimson;
+}
+
 @media only screen and (max-width: 933px) {
     .main {
         flex-direction: column-reverse;
