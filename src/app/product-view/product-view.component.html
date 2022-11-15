@@ -1,6 +1,6 @@
 <div class="product">
     <a [routerLink]="['/Shop']" class="return">
-        {{"< Go back"}}
+        {{"< Go to Shop"}}
     </a>
     <div class="main">
         <div class="left">
@@ -15,7 +15,7 @@
             <h3>
                 € {{product.price}} <p>VAT included</p>
             </h3>
-            <select *ngIf="product.category === 'sneakers'; else nonSneakersSelection">
+            <select *ngIf="product.category === 'Sneakers'; else nonSneakersSelection">
                 <option value="" disabled selected>-- Select Size --</option>
                 <option [disabled]="product.stockB.num1 === 0" value="37">EU - 37</option>
                 <option [disabled]="product.stockB.num2 === 0" value="38">EU - 38</option>
