@@ -2,15 +2,17 @@
     <ng-container *ngFor="let product of products">
         <div class="product-container" *ngIf="genderSelectionResult === product.gender">
             <div *ngIf="categorySelectionResult === product.category">
-                <a routerLink="/Shop/Product/{{product.id}}">
-                    <div class="image-container">
-                        <img [src]="product.src || product.image1"
-                        (mouseover)="product.src = product.image2"
-                        (mouseout)="product.src = product.image1" alt={{product.name}}/>
-                    </div>
-                    <p class="price">€ {{product.price}}</p>
-                    <p class="name">{{product.name}}</p>
-                </a>    
+                <div *ngIf="searchValueResult === '' || product.name.toLowerCase().includes(searchValueResult)">
+                    <a routerLink="/Shop/Product/{{product.id}}">
+                        <div class="image-container">
+                            <img [src]="product.src || product.image1"
+                            (mouseover)="product.src = product.image2"
+                            (mouseout)="product.src = product.image1" alt={{product.name}}/>
+                        </div>
+                        <p class="price">€ {{product.price}}</p>
+                        <p class="name">{{product.name}}</p>
+                    </a> 
+                </div>
             </div>
         </div>
     </ng-container>

@@ -26,4 +26,5 @@ export class CardComponent implements OnInit {
 
   @Input() genderSelectionResult: string = '';
   @Input() categorySelectionResult: string = '';
+  @Input() searchValueResult: string = '';
 }
