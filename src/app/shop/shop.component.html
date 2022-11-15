@@ -1,4 +1,8 @@
 <div class="shop">
-    <app-categories></app-categories>
-    <app-card></app-card>
+    <app-categories
+    (genderFilterButtonSelectionChanged)="onFilterButtonGenderChanged($event)"
+    (categoryFilterButtonSelectionChanged)="onFilterButtonCategoryChanged($event)"></app-categories>
+    <app-card
+    [genderSelectionResult]="getGenderSelection()"
+    [categorySelectionResult]="getCategorySelection()"></app-card>
 </div>

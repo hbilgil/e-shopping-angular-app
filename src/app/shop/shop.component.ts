@@ -19,4 +19,23 @@ export class ShopComponent implements OnInit {
     this.products = this.service.products;
   }
 
+  genderSelectionButton: string = 'Men';
+  categorySelectionButton: string = 'T-shirts';
+
+  onFilterButtonGenderChanged(data: any) {
+    this.genderSelectionButton = data;
+  }
+
+  onFilterButtonCategoryChanged(data: any) {
+    this.categorySelectionButton = data;
+  }
+
+  getGenderSelection() {
+    return this.genderSelectionButton;
+  }
+
+  getCategorySelection() {
+    return this.categorySelectionButton;
+  }
+
 }
