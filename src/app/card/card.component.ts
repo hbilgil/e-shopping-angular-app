@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ProductsService } from '../Services/products.service';
 import { ActivatedRoute } from '@angular/router';
 
@@ -10,6 +10,7 @@ import { ActivatedRoute } from '@angular/router';
     ProductsService
   ]
 })
+
 export class CardComponent implements OnInit {
   products: any;
   product: any;
@@ -22,4 +23,7 @@ export class CardComponent implements OnInit {
     this.productId = this.activatedRoute.snapshot.paramMap.get('id');
     this.product = this.service.products.find((element) => element.id == this.productId);
   }
+
+  @Input() genderSelectionResult: string = '';
+  @Input() categorySelectionResult: string = '';
 }

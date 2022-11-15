@@ -1,10 +1,10 @@
 .cards {
     padding: 2rem;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
+    display: grid;
+    grid-column-gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
     justify-content: center;
-    max-width: 60rem;
+    align-items: center;
     list-style: none;
 }
 
@@ -13,7 +13,7 @@ a {
     color: black;
 }
 
-li {
+.product-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -55,4 +55,16 @@ p {
 
 .name {
     height: 2.5rem;
+}
+
+@media only screen and (max-width: 850px) {
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media only screen and (max-width: 570px) {
+    .cards {
+        grid-template-columns: repeat(1, 1fr);
+    }
 }
