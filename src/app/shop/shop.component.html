@@ -1,8 +1,10 @@
 <div class="shop">
     <app-categories
     (genderFilterButtonSelectionChanged)="onFilterButtonGenderChanged($event)"
-    (categoryFilterButtonSelectionChanged)="onFilterButtonCategoryChanged($event)"></app-categories>
+    (categoryFilterButtonSelectionChanged)="onFilterButtonCategoryChanged($event)"
+    (searchTextChanged)="onSearchTextChanged($event)"></app-categories>
     <app-card
     [genderSelectionResult]="getGenderSelection()"
-    [categorySelectionResult]="getCategorySelection()"></app-card>
+    [categorySelectionResult]="getCategorySelection()"
+    [searchValueResult]="getSearchValue()"></app-card>
 </div>

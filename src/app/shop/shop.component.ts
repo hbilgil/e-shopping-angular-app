@@ -21,14 +21,7 @@ export class ShopComponent implements OnInit {
 
   genderSelectionButton: string = 'Men';
   categorySelectionButton: string = 'T-shirts';
-
-  onFilterButtonGenderChanged(data: any) {
-    this.genderSelectionButton = data;
-  }
-
-  onFilterButtonCategoryChanged(data: any) {
-    this.categorySelectionButton = data;
-  }
+  searchedText: string = '';
 
   getGenderSelection() {
     return this.genderSelectionButton;
@@ -38,4 +31,19 @@ export class ShopComponent implements OnInit {
     return this.categorySelectionButton;
   }
 
+  getSearchValue() {
+    return this.searchedText.toLowerCase();
+  }
+
+  onFilterButtonGenderChanged(data: any) {
+    this.genderSelectionButton = data;
+  }
+
+  onFilterButtonCategoryChanged(data: any) {
+    this.categorySelectionButton = data;
+  }
+
+  onSearchTextChanged(searchedValue: any) {
+    this.searchedText = searchedValue;
+  }
 }
