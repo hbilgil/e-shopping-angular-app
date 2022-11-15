@@ -22,7 +22,8 @@
     <input
       type="text"
       class="search"
-      placeholder="Search in products"
-    />
+      placeholder="Search in {{selectedGenderButtonValue}}'s {{selectedCategoryButtonValue}}"
+      [(ngModel)]="enteredSearchValue"
+      (input)="onSearchTextChanged()"/>
   </div>
 </div>

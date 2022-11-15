@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-categories',
@@ -14,9 +14,11 @@ export class CategoriesComponent implements OnInit {
 
   selectedGenderButtonValue: string = "Men";
   selectedCategoryButtonValue: string = "T-shirts";
+  enteredSearchValue: string = '';
 
   @Output() genderFilterButtonSelectionChanged: EventEmitter<string> = new EventEmitter<string>();
   @Output() categoryFilterButtonSelectionChanged: EventEmitter<string> = new EventEmitter<string>();
+  @Output() searchTextChanged: EventEmitter<string> = new EventEmitter<string>();
 
   onButtonSelectionGenderChanged() {
     this.genderFilterButtonSelectionChanged.emit(this.selectedGenderButtonValue);
@@ -25,6 +27,9 @@ export class CategoriesComponent implements OnInit {
   onButtonSelectionCategoryChanged() {
     this.categoryFilterButtonSelectionChanged.emit(this.selectedCategoryButtonValue);
   }
-  
+
+  onSearchTextChanged() {
+    this.searchTextChanged.emit(this.enteredSearchValue);
+  }
 
 }
