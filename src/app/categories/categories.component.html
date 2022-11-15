@@ -1,23 +1,23 @@
 <div class="top">
   <div class="genders">
-    <button class="active">
-      Men
-    </button>
-    <button>
-      Women
-    </button>
+    <input name="gender" type="radio" value="Men" label="Men" 
+    [(ngModel)]="selectedGenderButtonValue"
+    (change)="onButtonSelectionGenderChanged()"/>
+    <input name="gender" type="radio" value="Women" label="Women" 
+    [(ngModel)]="selectedGenderButtonValue"
+    (change)="onButtonSelectionGenderChanged()"/>
   </div>
   <div class="categories">
     <div class="category-buttons">
-      <button class="category-button active">
-        T-shirts
-      </button>
-      <button class="category-button">
-        Sweaters
-      </button>
-      <button class="category-button">
-        Sneakers
-      </button>
+      <input name="category" type="radio" value="T-shirts" label="T-shirts" 
+      [(ngModel)]="selectedCategoryButtonValue"
+      (change)="onButtonSelectionCategoryChanged()"/>
+      <input name="category" type="radio" value="Sweaters" label="Sweaters" 
+      [(ngModel)]="selectedCategoryButtonValue"
+      (change)="onButtonSelectionCategoryChanged()"/>
+      <input name="category" type="radio" value="Sneakers" label="Sneakers" 
+      [(ngModel)]="selectedCategoryButtonValue"
+      (change)="onButtonSelectionCategoryChanged()"/>
     </div>
     <input
       type="text"
