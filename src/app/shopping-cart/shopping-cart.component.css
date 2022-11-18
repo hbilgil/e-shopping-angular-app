@@ -4,9 +4,22 @@
     justify-content: center;
     align-items: center;
     gap: 2rem;
-    padding: 3rem 0rem;
     margin-top: 10px;
     font-family: 'Dosis', sans-serif;
+}
+
+.left-arrow {
+    align-self: flex-start;
+    margin: 0 1rem;
+    color: black;
+    text-decoration: none;
+    font-size: 1.2rem;
+    padding: 0.2rem 0.5rem;
+}
+
+.left-arrow:hover {
+    background-color: black;
+    color: white;
 }
 
 .empty-cart {
@@ -45,6 +58,10 @@ h1 {
     font-size: 2rem;
 }
 
+h1 span {
+    color: crimson;
+}
+
 a {
     text-decoration: none;
     color: black;
@@ -57,6 +74,7 @@ ul {
     width: 26rem;
     list-style: none;
     gap: 1rem;
+    padding: 2rem 0rem;
 }
 
 li {
@@ -156,6 +174,10 @@ lord-icon {
 .shipping {
     border-bottom: solid 1px rgb(182, 182, 182);
     padding-bottom: 0.5rem;
+}
+
+.shipping span {
+    color:rgb(182, 182, 182);
 }
 
 .total {

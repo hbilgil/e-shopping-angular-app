@@ -1,31 +1,43 @@
 <div class="shopping-cart">
-    <div class="empty-cart">
+    <a [routerLink]="['/Shop']" class="left-arrow">
+        {{"< Go to Shop"}}
+    </a>
+    <div class="empty-cart" *ngIf="chosenItems.length == 0; else proceedCheckOut">
         <p>Your cart is empty</p>
         <p>Fill it up with our collection!</p>
         <a [routerLink]="['/Shop']">Shop</a>
     </div>
+    <ng-template #proceedCheckOut>
     <ul>
-        <h1>My cart 2 items</h1>
-        <li>
-            <a href="">
-                <img src="{{product.image1}}" alt="{{product.name}}" />
+        <h1 *ngIf="totalQuantity.length>1; else onlyOne">
+            Your shopping cart: ( <span> {{ totalQuantity.length }} </span> ) items
+        </h1>
+        <ng-template #onlyOne>
+            <h1>
+                Your shopping cart: ( <span> {{ totalQuantity.length }} </span> ) item
+            </h1>
+        </ng-template>
+        <li *ngFor="let item of chosenItems">
+            <a routerLink="/Shop/Product/{{item.id}}">
+                <img src="{{item.image}}" alt="{{item.name}}" />
             </a>
             <div class="description">
-                <a routerLink="/Shop/Product/{{product.id}}">
-                  <p class="name">{{product.name}}</p>
+                <a routerLink="/Shop/Product/{{item.id}}">
+                  <p class="name">{{item.name}}</p>
                 </a>
-                <p class="size">size</p>
+                <p class="size">{{item.size}}</p>
                 <lord-icon
                     src="https://cdn.lordicon.com/gsqxdxog.json"
                     trigger="hover"
-                    style="width:25px;height:25px">
+                    style="width:25px;height:25px"
+                    (click)="removeItem(item)">
                 </lord-icon>
             </div>
             <div class="add-and-remove">
                 <button>
                   -
                 </button>
-                <p class="bold">1</p>
+                <p class="bold">{{item.quantity}}</p>
                 <button>
                   +
                 </button>
@@ -35,15 +47,27 @@
             <h3>Total</h3>
             <div class="sub-total">
                 <p>Sub-total</p>
-                <div>totalPrice</div>
+                <div>{{ totalPrice.toFixed(2) }}</div>
             </div>
             <div class="shipping">
-                <p>Shipping</p>
-                <div>FREE</div>
+                <p>Shipping <span *ngIf="totalPrice<=100"> {{'(free shipping on orders over €100)'}} </span></p>
+                <div *ngIf="totalPrice>100; else shipping">
+                    FREE
+                </div>
+                <ng-template #shipping>
+                    <div>
+                        {{shippingPrice}}
+                    </div>
+                </ng-template>
             </div>
             <div class="total">
-                <p>Total (VAT incl.)</p>
-                <div>EU totalPrice</div>
+                <p>Total (VAT included)</p>
+                <div *ngIf="totalPrice>100; else shippingAdded">
+                    € {{ totalPrice }}
+                </div>
+                <ng-template #shippingAdded>
+                    <div>€ {{ (totalPrice + shippingPrice).toFixed(2) }}</div>
+                </ng-template>
             </div>
             <a [routerLink]="['/ErrorPage']">ORDER</a>
         </div>
@@ -54,4 +78,5 @@
             </div>
         </div>
     </ul>
+    </ng-template>
 </div>
