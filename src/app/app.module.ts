@@ -1,13 +1,17 @@
+//Imported Modules
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
-
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
+
+//Imported services and packages
 import { ProductsService } from './Services/products.service';
+import { ChosenItemsService } from './Services/chosenItems.service';
 import { defineElement } from 'lord-icon-element';
 import lottie from 'lottie-web';
 
+//Imported Components
+import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { ContainerComponent } from './container/container.component';
@@ -50,14 +54,20 @@ import { ErrorNotFoundComponent } from './error-not-found/error-not-found.compon
     AppRoutingModule,
     FormsModule
   ],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  schemas: [
+    CUSTOM_ELEMENTS_SCHEMA
+  ],
   providers: [
     ProductsService,
+    ChosenItemsService,
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [
+    AppComponent
+  ]
 })
+
 export class AppModule { 
   constructor() {
-    defineElement(lottie.loadAnimation);
+    defineElement(lottie.loadAnimation); //animated icons
   }
 }
