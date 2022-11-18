@@ -5,9 +5,6 @@ import { ProductsService } from '../Services/products.service';
   selector: 'app-shop',
   templateUrl: './shop.component.html',
   styleUrls: ['./shop.component.css'],
-  providers: [
-    ProductsService
-  ]
 })
 export class ShopComponent implements OnInit {
 
