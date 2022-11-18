@@ -6,14 +6,14 @@ import { ActivatedRoute } from '@angular/router';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  providers: [ProductsService]
 })
 export class AppComponent implements OnInit {
   title = "e-shopping-angular-app";
   product: any;
   productId: any;
 
-  constructor(private activatedRoute: ActivatedRoute, private service: ProductsService) { }
+  constructor(private activatedRoute: ActivatedRoute, private service: ProductsService) { 
+  }
 
   ngOnInit(): void {
     this.productId = this.activatedRoute.snapshot.paramMap.get('id');
