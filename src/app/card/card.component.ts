@@ -6,9 +6,6 @@ import { ActivatedRoute } from '@angular/router';
   selector: 'app-card',
   templateUrl: './card.component.html',
   styleUrls: ['./card.component.css'],
-  providers: [
-    ProductsService
-  ]
 })
 
 export class CardComponent implements OnInit {
