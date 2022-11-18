@@ -1,21 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductsService } from '../Services/products.service';
 import { ActivatedRoute } from '@angular/router';
+import { ChosenItemsService } from '../Services/chosenItems.service';
 
 @Component({
   selector: 'app-product-view',
   templateUrl: './product-view.component.html',
   styleUrls: ['./product-view.component.css'],
-  providers: [
-    ProductsService
-  ]
 })
 
 export class ProductViewComponent implements OnInit  {
-  
   product: any;
   productId: any;
-  stockTotal: any;
   stockS: any;
   stockM: any;
   stockL: any;
@@ -30,9 +26,11 @@ export class ProductViewComponent implements OnInit  {
   stock8: any;
   stock9: any;
   stock10: any;
+  stockTotal: any;
 
-  constructor(private activatedRoute: ActivatedRoute, private service: ProductsService) { }
+  constructor(private activatedRoute: ActivatedRoute, private service: ProductsService, private service2: ChosenItemsService) {}
 
+  
   ngOnInit(): void {
     this.productId = this.activatedRoute.snapshot.paramMap.get('id');
     this.product = this.service.products.find((element) => element.id == this.productId);
@@ -64,5 +62,43 @@ export class ProductViewComponent implements OnInit  {
                       this.stock8 +
                       this.stock9 + 
                       this.stock10;
-   }
+  }
+
+  selectedSizeButtonValue: string = "";
+
+   onChangeButtonColor (e: any) {
+   e.target.classList.add('active');
+    setTimeout(() => {
+      e.target.classList.remove("active");
+    }, 1500);
+  };
+
+  handleAddToCart(e: any, value: string) {
+    if(value === '') return;
+    this.service.removeProduct(value, this.product);
+    const { v4: uuidv4 } = require('uuid');
+    interface chosenProduct {
+      uniqId: string;
+      id: number;
+      name: string;
+      price: number;
+      image: string;
+      size: string;
+      quantity: number;
+    };
+
+    let item: chosenProduct = {
+      uniqId: uuidv4(),
+      id : this.product.id,
+      name : this.product.name,
+      price: this.product.price,
+      image: this.product.image1,
+      size: value,
+      quantity: 1,
+    };
+
+    this.service2.addChosenItemToCart(item)
+    this.stockTotal--;
+    this.onChangeButtonColor(e);
+  }
 }

@@ -1,7 +1,12 @@
 <div class="product">
-    <a [routerLink]="['/Shop']" class="return">
-        {{"< Go to Shop"}}
-    </a>
+    <div class="arrows">
+        <a [routerLink]="['/Shop']" class="left-arrow">
+            {{"< Go to Shop"}}
+        </a>
+        <a [routerLink]="['/ShoppingCart']" class="right-arrow">
+            {{"Go to Shopping Cart >"}}
+        </a>
+    </div>
     <div class="main">
         <div class="left">
             <div class="product-img">
@@ -15,34 +20,36 @@
             <h3>
                 € {{product.price}} <p>VAT included</p>
             </h3>
-            <select *ngIf="product.category === 'Sneakers'; else nonSneakersSelection">
-                <option value="" disabled selected>-- Select Size --</option>
-                <option [disabled]="product.stockB.num1 === 0" value="37">EU - 37</option>
-                <option [disabled]="product.stockB.num2 === 0" value="38">EU - 38</option>
-                <option [disabled]="product.stockB.num3 === 0" value="39">EU - 39</option>
-                <option [disabled]="product.stockB.num4 === 0" value="40">EU - 40</option>
-                <option [disabled]="product.stockB.num5 === 0" value="41">EU - 41</option>
-                <option [disabled]="product.stockB.num6 === 0" value="42">EU - 42</option>
-                <option [disabled]="product.stockB.num7 === 0" value="43">EU - 43</option>
-                <option [disabled]="product.stockB.num8 === 0" value="44">EU - 44</option>
-                <option [disabled]="product.stockB.num9 === 0" value="45">EU - 45</option>
-                <option [disabled]="product.stockB.num10 === 0" value="46">EU - 46</option>
+            <select *ngIf="product.category === 'Sneakers'; else nonSneakersSelection" 
+            [(ngModel)]="selectedSizeButtonValue">
+                <option value="" disabled selected name="size" ngDefaultControl>-- Select Size --</option>
+                <option [disabled]="product.stockB.num1 === 0" value="37" name="size" ngDefaultControl>EU - 37</option>
+                <option [disabled]="product.stockB.num2 === 0" value="38" name="size" ngDefaultControl>EU - 38</option>
+                <option [disabled]="product.stockB.num3 === 0" value="39" name="size" ngDefaultControl>EU - 39</option>
+                <option [disabled]="product.stockB.num4 === 0" value="40" name="size" ngDefaultControl>EU - 40</option>
+                <option [disabled]="product.stockB.num5 === 0" value="41" name="size" ngDefaultControl>EU - 41</option>
+                <option [disabled]="product.stockB.num6 === 0" value="42" name="size" ngDefaultControl>EU - 42</option>
+                <option [disabled]="product.stockB.num7 === 0" value="43" name="size" ngDefaultControl>EU - 43</option>
+                <option [disabled]="product.stockB.num8 === 0" value="44" name="size" ngDefaultControl>EU - 44</option>
+                <option [disabled]="product.stockB.num9 === 0" value="45" name="size" ngDefaultControl>EU - 45</option>
+                <option [disabled]="product.stockB.num10 === 0" value="46" name="size" ngDefaultControl>EU - 46</option>
             </select>
             <ng-template #nonSneakersSelection>
-                <select>
-                    <option value="" disabled selected>-- Select Size --</option>
-                    <option [disabled]="product.stockA.S === 0" value="S">EU - S</option>
-                    <option [disabled]="product.stockA.M === 0" value="M">EU - M</option>
-                    <option [disabled]="product.stockA.L === 0" value="L">EU - L</option>
-                    <option [disabled]="product.stockA.XL === 0" value="XL">EU - XL</option>
+                <select
+                [(ngModel)]="selectedSizeButtonValue">
+                    <option value="" disabled selected name="size" ngDefaultControl>-- Select Size --</option>
+                    <option [disabled]="product.stockA.S === 0" value="S" name="size" ngDefaultControl>EU - S</option>
+                    <option [disabled]="product.stockA.M === 0" value="M" name="size" ngDefaultControl>EU - M</option>
+                    <option [disabled]="product.stockA.L === 0" value="L" name="size" ngDefaultControl>EU - L</option>
+                    <option [disabled]="product.stockA.XL === 0" value="XL" name="size" ngDefaultControl>EU - XL</option>
                 </select>
             </ng-template>
-            <button *ngIf="stockTotal!== 0; else notifyMe">
+            <button *ngIf="stockTotal!== 0; else notifyMe" (click)="handleAddToCart($event, selectedSizeButtonValue)">
                 Add to cart
             </button>
             <ng-template #notifyMe>
                 <p class="red">All sizes are out of stock!</p>
-                <button class="red-button">Notify Me</button>
+                <button class="red-button" (click)="onChangeButtonColor($event)">Notify Me</button>
             </ng-template>
         </div>
     </div>
