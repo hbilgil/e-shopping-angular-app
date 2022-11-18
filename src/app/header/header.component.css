@@ -71,7 +71,7 @@ h1:hover {
 
 .right {
   display: flex;
-  align-items: center;
+  align-items:center;
   justify-content: center;
   gap: 1rem;
 }
@@ -100,7 +100,7 @@ h1:hover {
     min-width: 1rem;
     min-height: 1rem;
     font-family: 'BenchNine', sans-serif;
-    font-size: 0.7rem;
+    font-size: 0.8rem;
     font-weight: 800;
     color: white;
 }
