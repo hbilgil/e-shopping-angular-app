@@ -1,3 +1,4 @@
+//imported modules and components
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './about/about.component';
@@ -9,7 +10,6 @@ import { ShopComponent } from './shop/shop.component';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 
 const routes: Routes = [
-  //{path: "", redirectTo:"Home", pathMatch:"full"},
   {path: "", component: HomeComponent},
   {path: "Home", component: HomeComponent},
   {path: "Shop", component: ShopComponent},
@@ -24,4 +24,5 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
+
 export class AppRoutingModule { }
