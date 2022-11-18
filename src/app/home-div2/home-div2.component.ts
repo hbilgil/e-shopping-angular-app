@@ -6,9 +6,6 @@ import { ActivatedRoute } from '@angular/router';
   selector: 'app-home-div2',
   templateUrl: './home-div2.component.html',
   styleUrls: ['./home-div2.component.css'],
-  providers: [
-    ProductsService
-  ]
 })
 export class HomeDiv2Component implements OnInit {
   products: any;
