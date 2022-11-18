@@ -1,4 +1,54 @@
+import { Injectable } from "@angular/core";
+
+@Injectable({ providedIn: 'root' })
+
 export class ProductsService {
+    removeProduct(value: any, product: any) {
+        switch(value) {
+            case 'S':
+                product.stockA.S--;
+              break;
+            case 'M':
+                product.stockA.M--;
+              break;
+            case 'L':
+                product.stockA.L--;
+              break;
+            case 'XL':
+                product.stockA.XL--;
+              break;
+            case '37':
+                product.stockB.num1--;
+              break;
+            case '38':
+                product.stockB.num2--;
+              break;
+            case '39':
+                product.stockB.num3--;
+              break;
+            case '40':
+                product.stockB.num4--;
+              break;
+              case '41':
+                product.stockB.num5;
+              break;
+            case '42':
+                product.stockB.num6--;
+              break;
+            case '43':
+                product.stockB.num7--;
+              break;
+            case '44':
+                product.stockB.num8--;
+              break;
+            case '45':
+                product.stockB.num9--;
+              break;
+            case '46':
+                product.stockB.num10--;
+        }
+    }
+
     products = [
         {
             id: 1,
@@ -257,8 +307,8 @@ export class ProductsService {
             price: 53.9,
             gender: "Men",
             category: "Sweaters",
-            image1: "assets/products/men/sweaters/nike_air_big_logo_1.png",
-            image2: "assets/products/men/sweaters/nike_air_big_logo_2.png",
+            image1: "assets/products/men/sweaters/nike_air_big_logo_2.png",
+            image2: "assets/products/men/sweaters/nike_air_big_logo_1.png",
             src: '',
             stockA: {
                 S: 0,
@@ -285,8 +335,8 @@ export class ProductsService {
             price: 65.5,
             gender: "Men",
             category: "Sweaters",
-            image1: "assets/products/men/sweaters/nike_air_jordan_1.png",
-            image2: "assets/products/men/sweaters/nike_air_jordan_2.png",
+            image1: "assets/products/men/sweaters/nike_air_jordan_2.png",
+            image2: "assets/products/men/sweaters/nike_air_jordan_1.png",
             src: '',
             stockA: {
                 S: 0,
@@ -313,8 +363,8 @@ export class ProductsService {
             price: 57,
             gender: "Men",
             category: "Sweaters",
-            image1: "assets/products/men/sweaters/nike_zipped_1.png",
-            image2: "assets/products/men/sweaters/nike_zipped_2.png",
+            image1: "assets/products/men/sweaters/nike_zipped_2.png",
+            image2: "assets/products/men/sweaters/nike_zipped_1.png",
             src: '',
             stockA: {
                 S: 0,
