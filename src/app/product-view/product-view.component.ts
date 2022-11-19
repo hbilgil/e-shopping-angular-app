@@ -27,13 +27,17 @@ export class ProductViewComponent implements OnInit  {
   stock9: any;
   stock10: any;
   stockTotal: any;
+  favorite: boolean = false;
 
   constructor(private activatedRoute: ActivatedRoute, private service: ProductsService, private service2: ChosenItemsService) {}
 
-  
+  onIconChange() {
+    return this.favorite === false ? this.favorite = true : this.favorite = false;
+  }
+
   ngOnInit(): void {
     this.productId = this.activatedRoute.snapshot.paramMap.get('id');
-    this.product = this.service.products.find((element) => element.id == this.productId);
+    this.product = this.service.products.find((element: any) => element.id == this.productId);
     this.stockS = this.product.stockA.S;
     this.stockM = this.product.stockA.M;
     this.stockL = this.product.stockA.L;
@@ -85,6 +89,23 @@ export class ProductViewComponent implements OnInit  {
       image: string;
       size: string;
       quantity: number;
+      stockA: {
+        S: number;
+        M: number;
+        L: number;
+        XL: number;};
+      stockB: {
+        num1: number;
+        num2: number;
+        num3: number;
+        num4: number;
+        num5: number;
+        num6: number;
+        num7: number;
+        num8: number;
+        num9: number;
+        num10: number;
+      };
     };
 
     let item: chosenProduct = {
@@ -95,8 +116,25 @@ export class ProductViewComponent implements OnInit  {
       image: this.product.image1,
       size: value,
       quantity: 1,
+      stockA: {
+        S: this.product.stockA.S,
+        M: this.product.stockA.M,
+        L: this.product.stockA.L,
+        XL: this.product.stockA.XL,
+      },
+      stockB: {
+        num1: this.product.stockB.num1,
+        num2: this.product.stockB.num2,
+        num3: this.product.stockB.num3,
+        num4: this.product.stockB.num4,
+        num5: this.product.stockB.num5,
+        num6: this.product.stockB.num6,
+        num7: this.product.stockB.num7,
+        num8: this.product.stockB.num8,
+        num9: this.product.stockB.num9,
+        num10: this.product.stockB.num10,
+      },
     };
-
     this.service2.addChosenItemToCart(item)
     this.stockTotal--;
     this.onChangeButtonColor(e);

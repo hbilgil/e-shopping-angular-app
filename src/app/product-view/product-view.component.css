@@ -135,6 +135,30 @@ button.active {
     color: crimson;
 }
 
+lord-icon {
+    cursor: pointer;
+}
+
+.favorites {
+    display: flex;
+    align-items: center;
+    
+}
+
+.green-span {
+    display: none;
+    color:forestgreen;
+}
+
+.red-span {
+    display: none;
+    color:deeppink;
+}
+
+.favorites:hover span {
+    display: inline-block;
+}
+
 @media only screen and (max-width: 933px) {
     .main {
         flex-direction: column-reverse;
