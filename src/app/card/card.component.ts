@@ -13,12 +13,13 @@ export class CardComponent implements OnInit {
   product: any;
   productId: any;
 
-  constructor(private activatedRoute: ActivatedRoute, private service: ProductsService) { }
+  constructor(private activatedRoute: ActivatedRoute, private service: ProductsService) { 
+  }
 
   ngOnInit(): void {
     this.products = this.service.products;
     this.productId = this.activatedRoute.snapshot.paramMap.get('id');
-    this.product = this.service.products.find((element) => element.id == this.productId);
+    this.product = this.service.products.find((element: any) => element.id == this.productId);
   }
 
   @Input() genderSelectionResult: string = '';
