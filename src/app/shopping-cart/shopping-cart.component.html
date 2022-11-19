@@ -34,13 +34,54 @@
                 </lord-icon>
             </div>
             <div class="add-and-remove">
-                <button>
+                <button [disabled]="item.quantity == 1" (click)="decreaseQuantity(item, item.size)">
                   -
                 </button>
                 <p class="bold">{{item.quantity}}</p>
-                <button>
-                  +
-                </button>
+                <div [ngSwitch]="item.size">
+                    <button *ngSwitchCase="'S'" [disabled]="item.stockA.S == 0" (click)="increaseQuantity(item, item.size)">
+                        +
+                    </button>
+                    <button *ngSwitchCase="'M'" [disabled]="item.stockA.M == 0" (click)="increaseQuantity(item, item.size)">
+                        +
+                    </button>
+                    <button *ngSwitchCase="'L'" [disabled]="item.stockA.L == 0" (click)="increaseQuantity(item, item.size)">
+                        +
+                    </button>
+                    <button *ngSwitchCase="'XL'" [disabled]="item.stockA.XL == 0" (click)="increaseQuantity(item, item.size)">
+                        +
+                    </button>
+                    <button *ngSwitchCase="'37'" [disabled]="item.stockB.num1 == 0" (click)="increaseQuantity(item, item.size)">
+                        +
+                    </button>
+                    <button *ngSwitchCase="'38'" [disabled]="item.stockB.num2 == 0" (click)="increaseQuantity(item, item.size)">
+                        +
+                    </button>
+                    <button *ngSwitchCase="'39'" [disabled]="item.stockB.num3 == 0" (click)="increaseQuantity(item, item.size)">
+                        +
+                    </button>
+                    <button *ngSwitchCase="'40'" [disabled]="item.stockB.num4 == 0" (click)="increaseQuantity(item, item.size)">
+                        +
+                    </button>
+                    <button *ngSwitchCase="'41'" [disabled]="item.stockB.num5 == 0" (click)="increaseQuantity(item, item.size)">
+                        +
+                    </button>
+                    <button *ngSwitchCase="'42'" [disabled]="item.stockB.num6 == 0" (click)="increaseQuantity(item, item.size)">
+                        +
+                    </button>
+                    <button *ngSwitchCase="'43'" [disabled]="item.stockB.num7 == 0" (click)="increaseQuantity(item, item.size)">
+                        +
+                    </button>
+                    <button *ngSwitchCase="'44'" [disabled]="item.stockB.num8 == 0" (click)="increaseQuantity(item, item.size)">
+                        +
+                    </button>
+                    <button *ngSwitchCase="'45'" [disabled]="item.stockB.num9 == 0" (click)="increaseQuantity(item, item.size)">
+                        +
+                    </button>
+                    <button *ngSwitchCase="'46'" [disabled]="item.stockB.num10 == 0" (click)="increaseQuantity(item, item.size)">
+                        +
+                    </button>
+                </div>
             </div>
         </li>
         <div class="total-price">
@@ -63,7 +104,7 @@
             <div class="total">
                 <p>Total (VAT included)</p>
                 <div *ngIf="totalPrice>100; else shippingAdded">
-                    € {{ totalPrice }}
+                    € {{ totalPrice.toFixed(2) }}
                 </div>
                 <ng-template #shippingAdded>
                     <div>€ {{ (totalPrice + shippingPrice).toFixed(2) }}</div>

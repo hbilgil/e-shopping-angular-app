@@ -133,6 +133,11 @@ li img {
     color: #ff613a;
 }
 
+.add-and-remove button:disabled {
+    cursor: not-allowed;
+    color:rgb(182, 182, 182);
+}
+
 .name {
     max-width: 12rem;
 }
