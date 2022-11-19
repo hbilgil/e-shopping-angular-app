@@ -17,6 +17,6 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this.productId = this.activatedRoute.snapshot.paramMap.get('id');
-    this.product = this.service.products.find((element) => element.id == this.productId);
+    this.product = this.service.products.find((element: any) => element.id == this.productId);
   }
 }
