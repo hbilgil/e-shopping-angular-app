@@ -17,7 +17,7 @@ export class HomeDiv2Component implements OnInit {
   ngOnInit(): void {
     this.products = this.service.products;
     this.productId = this.activatedRoute.snapshot.paramMap.get('id');
-    this.product = this.service.products.find((element) => element.id == this.productId);
+    this.product = this.service.products.find((element: any) => element.id == this.productId);
   }
 
 }

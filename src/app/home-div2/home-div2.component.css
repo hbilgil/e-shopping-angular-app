@@ -78,8 +78,20 @@ p {
     .cards {
         grid-template-columns: repeat(2, 1fr);
     }
+
     .card,
     a {
         height: 20rem;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    .cards {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    
+    .card,
+    a {
+        height: 10rem;
     }
 }
