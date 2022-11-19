@@ -1,55 +1,204 @@
-import { Injectable } from "@angular/core";
-
-@Injectable({ providedIn: 'root' })
-
 export class ProductsService {
+
+    LOCAL_STORAGE_LIST_KEY: string = 'product.list' //all products are kept in local store
+
+    saveInLocalStore() {
+        localStorage.setItem(this.LOCAL_STORAGE_LIST_KEY, JSON.stringify(this.products))
+    }
+    
+    product: any;
+
     removeProduct(value: any, product: any) {
         switch(value) {
             case 'S':
                 product.stockA.S--;
-              break;
+            break;
             case 'M':
                 product.stockA.M--;
-              break;
+            break;
             case 'L':
                 product.stockA.L--;
-              break;
+            break;
             case 'XL':
                 product.stockA.XL--;
-              break;
+            break;
             case '37':
                 product.stockB.num1--;
-              break;
+            break;
             case '38':
                 product.stockB.num2--;
-              break;
+            break;
             case '39':
                 product.stockB.num3--;
-              break;
+            break;
             case '40':
                 product.stockB.num4--;
-              break;
-              case '41':
-                product.stockB.num5;
-              break;
+            break;
+            case '41':
+                product.stockB.num5--;
+            break;
             case '42':
                 product.stockB.num6--;
-              break;
+            break;
             case '43':
                 product.stockB.num7--;
               break;
             case '44':
                 product.stockB.num8--;
-              break;
+            break;
             case '45':
                 product.stockB.num9--;
-              break;
+            break;
             case '46':
                 product.stockB.num10--;
         }
     }
 
-    products = [
+    addItemQuantityToStock(item: any) {
+        let productId = item.id
+        this.product = this.products.find((element: any) => element.id == productId);
+            switch(item.size) {
+                case 'S':
+                    this.product.stockA.S += item.quantity;
+                break;
+                case 'M':
+                    this.product.stockA.M += item.quantity;
+                break;
+                case 'L':
+                    this.product.stockA.L += item.quantity;
+                break;
+                case 'XL':
+                    this.product.stockA.XL += item.quantity;
+                break;
+                case '37':
+                    this.product.stockB.num1 += item.quantity;
+                break;
+                case '38':
+                    this.product.stockB.num2 += item.quantity;
+                break;
+                case '39':
+                    this.product.stockB.num3 += item.quantity;
+                break;
+                case '40':
+                    this.product.stockB.num4 += item.quantity;
+                break;
+                case '41':
+                    this.product.stockB.num5 += item.quantity;
+                break;
+                case '42':
+                    this.product.stockB.num6 += item.quantity;
+                break;
+                case '43':
+                    this.product.stockB.num7 += item.quantity;
+                break;
+                case '44':
+                    this.product.stockB.num8 += item.quantity;
+                break;
+                case '45':
+                    this.product.stockB.num9 += item.quantity;
+                break;
+                case '46':
+                    this.product.stockB.num10 += item.quantity;
+            }
+    }
+
+    addItemSizeToStock(item: any) {
+        let productId = item.id
+        this.product = this.products.find((element: any) => element.id == productId);
+            switch(item.size) {
+                case 'S':
+                    this.product.stockA.S++;
+                break;
+                case 'M':
+                    this.product.stockA.M++;
+                break;
+                case 'L':
+                    this.product.stockA.L++;
+                break;
+                case 'XL':
+                    this.product.stockA.XL++;
+                break;
+                case '37':
+                    this.product.stockB.num1++;
+                break;
+                case '38':
+                    this.product.stockB.num2++;
+                break;
+                case '39':
+                    this.product.stockB.num3++;
+                break;
+                case '40':
+                    this.product.stockB.num4++;
+                break;
+                case '41':
+                    this.product.stockB.num5++;
+                break;
+                case '42':
+                    this.product.stockB.num6++;
+                break;
+                case '43':
+                    this.product.stockB.num7++;
+                break;
+                case '44':
+                    this.product.stockB.num8++;
+                break;
+                case '45':
+                    this.product.stockB.num9++;
+                break;
+                case '46':
+                    this.product.stockB.num10++;
+            }
+    }
+
+    removeItemSizeFromStock(item: any) {
+        let productId = item.id
+        this.product = this.products.find((element: any) => element.id == productId);
+            switch(item.size) {
+                case 'S':
+                    this.product.stockA.S--;
+                break;
+                case 'M':
+                    this.product.stockA.M--;
+                break;
+                case 'L':
+                    this.product.stockA.L--;
+                break;
+                case 'XL':
+                    this.product.stockA.XL--;
+                break;
+                case '37':
+                    this.product.stockB.num1--;
+                break;
+                case '38':
+                    this.product.stockB.num2--;
+                break;
+                case '39':
+                    this.product.stockB.num3--;
+                break;
+                case '40':
+                    this.product.stockB.num4--;
+                break;
+                case '41':
+                    this.product.stockB.num5--;
+                break;
+                case '42':
+                    this.product.stockB.num6--;
+                break;
+                case '43':
+                    this.product.stockB.num7--;
+                break;
+                case '44':
+                    this.product.stockB.num8--;
+                break;
+                case '45':
+                    this.product.stockB.num9--;
+                break;
+                case '46':
+                    this.product.stockB.num10--;
+            }
+    }
+
+    products2 = [
         {
             id: 1,
             name: 'Adidas Grey T-shirt',
@@ -1225,4 +1374,7 @@ export class ProductsService {
             },
         },
     ];
+
+products = this.products2 || JSON.parse(`${localStorage.getItem(this.LOCAL_STORAGE_LIST_KEY)}`)
+
 }
