@@ -6,15 +6,19 @@ import { ChosenItemsService } from '../Services/chosenItems.service';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css'],
 })
+
 export class HeaderComponent implements OnInit {
 
   chosenItems: any;
   chosenItemsTotalQuantity: any;
+  
 
-  constructor(private service: ChosenItemsService) { }
+  constructor(private service: ChosenItemsService) { 
+  }
+  
 
   ngOnInit(): void {
-    this.chosenItems = this.service.items;
     this.chosenItemsTotalQuantity = this.service.totalQuantity;
+    this.chosenItems = this.service.items;
   }
 }
