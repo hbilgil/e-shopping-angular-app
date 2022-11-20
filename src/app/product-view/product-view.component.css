@@ -125,13 +125,27 @@ button.active {
     transition: 600ms;
 }
 
+.ng-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 30px;
+    gap: 40px;
+}
+
+span.red1 {
+    color: crimson;
+    font-weight: 200;
+    font-size: 1rem;
+    line-height: 0;
+    align-self: center;
+}
+
 .red-button {
     background-color: crimson;
 }
   
-.red {
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+.red2 {
     color: crimson;
 }
 

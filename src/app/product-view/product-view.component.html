@@ -60,11 +60,29 @@
                     <option [disabled]="product.stockA.XL === 0" value="XL" name="size">EU - XL</option>
                 </select>
             </ng-template>
-            <button *ngIf="stockTotal!== 0; else notifyMe" (click)="handleAddToCart($event, selectedSizeButtonValue)">
-                Add to cart
-            </button>
+            <div class="ng-container">
+                <div [ngSwitch]="selectedSizeButtonValue">
+                    <p *ngSwitchCase="'S'"><span *ngIf="product.stockA.S === 1" class="red1">Hurry up! Only 1 item remained for size '{{selectedSizeButtonValue}}'</span></p>
+                    <p *ngSwitchCase="'M'"><span *ngIf="product.stockA.M === 1" class="red1">Hurry up! Only 1 item remained for size '{{selectedSizeButtonValue}}'</span></p>
+                    <p *ngSwitchCase="'L'"><span *ngIf="product.stockA.L === 1" class="red1">Hurry up! Only 1 item remained for size '{{selectedSizeButtonValue}}'</span></p>
+                    <p *ngSwitchCase="'XL'"><span *ngIf="product.stockA.XL === 1" class="red1">Hurry up! Only 1 item remained for size{{selectedSizeButtonValue}}'</span></p>
+                    <p *ngSwitchCase="'37'"><span *ngIf="product.stockB.num1 === 1" class="red1">Hurry up! Only 1 item remained for size '{{selectedSizeButtonValue}}'</span></p>
+                    <p *ngSwitchCase="'38'"><span *ngIf="product.stockB.num2 === 1" class="red1">Hurry up! Only 1 item remained for size '{{selectedSizeButtonValue}}'</span></p>
+                    <p *ngSwitchCase="'39'"><span *ngIf="product.stockB.num3 === 1" class="red1">Hurry up! Only 1 item remained for size '{{selectedSizeButtonValue}}'</span></p>
+                    <p *ngSwitchCase="'40'"><span *ngIf="product.stockB.num4 === 1" class="red1">Hurry up! Only 1 item remained for size '{{selectedSizeButtonValue}}'</span></p>
+                    <p *ngSwitchCase="'41'"><span *ngIf="product.stockB.num5 === 1" class="red1">Hurry up! Only 1 item remained for size '{{selectedSizeButtonValue}}'</span></p>
+                    <p *ngSwitchCase="'42'"><span *ngIf="product.stockB.num6 === 1" class="red1">Hurry up! Only 1 item remained for size '{{selectedSizeButtonValue}}'</span></p>
+                    <p *ngSwitchCase="'43'"><span *ngIf="product.stockB.num7 === 1" class="red1">Hurry up! Only 1 item remained for size '{{selectedSizeButtonValue}}'</span></p>
+                    <p *ngSwitchCase="'44'"><span *ngIf="product.stockB.num8 === 1" class="red1">Hurry up! Only 1 item remained for size '{{selectedSizeButtonValue}}'</span></p>
+                    <p *ngSwitchCase="'45'"><span *ngIf="product.stockB.num9 === 1" class="red1">Hurry up! Only 1 item remained for size '{{selectedSizeButtonValue}}'</span></p>
+                    <p *ngSwitchCase="'46'"><span *ngIf="product.stockB.num10 === 1" class="red1">Hurry up! Only 1 item remained for size '{{selectedSizeButtonValue}}'</span></p>
+                </div>
+                <button *ngIf="stockTotal!== 0; else notifyMe" (click)="handleAddToCart($event, selectedSizeButtonValue)">
+                    Add to cart
+                </button>
+            </div>
             <ng-template #notifyMe>
-                <p class="red">All sizes are out of stock!</p>
+                <p class="red2">All sizes are out of stock!</p>
                 <button class="red-button" (click)="onChangeButtonColor($event)">Notify Me</button>
             </ng-template>
         </div>
