@@ -62,6 +62,12 @@ export class ChosenItemsService {
         this.totalPrice += item.price;
     }
 
+    removeAllItems(chosenItems: any) {
+        this.totalPrice = 0;
+        this.items.splice(0, chosenItems.length);
+        this.totalQuantity.splice(0, this.totalQuantity.length);
+    }
+
     removeItem(item: any) {
         this.items.map((a: any, index: any) => {
             if(item.uniqId == a.uniqId) {
