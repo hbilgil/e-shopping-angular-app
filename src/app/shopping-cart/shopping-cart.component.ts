@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ChosenItemsService } from '../Services/chosenItems.service';
 import { ProductsService } from '../Services/products.service';
+import { OrderedItems } from '../Services/orderedItems.service';
 
 @Component({
   selector: 'app-shopping-cart',
@@ -10,16 +11,24 @@ import { ProductsService } from '../Services/products.service';
 export class ShoppingCartComponent implements OnInit {
 
   chosenItems: any;
+  orderedItems: any;
   totalQuantity: any;
   totalPrice: number = this.service2.totalPrice;
   shippingPrice: number = 20;
 
-  constructor(private service: ProductsService, private service2: ChosenItemsService) {
+  constructor(private service: ProductsService, private service2: ChosenItemsService, private service3: OrderedItems) {
   }
 
   ngOnInit(): void {
     this.chosenItems = this.service2.items;
     this.totalQuantity = this.service2.totalQuantity;
+    this.orderedItems = this.service3.orderedItems;
+  }
+
+  addItemsToOrderedItems() {
+    this.service3.addOrderedItemToAccount(this.chosenItems)
+    this.service2.removeAllItems(this.chosenItems)
+    this.totalPrice = 0;
   }
 
   removeItem(item: any) {

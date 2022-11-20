@@ -110,7 +110,7 @@
                     <div>€ {{ (totalPrice + shippingPrice).toFixed(2) }}</div>
                 </ng-template>
             </div>
-            <a [routerLink]="['/ErrorPage']">ORDER</a>
+            <a [routerLink]="['/ErrorPage']" (click)="addItemsToOrderedItems()">ORDER</a>
         </div>
         <div class="payment-method">
             <h3>We accept</h3>

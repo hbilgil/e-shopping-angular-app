@@ -134,7 +134,7 @@ li img {
 }
 
 .add-and-remove button:disabled {
-    cursor: not-allowed;
+    pointer-events: none;
     color:rgb(182, 182, 182);
 }
 
@@ -144,6 +144,7 @@ li img {
 
 lord-icon {
     cursor: pointer;
+    margin: 0;
 }
 
 .total-price,
