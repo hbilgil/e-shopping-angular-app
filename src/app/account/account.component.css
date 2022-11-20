@@ -1,0 +1,8 @@
+.wrapper {
+    display: grid;
+    grid-template-columns: 1fr 8fr;
+    width: 100%;
+    cursor: default;
+    margin-top: 10px;
+    font-family: 'Dosis', sans-serif;
+}

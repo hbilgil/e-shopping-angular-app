@@ -1,0 +1,9 @@
+p-sidebar {
+    box-sizing: border-box;
+    width: 100%;
+    background: #f7f7f7;
+    display: flex;
+    cursor: default;
+    font-family: 'BenchNine', sans-serif;
+    padding: 0.5rem 2rem;
+}

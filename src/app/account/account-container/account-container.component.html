@@ -1,0 +1,48 @@
+<div class="order-cart">
+    <div class="empty-cart" *ngIf="orderedProducts.length == 0; else orderedItems">
+        <p>Your have not ordered any products, yet</p>
+        <p>Let's have a look at our collection!</p>
+        <a [routerLink]="['/Shop']">Shop</a>
+    </div>
+    <ng-template #orderedItems>
+    <ul>
+        <h1 *ngIf="orderedProducts.length>1; else onlyOne">
+            You ordered: ( <span> {{ totalQuantity.length }} </span> ) items
+        </h1>
+        <ng-template #onlyOne>
+            <h1>
+                You ordered: ( <span> {{ totalQuantity.length }} </span> ) item
+            </h1>
+        </ng-template>
+        <div class="card-container">
+            <li *ngFor="let item of orderedProducts">
+                <a routerLink="/Shop/Product/{{item.id}}">
+                    <img src="{{item.image}}" alt="{{item.name}}" />
+                </a>
+                <div class="description">
+                    <a routerLink="/Shop/Product/{{item.id}}">
+                        <p class="name">{{item.name}}</p>
+                    </a>
+                    <p class="size">Size: <span>{{item.size}}</span></p>
+                    <p class="price">Price: <span>€ {{item.price}}</span></p>
+                    <p class="quantity">Ordered quantity: <span>{{item.quantity}}</span></p>
+                    <p class="totalPrice">Total price: <span>€ {{(item.price)*(item.quantity).toFixed(2)}}</span></p>
+                </div>
+                <lord-icon
+                        src="https://cdn.lordicon.com/gsqxdxog.json"
+                        trigger="hover"
+                        style="width:25px;height:25px"
+                        (click)="removeItem(item)">
+                </lord-icon>
+            </li>
+        </div>
+        <div class="total-price">
+            <h3>ORDER TOTAL</h3>
+            <div class="total">
+                <p>Total (VAT included)</p>
+                <div>€ {{(totalPrice).toFixed(2)}}</div>
+            </div>
+        </div>
+    </ul>
+    </ng-template>
+</div>
