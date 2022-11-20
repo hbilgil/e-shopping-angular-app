@@ -7,6 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 //Imported services and packages
 import { ProductsService } from './Services/products.service';
 import { ChosenItemsService } from './Services/chosenItems.service';
+import { OrderedItems } from './Services/orderedItems.service';
 import { defineElement } from 'lord-icon-element';
 import lottie from 'lottie-web';
 
@@ -28,6 +29,9 @@ import { AboutDiv2Component } from './about-div2/about-div2.component';
 import { ErrorPageComponent } from './error-page/error-page.component';
 import { ProductViewComponent } from './product-view/product-view.component';
 import { ErrorNotFoundComponent } from './error-not-found/error-not-found.component';
+import { AccountComponent } from './account/account.component';
+import { SidebarComponent } from './account/sidebar/sidebar.component';
+import { AccountContainerComponent } from './account/account-container/account-container.component';
 
 @NgModule({
   declarations: [
@@ -47,12 +51,15 @@ import { ErrorNotFoundComponent } from './error-not-found/error-not-found.compon
     AboutDiv2Component,
     ErrorPageComponent,
     ProductViewComponent,
-    ErrorNotFoundComponent
+    ErrorNotFoundComponent,
+    AccountComponent,
+    SidebarComponent,
+    AccountContainerComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA
@@ -60,6 +67,7 @@ import { ErrorNotFoundComponent } from './error-not-found/error-not-found.compon
   providers: [
     ProductsService,
     ChosenItemsService,
+    OrderedItems,
   ],
   bootstrap: [
     AppComponent
