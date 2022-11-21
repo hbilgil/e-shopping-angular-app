@@ -6,7 +6,6 @@
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    /*box-sizing: border-box;*/
     gap: 2rem;
 }
 
