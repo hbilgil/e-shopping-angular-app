@@ -16,8 +16,8 @@ ng serve
 
 ## Built with
 - [Angular](https://angular.io/)
-- [uuid] (https://www.npmjs.com/package/uuid)
-- [lord-icon] (https://lordicon.com/)
+- [uuid](https://www.npmjs.com/package/uuid)
+- [lord-icon](https://lordicon.com/)
 
 ## Running unit tests
 
