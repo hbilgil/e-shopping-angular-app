@@ -9,6 +9,8 @@ import { ProductViewComponent } from './product-view/product-view.component';
 import { ShopComponent } from './shop/shop.component';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { AccountComponent } from './account/account.component';
+import { OrdersComponent } from './account/orders/orders.component';
+import { FavoritesComponent } from './account/favorites/favorites.component';
 
 const routes: Routes = [
   {path: "", component: HomeComponent},
@@ -18,7 +20,14 @@ const routes: Routes = [
   {path: "ShoppingCart", component: ShoppingCartComponent},
   {path: "ErrorPage", component: ErrorPageComponent},
   {path: "Shop/Product/:id", component: ProductViewComponent},
-  {path: "Account", component: AccountComponent},
+  {path: "Account", component: AccountComponent, children: [
+    {
+      path:'Orders', component: OrdersComponent,
+    },
+    {
+      path: 'Favorites', component: FavoritesComponent,
+    }
+  ]},
   {path: "**", component: ErrorNotFoundComponent},
 ];
 
