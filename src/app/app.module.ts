@@ -8,6 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { ProductsService } from './Services/products.service';
 import { ChosenItemsService } from './Services/chosenItems.service';
 import { OrderedItems } from './Services/orderedItems.service';
+import { FavoriteItemsService } from './Services/favoriteItems.service';
 import { defineElement } from 'lord-icon-element';
 import lottie from 'lottie-web';
 
@@ -31,7 +32,8 @@ import { ProductViewComponent } from './product-view/product-view.component';
 import { ErrorNotFoundComponent } from './error-not-found/error-not-found.component';
 import { AccountComponent } from './account/account.component';
 import { SidebarComponent } from './account/sidebar/sidebar.component';
-import { AccountContainerComponent } from './account/account-container/account-container.component';
+import { OrdersComponent } from './account/orders/orders.component';
+import { FavoritesComponent } from './account/favorites/favorites.component';
 
 @NgModule({
   declarations: [
@@ -54,7 +56,8 @@ import { AccountContainerComponent } from './account/account-container/account-c
     ErrorNotFoundComponent,
     AccountComponent,
     SidebarComponent,
-    AccountContainerComponent
+    OrdersComponent,
+    FavoritesComponent,
   ],
   imports: [
     BrowserModule,
@@ -68,6 +71,7 @@ import { AccountContainerComponent } from './account/account-container/account-c
     ProductsService,
     ChosenItemsService,
     OrderedItems,
+    FavoriteItemsService
   ],
   bootstrap: [
     AppComponent
