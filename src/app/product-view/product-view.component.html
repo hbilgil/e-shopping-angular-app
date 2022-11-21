@@ -17,21 +17,19 @@
         </div>
         <div class="right">
             <h1>{{product.name}}</h1>
-            <div [ngSwitch]="favorite">
-                <div class="favorites">
-                    <lord-icon (click)="onIconChange()" *ngSwitchCase="false"
-                        src="https://cdn.lordicon.com/rjzlnunf.json"
-                        trigger="hover"
-                        style="width:40px;height:40px">
-                    </lord-icon>
-                    <lord-icon (click)="onIconChange()" *ngSwitchCase="true"
-                        src="https://cdn.lordicon.com/iwaotjbp.json"
-                        trigger="hover"
-                        style="width:40px;height:40px">
-                    </lord-icon>
-                    <span class="green-span" *ngSwitchCase="false">Add to your favorites</span>
-                    <span class="red-span" *ngSwitchCase="true">It is in your favorites!</span>
-                </div>
+            <div class="favorites">
+                <lord-icon (click)="addToFavorites(product)" *ngIf="product.fav === false"
+                    src="https://cdn.lordicon.com/rjzlnunf.json"
+                    trigger="hover"
+                    style="width:40px;height:40px">
+                </lord-icon>
+                <lord-icon (click)="removeFromFavorites(product)" *ngIf="product.fav === true"
+                    src="https://cdn.lordicon.com/iwaotjbp.json"
+                    trigger="hover"
+                    style="width:40px;height:40px">
+                </lord-icon>
+                <span class="green-span" *ngIf="product.fav === false">Add to your favorites</span>
+                <span class="red-span" *ngIf="product.fav === true">It is in your favorites!</span>
             </div>
             <h3>
                 € {{product.price}} <p>VAT included</p>

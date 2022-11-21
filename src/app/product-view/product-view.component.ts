@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ProductsService } from '../Services/products.service';
 import { ActivatedRoute } from '@angular/router';
 import { ChosenItemsService } from '../Services/chosenItems.service';
+import { FavoriteItemsService } from '../Services/favoriteItems.service';
 
 @Component({
   selector: 'app-product-view',
@@ -27,13 +28,8 @@ export class ProductViewComponent implements OnInit  {
   stock9: any;
   stock10: any;
   stockTotal: any;
-  favorite: boolean = false;
-
-  constructor(private activatedRoute: ActivatedRoute, private service: ProductsService, private service2: ChosenItemsService) {}
-
-  onIconChange() {
-    return this.favorite === false ? this.favorite = true : this.favorite = false;
-  }
+  
+  constructor(private activatedRoute: ActivatedRoute, private service: ProductsService, private service2: ChosenItemsService, private service3: FavoriteItemsService) {}
 
   ngOnInit(): void {
     this.productId = this.activatedRoute.snapshot.paramMap.get('id');
@@ -70,7 +66,17 @@ export class ProductViewComponent implements OnInit  {
 
   selectedSizeButtonValue: string = "";
 
-   onChangeButtonColor (e: any) {
+  addToFavorites(item: any) {
+    this.service.addItemToFavs(item);
+    this.service3.addToFavorites(item);
+  }
+
+  removeFromFavorites(item: any) {
+    this.service3.removeFromFavorites(item);
+    this.service.removeItemFromFavs(item);
+  }
+
+  onChangeButtonColor (e: any) {
    e.target.classList.add('active');
     setTimeout(() => {
       e.target.classList.remove("active");
