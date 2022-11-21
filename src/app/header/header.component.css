@@ -47,7 +47,7 @@ a:hover:after {
     transform-origin: bottom left;
 }
 
-a:nth-of-type(4)::after {
+a:nth-of-type(5)::after {
     display: none;
 }
 
