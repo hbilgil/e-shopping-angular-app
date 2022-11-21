@@ -1,0 +1,27 @@
+<div class="cards">
+    <div class="empty-cart" *ngIf="favoriteItems.length == 0; else favoriteProducts">
+        <p>Your have not liked any products, yet</p>
+        <p>Let's create a wishlist for you with our collection!</p>
+        <a [routerLink]="['/Shop']">Shop</a>
+    </div>
+    <ng-template #favoriteProducts>
+    <div class="card" *ngFor="let favorite of favoriteItems">
+        <a routerLink="/Shop/Product/{{favorite.id}}">
+            <div class="image-container">
+                <img [src]="favorite.src || favorite.image1"
+                    (mouseover)="favorite.src = favorite.image2"
+                    (mouseout)="favorite.src = favorite.image1" alt={{favorite.name}}/>
+            </div>
+            <p class="name">{{favorite.name}}</p>
+        </a>
+        <div class="favorite">
+            <lord-icon (click)="removeItem(favorite)"
+            src="https://cdn.lordicon.com/iwaotjbp.json"
+            trigger="hover"
+            style="width:40px;height:40px">
+            </lord-icon>
+            <p class="red-span">Remove from favorites!</p>
+        </div>
+    </div>
+    </ng-template>
+</div>

@@ -1,0 +1,118 @@
+.cards {
+    justify-content: center;
+    padding: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 2rem;
+    font-family: 'Dosis', sans-serif;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+}
+
+.empty-cart {
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #f7f7f7;
+    margin-top: 30px;
+    padding: 4rem;
+    gap: 1rem;
+    font-size: 1.2rem;
+    border-radius: 4px;
+    box-shadow: #0000002f 0 5px 5px;
+    width: 13rem;
+}
+
+.empty-cart a {
+    margin-top: 1rem;
+    text-decoration: none;
+    color: white;
+    background: #ff613a;
+    width: 10rem;
+    padding: 0.5rem 1rem;
+    text-align: center;
+    transition: 400ms;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.empty-cart a:hover {
+    background: #ff8567;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+lord-icon {
+    align-self: flex-start;
+    cursor: pointer;
+}
+
+.favorite {
+    display:flex;
+    gap: 1rem;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.image-container {
+    position: relative;
+    background-color: #f7f7f7;
+    height: 15rem;
+    width: 15rem;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+img {
+    object-position: center;
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: cover;
+    transition: 1000ms;
+}
+
+.image-container:hover > img {
+    transform: scale(0.95);
+}
+
+p {
+    max-width: 15rem;
+    justify-self: flex-start;
+    align-self: flex-start;
+    margin: 0;
+    font-weight: 300;
+}
+
+.name {
+    height: 2.5rem;
+}
+
+.red-span {
+    display: none;
+    color:deeppink;
+    align-self: center;
+}
+
+.favorite:hover > .red-span {
+    display: inline;
+}
+
+@media only screen and (max-width: 800px) {
+
+}
