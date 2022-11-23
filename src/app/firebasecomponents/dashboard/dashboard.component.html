@@ -1,1 +1,14 @@
-<p>lig</p>
+<div class="info-container">
+    <div class="info-card">
+        <h1 class="h2">YOUR PROFILE</h1>
+        <div class="user-div" *ngIf="authService.userData as user">
+            <img src="{{(user.photoURL) ? user.photoURL : 'assets/dummy-user.png'}}" alt="{{user.displayName}}">
+            <div class="media-body">
+                  <p>User Name: <strong>{{(user.displayName) ? user.displayName : 'User'}}</strong></p>
+                  <p>User ID: <strong>{{user.uid}}</strong></p>
+                  <p>Email: <strong>{{user.email}}</strong></p>
+                  <p>Email Verified: <strong>{{user.emailVerified}}</strong></p>
+            </div>
+        </div>
+    </div>
+</div>
