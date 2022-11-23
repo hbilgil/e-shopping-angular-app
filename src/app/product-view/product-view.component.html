@@ -17,6 +17,23 @@
         </div>
         <div class="right">
             <h1>{{product.name}}</h1>
+            <p-accordion [multiple]="true">
+                <p-accordionTab header="Description">
+                    <p>
+                        {{product.description}}
+                    </p>
+                </p-accordionTab>
+                <p-accordionTab header="Tech Details">
+                    <p>
+                       {{product.details}}
+                    </p>
+                </p-accordionTab>
+                <p-accordionTab *ngIf="product.category !== 'Sneakers'" header="Care Instructions">
+                    <p>
+                        {{product.care}}
+                    </p>
+                </p-accordionTab>
+            </p-accordion>
             <div class="favorites">
                 <lord-icon (click)="addToFavorites(product)" *ngIf="product.fav === false"
                     src="https://cdn.lordicon.com/rjzlnunf.json"

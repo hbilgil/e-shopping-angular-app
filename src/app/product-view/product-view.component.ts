@@ -3,6 +3,7 @@ import { ProductsService } from '../Services/products.service';
 import { ActivatedRoute } from '@angular/router';
 import { ChosenItemsService } from '../Services/chosenItems.service';
 import { FavoriteItemsService } from '../Services/favoriteItems.service';
+import { ChosenProduct } from '../Models/chosenItem.model';
 import Swal from 'sweetalert2/dist/sweetalert2.js';
 
 @Component({
@@ -12,6 +13,7 @@ import Swal from 'sweetalert2/dist/sweetalert2.js';
 })
 
 export class ProductViewComponent implements OnInit  {
+
   product: any;
   productId: any;
   stockS: any;
@@ -30,7 +32,10 @@ export class ProductViewComponent implements OnInit  {
   stock10: any;
   stockTotal: any;
   
-  constructor(private activatedRoute: ActivatedRoute, private service: ProductsService, private service2: ChosenItemsService, private service3: FavoriteItemsService) {}
+  constructor(private activatedRoute: ActivatedRoute, 
+              private service: ProductsService, 
+              private service2: ChosenItemsService, 
+              private service3: FavoriteItemsService) {}
 
   ngOnInit(): void {
     this.productId = this.activatedRoute.snapshot.paramMap.get('id');
@@ -95,34 +100,7 @@ export class ProductViewComponent implements OnInit  {
     if(value === '') return;
     this.service.removeProduct(value, this.product);
     const { v4: uuidv4 } = require('uuid');
-    interface chosenProduct {
-      uniqId: string;
-      id: number;
-      name: string;
-      price: number;
-      image: string;
-      size: string;
-      quantity: number;
-      stockA: {
-        S: number;
-        M: number;
-        L: number;
-        XL: number;};
-      stockB: {
-        num1: number;
-        num2: number;
-        num3: number;
-        num4: number;
-        num5: number;
-        num6: number;
-        num7: number;
-        num8: number;
-        num9: number;
-        num10: number;
-      };
-    };
-
-    let item: chosenProduct = {
+    let item: ChosenProduct = {
       uniqId: uuidv4(),
       id : this.product.id,
       name : this.product.name,
