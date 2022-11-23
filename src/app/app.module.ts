@@ -1,6 +1,8 @@
 //Imported Modules
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { AccordionModule } from "primeng/accordion";
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
@@ -16,6 +18,7 @@ import { ProductsService } from './Services/products.service';
 import { ChosenItemsService } from './Services/chosenItems.service';
 import { OrderedItems } from './Services/orderedItems.service';
 import { FavoriteItemsService } from './Services/favoriteItems.service';
+import { DetailsService } from './Services/details.service';
 import { AuthService } from "./shared/services/auth.service";
 import { defineElement } from 'lord-icon-element';
 import lottie from 'lottie-web';
@@ -47,6 +50,7 @@ import { SignInComponent } from './firebasecomponents/sign-in/sign-in.component'
 import { SignUpComponent } from './firebasecomponents/sign-up/sign-up.component';
 import { ForgotPasswordComponent } from './firebasecomponents/forgot-password/forgot-password.component';
 import { VerifyEmailComponent } from './firebasecomponents/verify-email/verify-email.component';
+import { WelcomeComponent } from './account/welcome/welcome.component';
 
 @NgModule({
   declarations: [
@@ -76,9 +80,12 @@ import { VerifyEmailComponent } from './firebasecomponents/verify-email/verify-e
     SignUpComponent,
     ForgotPasswordComponent,
     VerifyEmailComponent,
+    WelcomeComponent,
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
+    AccordionModule,
     AppRoutingModule,
     FormsModule,
     SweetAlert2Module,
@@ -96,8 +103,8 @@ import { VerifyEmailComponent } from './firebasecomponents/verify-email/verify-e
     ChosenItemsService,
     OrderedItems,
     FavoriteItemsService,
+    DetailsService,
     AuthService,
-
   ],
   bootstrap: [
     AppComponent
