@@ -16,10 +16,12 @@ ng serve
 
 ## Built with
 - [Angular](https://angular.io/)
+- [Firebase](https://firebase.google.com/)
 - [uuid](https://www.npmjs.com/package/uuid)
 - [Lord-icon](https://lordicon.com/)
-- [Firebase](https://firebase.google.com/)
 - [Sweetalert](https://sweetalert2.github.io/)
+- [PrimeNG](https://www.primefaces.org/)
+- [Bootstrap](https://getbootstrap.com)
 
 ## Running unit tests
 
