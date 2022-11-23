@@ -1,0 +1,10 @@
+<div class="container">
+    <div class="welcome-message">
+        <h3>Hello <span *ngIf="authService.userData as user">{{(user.displayName) ? user.displayName : 'User'}}</span></h3>
+        <p class="welcome">Welcome to <span> FashionGuru</span></p>
+    </div>
+    <img src="../../../assets/welcome.jpg" alt="welcome-image" />
+    <p class="copy-right">welcome image design by 
+        <a href="https://vecteezy.com" target="_blank"> vecteezy</a>
+    </p>
+</div>

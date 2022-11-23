@@ -1,0 +1,77 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.welcome-message {
+    font-size: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.welcome {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.welcome span {
+    font-family: 'Monoton', cursive;
+    font-size: 3rem;
+    color: #ff613a;
+}
+
+img {
+    position: absolute;
+    object-fit:cover;
+    top: 2rem;
+    left: 0;
+    height: 90%;
+    width: 100%;
+    transform: scale(1.05);
+    transition: transform 1000ms;
+    z-index: -1;
+}
+
+div:hover > img {
+    transform: scale(1);
+}
+
+.copy-right {
+    padding-top: 20rem;
+}
+
+a[href="https://vecteezy.com"] {
+    color:darkorange;
+    text-decoration: none;
+}
+
+a[href="https://vecteezy.com"]:link { 
+    text-decoration: none;
+}
+  
+a[href="https://vecteezy.com"]:visited { 
+    text-decoration: none; 
+}
+  
+a[href="https://vecteezy.com"]:hover { 
+    text-decoration: none; 
+    color:rgba(75, 201, 201, 0.764);
+}
+  
+a[href="https://vecteezy.com"]:active { 
+    text-decoration: none;
+}
+
+@media only screen and (max-width: 800px) {
+    .copy-right {
+        padding-top: 0;
+    }
+}
