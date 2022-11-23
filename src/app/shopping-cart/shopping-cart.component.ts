@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ChosenItemsService } from '../Services/chosenItems.service';
 import { ProductsService } from '../Services/products.service';
 import { OrderedItems } from '../Services/orderedItems.service';
+import Swal from 'sweetalert2/dist/sweetalert2.js';
 
 @Component({
   selector: 'app-shopping-cart',
@@ -26,15 +27,37 @@ export class ShoppingCartComponent implements OnInit {
   }
 
   addItemsToOrderedItems() {
+    Swal.fire(
+        'Good job!',
+        'Your items were added to your account!',
+        'success'
+    )
     this.service3.addOrderedItemToAccount(this.chosenItems)
     this.service2.removeAllItems(this.chosenItems)
     this.totalPrice = 0;
   }
 
   removeItem(item: any) {
-    this.service2.removeItem(item);
-    this.service.addItemQuantityToStock(item);
-    this.totalPrice -= (item.quantity)*(item.price);
+    Swal.fire({
+        title: 'Are you sure?',
+        text: "You won't be able to revert this!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, delete it!'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          Swal.fire(
+            'Deleted!',
+            item.name + ' was removed',
+            'success'
+          )
+        this.service2.removeItem(item);
+        this.service.addItemQuantityToStock(item);
+        this.totalPrice -= (item.quantity)*(item.price);
+        }
+    })
   }
 
   decreaseQuantity(item: any, itemSize: any) {
