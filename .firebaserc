@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "e-commerce-auth-ad075": {
+      "hosting": {
+        "e-shopping-angular-app": [
+          "e-commerce-auth-ad075"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "e-commerce-auth-ad075"
+  }
+}
