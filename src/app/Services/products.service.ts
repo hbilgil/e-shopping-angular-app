@@ -1,11 +1,16 @@
+import { DetailsService } from "./details.service";
+import { Injectable } from "@angular/core";
+
+@Injectable()
 export class ProductsService {
+
+    constructor(private service: DetailsService){}
 
     LOCAL_STORAGE_LIST_KEY: string = 'product.list' //all products are kept in local store
 
     saveInProductsServicesData() {
         localStorage.setItem(this.LOCAL_STORAGE_LIST_KEY, JSON.stringify(this.products))
     }
-    
     product: any;
 
     addItemToFavs(item: any) {
@@ -214,6 +219,9 @@ export class ProductsService {
         {
             id: 1,
             name: 'Adidas Grey T-shirt',
+            description: this.service.details[0].description,
+            details: this.service.details[0].details,
+            care: this.service.details[0].care,
             price: 12.5,
             gender: 'Men',
             category: 'T-shirts',
@@ -243,6 +251,9 @@ export class ProductsService {
         {
             id: 2,
             name: "Adidas Red T-shirt",
+            description: this.service.details[1].description,
+            details: this.service.details[1].details,
+            care: this.service.details[1].care,
             price: 12,
             gender: 'Men',
             category: 'T-shirts',
@@ -272,6 +283,9 @@ export class ProductsService {
         {
             id: 3,
             name: "Adidas Long Sleeve T-shirt",
+            description: this.service.details[2].description,
+            details: this.service.details[2].details,
+            care: this.service.details[2].care,
             price: 14.9,
             gender: 'Men',
             category: 'T-shirts',
@@ -301,6 +315,9 @@ export class ProductsService {
         {
             id: 4,
             name: "Nike Air Black T-shirt",
+            description: this.service.details[3].description,
+            details: this.service.details[3].details,
+            care: this.service.details[3].care,
             price: 13.9,
             gender: 'Men',
             category: 'T-shirts',
@@ -330,6 +347,9 @@ export class ProductsService {
         {
             id: 5,
             name: "Nike Air Jordan Grey T-shirt",
+            description: this.service.details[4].description,
+            details: this.service.details[4].details,
+            care: this.service.details[4].care,
             price: 15.5,
             gender: 'Men',
             category: 'T-shirts',
@@ -359,6 +379,9 @@ export class ProductsService {
         {
             id: 6,
             name: "Nike Long Sleeve T-shirt",
+            description: this.service.details[5].description,
+            details: this.service.details[5].details,
+            care: this.service.details[5].care,
             price: 17,
             gender: 'Men',
             category: 'T-shirts',
@@ -387,6 +410,9 @@ export class ProductsService {
         },{
             id: 7,
             name: 'Adidas Essential Big Logo Sweatshirt',
+            description: this.service.details[6].description,
+            details: this.service.details[6].details,
+            care: this.service.details[6].care,
             price: 52.5,
             gender: 'Men',
             category: 'Sweaters',
@@ -416,6 +442,9 @@ export class ProductsService {
         {
             id: 8,
             name: "Adidas Essential Hoodie",
+            description: this.service.details[7].description,
+            details: this.service.details[7].details,
+            care: this.service.details[7].care,
             price: 61,
             gender: "Men",
             category: "Sweaters",
@@ -445,6 +474,9 @@ export class ProductsService {
         {
             id: 9,
             name: "Adidas Zipped Sweater",
+            description: this.service.details[8].description,
+            details: this.service.details[8].details,
+            care: this.service.details[8].care,
             price: 54.9,
             gender: "Men",
             category: "Sweaters",
@@ -474,6 +506,9 @@ export class ProductsService {
         {
             id: 10,
             name: "Nike Air Big Logo Sweatshirt",
+            description: this.service.details[9].description,
+            details: this.service.details[9].details,
+            care: this.service.details[9].care,
             price: 53.9,
             gender: "Men",
             category: "Sweaters",
@@ -503,6 +538,9 @@ export class ProductsService {
         {
             id: 11,
             name: "Nike Air Jordan Hoodie",
+            description: this.service.details[10].description,
+            details: this.service.details[10].details,
+            care: this.service.details[10].care,
             price: 65.5,
             gender: "Men",
             category: "Sweaters",
@@ -532,6 +570,9 @@ export class ProductsService {
         {
             id: 12,
             name: "Nike Zipped Sweater",
+            description: this.service.details[11].description,
+            details: this.service.details[11].details,
+            care: this.service.details[11].care,
             price: 57,
             gender: "Men",
             category: "Sweaters",
@@ -561,6 +602,9 @@ export class ProductsService {
         {
             id: 13,
             name: 'Adidas Duramo Running Shoes',
+            description: this.service.details[12].description,
+            details: this.service.details[12].details,
+            care: this.service.details[12].care,
             price: 46.5,
             gender: "Men",
             category: "Sneakers",
@@ -590,6 +634,9 @@ export class ProductsService {
         {
             id: 14,
             name: "Adidas FluidFlow Running Shoes",
+            description: this.service.details[13].description,
+            details: this.service.details[13].details,
+            care: this.service.details[13].care,
             price: 39,
             gender: "Men",
             category: "Sneakers",
@@ -619,6 +666,9 @@ export class ProductsService {
         {
             id: 15,
             name: "Adidas Response Running Shoes",
+            description: this.service.details[14].description,
+            details: this.service.details[14].details,
+            care: this.service.details[14].care,
             price: 41.9,
             gender: "Men",
             category: "Sneakers",
@@ -648,6 +698,9 @@ export class ProductsService {
         {
             id: 16,
             name: "Adidas Ultra 4D Running Shoes",
+            description: this.service.details[15].description,
+            details: this.service.details[15].details,
+            care: this.service.details[15].care,
             price: 33.5,
             gender: "Men",
             category: "Sneakers",
@@ -677,6 +730,9 @@ export class ProductsService {
         {
             id: 17,
             name: "Nike Air Jordan Basketball Shoes",
+            description: this.service.details[16].description,
+            details: this.service.details[16].details,
+            care: this.service.details[16].care,
             price: 65.7,
             gender: "Men",
             category: "Sneakers",
@@ -706,6 +762,9 @@ export class ProductsService {
         {
             id: 18,
             name: "Nike Air Zoom Running Shoes",
+            description: this.service.details[17].description,
+            details: this.service.details[17].details,
+            care: this.service.details[17].care,
             price: 47,
             gender: "Men",
             category: "Sneakers",
@@ -735,6 +794,9 @@ export class ProductsService {
         {
             id: 19,
             name: "Nike Lebron James Basketball Shoes",
+            description: this.service.details[18].description,
+            details: this.service.details[18].details,
+            care: this.service.details[18].care,
             price: 63.5,
             gender: "Men",
             category: "Sneakers",
@@ -764,6 +826,9 @@ export class ProductsService {
         {
             id: 20,
             name: "Nike Pegasus Running Shoes",
+            description: this.service.details[19].description,
+            details: this.service.details[19].details,
+            care: this.service.details[19].care,
             price: 42.3,
             gender: "Men",
             category: "Sneakers",
@@ -793,6 +858,9 @@ export class ProductsService {
         {
             id: 21,
             name: "Nike React Running Shoes",
+            description: this.service.details[20].description,
+            details: this.service.details[20].details,
+            care: this.service.details[20].care,
             price: 41,
             gender: "Men",
             category: "Sneakers",
@@ -822,6 +890,9 @@ export class ProductsService {
         {
             id: 22,
             name: 'Adidas Big Logo Black T-shirt',
+            description: this.service.details[21].description,
+            details: this.service.details[21].details,
+            care: this.service.details[21].care,
             price: 17.6,
             gender: 'Women',
             category: 'T-shirts',
@@ -851,6 +922,9 @@ export class ProductsService {
         {
             id: 23,
             name: "Adidas Floral T-shirt",
+            description: this.service.details[22].description,
+            details: this.service.details[22].details,
+            care: this.service.details[22].care,
             price: 16.2,
             gender: 'Women',
             category: 'T-shirts',
@@ -880,6 +954,9 @@ export class ProductsService {
         {
             id: 24,
             name: "Adidas Long Sleeve T-shirt",
+            description: this.service.details[23].description,
+            details: this.service.details[23].details,
+            care: this.service.details[23].care,
             price: 20.9,
             gender: 'Women',
             category: 'T-shirts',
@@ -909,6 +986,9 @@ export class ProductsService {
         {
             id: 25,
             name: "Nike Short White T-shirt",
+            description: this.service.details[24].description,
+            details: this.service.details[24].details,
+            care: this.service.details[24].care,
             price: 15.2,
             gender: 'Women',
             category: 'T-shirts',
@@ -938,6 +1018,9 @@ export class ProductsService {
         {
             id: 26,
             name: "Nike Running ClimaCool T-shirt",
+            description: this.service.details[25].description,
+            details: this.service.details[25].details,
+            care: this.service.details[25].care,
             price: 19.5,
             gender: 'Women',
             category: 'T-shirts',
@@ -967,6 +1050,9 @@ export class ProductsService {
         {
             id: 27,
             name: "Nike Long Sleeve T-shirt",
+            description: this.service.details[26].description,
+            details: this.service.details[26].details,
+            care: this.service.details[26].care,
             price: 21.5,
             gender: 'Women',
             category: 'T-shirts',
@@ -995,6 +1081,9 @@ export class ProductsService {
         },{
             id: 28,
             name: 'Adidas Essential Big Logo Sweatshirt',
+            description: this.service.details[27].description,
+            details: this.service.details[27].details,
+            care: this.service.details[27].care,
             price: 49.3,
             gender: 'Women',
             category: 'Sweaters',
@@ -1024,6 +1113,9 @@ export class ProductsService {
         {
             id: 29,
             name: "Adidas Essential Hoodie",
+            description: this.service.details[28].description,
+            details: this.service.details[28].details,
+            care: this.service.details[28].care,
             price: 64.2,
             gender: 'Women',
             category: 'Sweaters',
@@ -1053,6 +1145,9 @@ export class ProductsService {
         {
             id: 30,
             name: "Adidas Zipped Sweater",
+            description: this.service.details[29].description,
+            details: this.service.details[29].details,
+            care: this.service.details[29].care,
             price: 56.5,
             gender: 'Women',
             category: 'Sweaters',
@@ -1082,6 +1177,9 @@ export class ProductsService {
         {
             id: 31,
             name: "Nike Essential Big Logo Sweatshirt",
+            description: this.service.details[30].description,
+            details: this.service.details[30].details,
+            care: this.service.details[30].care,
             price: 54.2,
             gender: 'Women',
             category: 'Sweaters',
@@ -1111,6 +1209,9 @@ export class ProductsService {
         {
             id: 32,
             name: "Nike Air Big Logo Hoodie",
+            description: this.service.details[31].description,
+            details: this.service.details[31].details,
+            care: this.service.details[31].care,
             price: 59.7,
             gender: 'Women',
             category: 'Sweaters',
@@ -1140,6 +1241,9 @@ export class ProductsService {
         {
             id: 33,
             name: "Nike Zipped Sweater",
+            description: this.service.details[32].description,
+            details: this.service.details[32].details,
+            care: this.service.details[32].care,
             price: 56,
             gender: 'Women',
             category: 'Sweaters',
@@ -1169,6 +1273,9 @@ export class ProductsService {
         {
             id: 34,
             name: 'Adidas FluidFlow Running Shoes',
+            description: this.service.details[33].description,
+            details: this.service.details[33].details,
+            care: this.service.details[33].care,
             price: 40.5,
             gender: 'Women',
             category: 'Sneakers',
@@ -1198,6 +1305,9 @@ export class ProductsService {
         {
             id: 35,
             name: "Adidas Grandcourt Base Tennis Shoes",
+            description: this.service.details[34].description,
+            details: this.service.details[34].details,
+            care: this.service.details[34].care,
             price: 47.2,
             gender: 'Women',
             category: 'Sneakers',
@@ -1227,6 +1337,9 @@ export class ProductsService {
         {
             id: 36,
             name: "Adidas Response Running Shoes",
+            description: this.service.details[35].description,
+            details: this.service.details[35].details,
+            care: this.service.details[35].care,
             price: 43.5,
             gender: 'Women',
             category: 'Sneakers',
@@ -1256,6 +1369,9 @@ export class ProductsService {
         {
             id: 37,
             name: "Adidas Ultra 4D Running Shoes",
+            description: this.service.details[36].description,
+            details: this.service.details[36].details,
+            care: this.service.details[36].care,
             price: 37.3,
             gender: 'Women',
             category: 'Sneakers',
@@ -1285,6 +1401,9 @@ export class ProductsService {
         {
             id: 38,
             name: "Nike Air Zoom Running Shoes",
+            description: this.service.details[37].description,
+            details: this.service.details[37].details,
+            care: this.service.details[37].care,
             price: 52.7,
             gender: 'Women',
             category: 'Sneakers',
@@ -1314,6 +1433,9 @@ export class ProductsService {
         {
             id: 39,
             name: "Nike Free Run Running Shoes",
+            description: this.service.details[38].description,
+            details: this.service.details[38].details,
+            care: this.service.details[38].care,
             price: 43.1,
             gender: 'Women',
             category: 'Sneakers',
@@ -1343,6 +1465,9 @@ export class ProductsService {
         {
             id: 40,
             name: "Nike Juniper Running Shoes",
+            description: this.service.details[39].description,
+            details: this.service.details[39].details,
+            care: this.service.details[39].care,
             price: 53.5,
             gender: 'Women',
             category: 'Sneakers',
@@ -1372,6 +1497,9 @@ export class ProductsService {
         {
             id: 41,
             name: "Nike Pegasus Running Shoes",
+            description: this.service.details[40].description,
+            details: this.service.details[40].details,
+            care: this.service.details[40].care,
             price: 47.6,
             gender: 'Women',
             category: 'Sneakers',
@@ -1401,6 +1529,9 @@ export class ProductsService {
         {
             id: 42,
             name: "Nike React Running Shoes",
+            description: this.service.details[41].description,
+            details: this.service.details[41].details,
+            care: this.service.details[41].care,
             price: 45.1,
             gender: 'Women',
             category: 'Sneakers',
