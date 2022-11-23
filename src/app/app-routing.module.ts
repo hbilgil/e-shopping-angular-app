@@ -17,6 +17,7 @@ import { DashboardComponent } from './firebasecomponents/dashboard/dashboard.com
 import { ForgotPasswordComponent } from './firebasecomponents/forgot-password/forgot-password.component';
 import { VerifyEmailComponent } from './firebasecomponents/verify-email/verify-email.component';
 import { AuthGuard } from './shared/guard/auth.guard';
+import { WelcomeComponent } from './account/welcome/welcome.component';
 
 const routes: Routes = [
   
@@ -35,6 +36,9 @@ const routes: Routes = [
   {path: "Shop/Product/:id", component: ProductViewComponent, canActivate: [AuthGuard]},
   {path: "Account", component: AccountComponent, canActivate: [AuthGuard],
    children: [
+    {
+      path: 'Welcome', component: WelcomeComponent,
+    },
     {
       path:'Orders', component: OrdersComponent,
     },
