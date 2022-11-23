@@ -19,7 +19,7 @@
                     </lord-icon>
                 </div>
             </li>
-            <li>
+            <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}" [routerLink]="['Info']">
                 <div class="account-icon">
                     <lord-icon
                         src="https://cdn.lordicon.com/vusrdugn.json"
@@ -28,7 +28,7 @@
                     </lord-icon>
                 </div>
             </li>
-            <li>
+            <li (click)="logOut()">
                 <div class="log-out-icon">
                     <lord-icon
                         src="https://cdn.lordicon.com/vsgcujbd.json"
