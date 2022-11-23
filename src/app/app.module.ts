@@ -3,12 +3,20 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
+import { environment } from '../environments/environment';
 
 //Imported services and packages
 import { ProductsService } from './Services/products.service';
 import { ChosenItemsService } from './Services/chosenItems.service';
 import { OrderedItems } from './Services/orderedItems.service';
 import { FavoriteItemsService } from './Services/favoriteItems.service';
+import { AuthService } from "./shared/services/auth.service";
 import { defineElement } from 'lord-icon-element';
 import lottie from 'lottie-web';
 
@@ -34,6 +42,11 @@ import { AccountComponent } from './account/account.component';
 import { SidebarComponent } from './account/sidebar/sidebar.component';
 import { OrdersComponent } from './account/orders/orders.component';
 import { FavoritesComponent } from './account/favorites/favorites.component';
+import { DashboardComponent } from './firebasecomponents/dashboard/dashboard.component';
+import { SignInComponent } from './firebasecomponents/sign-in/sign-in.component';
+import { SignUpComponent } from './firebasecomponents/sign-up/sign-up.component';
+import { ForgotPasswordComponent } from './firebasecomponents/forgot-password/forgot-password.component';
+import { VerifyEmailComponent } from './firebasecomponents/verify-email/verify-email.component';
 
 @NgModule({
   declarations: [
@@ -58,11 +71,22 @@ import { FavoritesComponent } from './account/favorites/favorites.component';
     SidebarComponent,
     OrdersComponent,
     FavoritesComponent,
+    DashboardComponent,
+    SignInComponent,
+    SignUpComponent,
+    ForgotPasswordComponent,
+    VerifyEmailComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    SweetAlert2Module,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAuthModule,
+    AngularFirestoreModule,
+    AngularFireStorageModule,
+    AngularFireDatabaseModule,
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA
@@ -71,7 +95,9 @@ import { FavoritesComponent } from './account/favorites/favorites.component';
     ProductsService,
     ChosenItemsService,
     OrderedItems,
-    FavoriteItemsService
+    FavoriteItemsService,
+    AuthService,
+
   ],
   bootstrap: [
     AppComponent

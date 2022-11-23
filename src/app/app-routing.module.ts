@@ -11,22 +11,39 @@ import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { AccountComponent } from './account/account.component';
 import { OrdersComponent } from './account/orders/orders.component';
 import { FavoritesComponent } from './account/favorites/favorites.component';
+import { SignInComponent } from './firebasecomponents/sign-in/sign-in.component';
+import { SignUpComponent } from './firebasecomponents/sign-up/sign-up.component';
+import { DashboardComponent } from './firebasecomponents/dashboard/dashboard.component';
+import { ForgotPasswordComponent } from './firebasecomponents/forgot-password/forgot-password.component';
+import { VerifyEmailComponent } from './firebasecomponents/verify-email/verify-email.component';
+import { AuthGuard } from './shared/guard/auth.guard';
 
 const routes: Routes = [
-  {path: "", component: HomeComponent},
+  
+  { path: '', redirectTo: '/sign-in', pathMatch: 'full' },
+  { path: 'sign-in', component: SignInComponent },
+  { path: 'register-user', component: SignUpComponent },
+  { path: 'forgot-password', component: ForgotPasswordComponent },
+  { path: 'verify-email-address', component: VerifyEmailComponent },
+
+  //{path: "", component: HomeComponent},
   {path: "Home", component: HomeComponent},
-  {path: "Shop", component: ShopComponent},
+  {path: "Shop", component: ShopComponent, canActivate: [AuthGuard]},
   {path: "About", component: AboutComponent},
-  {path: "ShoppingCart", component: ShoppingCartComponent},
+  {path: "ShoppingCart", component: ShoppingCartComponent, canActivate: [AuthGuard]},
   {path: "ErrorPage", component: ErrorPageComponent},
-  {path: "Shop/Product/:id", component: ProductViewComponent},
-  {path: "Account", component: AccountComponent, children: [
+  {path: "Shop/Product/:id", component: ProductViewComponent, canActivate: [AuthGuard]},
+  {path: "Account", component: AccountComponent, canActivate: [AuthGuard],
+   children: [
     {
       path:'Orders', component: OrdersComponent,
     },
     {
       path: 'Favorites', component: FavoritesComponent,
-    }
+    },
+    { 
+      path: 'Info', component: DashboardComponent,
+    },
   ]},
   {path: "**", component: ErrorNotFoundComponent},
 ];
