@@ -3,6 +3,7 @@ import { ProductsService } from '../Services/products.service';
 import { ActivatedRoute } from '@angular/router';
 import { ChosenItemsService } from '../Services/chosenItems.service';
 import { FavoriteItemsService } from '../Services/favoriteItems.service';
+import Swal from 'sweetalert2/dist/sweetalert2.js';
 
 @Component({
   selector: 'app-product-view',
@@ -67,6 +68,13 @@ export class ProductViewComponent implements OnInit  {
   selectedSizeButtonValue: string = "";
 
   addToFavorites(item: any) {
+    Swal.fire({ //a special embedded function to have a customized alert box with better UI and styling
+      position: 'top-end',
+      icon: 'success',
+      title: item.name + ' was added to your favorites',
+      showConfirmButton: false,
+      timer: 1500
+   })
     this.service.addItemToFavs(item);
     this.service3.addToFavorites(item);
   }
@@ -143,6 +151,13 @@ export class ProductViewComponent implements OnInit  {
     };
     this.service2.addChosenItemToCart(item)
     this.stockTotal--;
+    Swal.fire({ //a special embedded function to have a customized alert box with better UI and styling
+      position: 'top-end',
+      icon: 'success',
+      title: this.product.name + ' was added to your shopping cart',
+      showConfirmButton: false,
+      timer: 1500
+   })
     this.onChangeButtonColor(e);
   }
 }
