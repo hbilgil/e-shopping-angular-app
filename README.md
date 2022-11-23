@@ -17,7 +17,9 @@ ng serve
 ## Built with
 - [Angular](https://angular.io/)
 - [uuid](https://www.npmjs.com/package/uuid)
-- [lord-icon](https://lordicon.com/)
+- [Lord-icon](https://lordicon.com/)
+- [Firebase](https://firebase.google.com/)
+- [Sweetalert](https://sweetalert2.github.io/)
 
 ## Running unit tests
 
