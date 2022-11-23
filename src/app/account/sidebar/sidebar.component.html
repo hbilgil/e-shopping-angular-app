@@ -1,7 +1,7 @@
 <div class="continer">
-    <nav>
-        <ul>
-            <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}" [routerLink]="['Orders']">
+    <nav class="sidebar">
+        <ul class="unordered-list">
+            <li class="list-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}" [routerLink]="['Orders']">
                 <div class="basket-icon">
                     <lord-icon
                         src="https://cdn.lordicon.com/qzwudxpy.json"
@@ -10,7 +10,7 @@
                     </lord-icon>
                 </div>
             </li>
-            <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}" [routerLink]="['Favorites']">
+            <li class="list-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}" [routerLink]="['Favorites']">
                 <div class="star-icon">
                     <lord-icon
                         src="https://cdn.lordicon.com/hqrgkqvs.json"
@@ -19,7 +19,7 @@
                     </lord-icon>
                 </div>
             </li>
-            <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}" [routerLink]="['Info']">
+            <li class="list-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}" [routerLink]="['Info']">
                 <div class="account-icon">
                     <lord-icon
                         src="https://cdn.lordicon.com/vusrdugn.json"
@@ -28,7 +28,7 @@
                     </lord-icon>
                 </div>
             </li>
-            <li (click)="logOut()">
+            <li class="list-item" (click)="logOut()">
                 <div class="log-out-icon">
                     <lord-icon
                         src="https://cdn.lordicon.com/vsgcujbd.json"

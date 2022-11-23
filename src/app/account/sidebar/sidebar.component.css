@@ -2,62 +2,63 @@
     width: 10%;
 }
 
-nav {
+.sidebar {
     float: left;
 	position: relative;
 	top: 0;
     left: 0;
 	background: transparent;
     padding: 100px 0;
+    
 }
 
-nav ul {
+.unordered-list {
 	text-align: center;
 }
 
-nav ul li {
+.list-item {
     list-style: none;
 }
 
-nav ul li:nth-child(1) {
+.list-item:nth-child(1) {
 	position: relative;
     width: 70px;
     cursor: pointer;
     background: white;
 	transition:all .4s ease-out;
-    border-top: 2px solid #ff613a;
-    border-right: 2px solid #ff613a;
+    border-top: 2px solid #ff613a !important;
+    border-right: 2px solid #ff613a !important;
 }
 
-nav ul li:nth-child(2) {
+.list-item:nth-child(2) {
 	position: relative;
     width: 70px;
     cursor: pointer;
     background: white;
 	transition:all .4s ease-out;
-    border-right: 2px solid #ff613a;
+    border-right: 2px solid #ff613a !important;
 }
 
-nav ul li:nth-child(3) {
+.list-item:nth-child(3) {
 	position: relative;
     width: 70px;
     cursor: pointer;
     background: white;
 	transition:all .4s ease-out;
-    border-right: 2px solid #ff613a;
+    border-right: 2px solid #ff613a !important;
 }
 
-nav ul li:nth-child(4) {
+.list-item:nth-child(4) {
 	position: relative;
     width: 70px;
     cursor: pointer;
     background: white;
 	transition:all .4s ease-out;
-    border-right: 2px solid #ff613a;
-    border-bottom: 2px solid #ff613a;
+    border-right: 2px solid #ff613a !important;
+    border-bottom: 2px solid #ff613a !important;
 }
 
-nav ul li:after {
+.list-item:after {
 	position: absolute;
     background: #ff613a;
     color: white;
@@ -70,123 +71,125 @@ nav ul li:after {
 	transition:all .4s ease-out;
 }
 
-nav ul li:nth-child(1):after { 
+.list-item:nth-child(1):after { 
     content: "Orders";
 	line-height: 88px;
-    border-right: 2px solid #ff613a;
-    border-top: 2px solid #ff613a;
+    border-right: 2px solid #ff613a !important;
+    border-top: 2px solid #ff613a !important;
 }
 
-nav ul li:nth-child(2):after {
+.list-item:nth-child(2):after {
     content: "Favorites"; 
 	line-height: 88px;
-    border-right: 2px solid #ff613a;
+    border-right: 2px solid #ff613a !important;
 }
 
-nav ul li:nth-child(3):after { 
+.list-item:nth-child(3):after { 
     content: "Infos";
 	line-height: 88px;
-    border-right: 2px solid #ff613a;
-}
-nav ul li:nth-child(4):after { 
-    content: "Log-out";
-	line-height: 88px;
-    border-right: 2px solid #ff613a;
-    border-bottom: 2px solid #ff613a;
+    border-right: 2px solid #ff613a !important;
 }
 
-nav ul li.active{
+.list-item:nth-child(4):after { 
+    content: "Log-out";
+	line-height: 88px;
+    border-right: 2px solid #ff613a !important;
+    border-bottom: 2px solid #ff613a !important;
+}
+
+.list-item.active{
 	transform: translateX(-70px);
 }
 
-nav ul li.active:after {
+.list-item.active:after {
     opacity: 1;
 	transform: perspective(400px) rotateY(0deg) scale(1) ;
 }
 
-nav ul li > div {
+.list-item > div {
 	display: inline-block;
 	padding: 25px 0;
     background-color: white;
 }
 
-nav ul li div {
+.list-item div {
     position: relative;
 }
 
 @media only screen and (max-width: 800px) {
-    nav ul {
+    .unordered-list {
         align-self: center;
         display: flex;
 	    position: relative;
 	    background: transparent;
     }
 
-    nav ul li {
+    .list-item {
         list-style: none;
     }
 
-    nav ul li:after {
+    .list-item:after {
         transform:none;
     }
 
-    nav ul li:nth-child(1) {
+    .list-item:nth-child(1) {
         position: relative;
         width: 70px;
         cursor: pointer;
         background: white;
-        border: 2px solid #ff613a;
+        border: 2px solid #ff613a !important;
     }
     
-    nav ul li:nth-child(2) {
+    .list-item:nth-child(2) {
         position: relative;
         width: 70px;
         cursor: pointer;
         background: white;
-        border-right: 2px solid #ff613a;
-        border-top: 2px solid #ff613a;
-        border-bottom: 2px solid #ff613a;
+        border-right: 2px solid #ff613a !important;
+        border-top: 2px solid #ff613a !important;
+        border-bottom: 2px solid #ff613a !important;
     }
     
-    nav ul li:nth-child(3) {
+    .list-item:nth-child(3) {
         position: relative;
         width: 70px;
         cursor: pointer;
         background: white;
-        border-right: 2px solid #ff613a;
-        border-top: 2px solid #ff613a;
-        border-bottom: 2px solid #ff613a;
+        border-right: 2px solid #ff613a !important;
+        border-top: 2px solid #ff613a !important;
+        border-bottom: 2px solid #ff613a !important;
     }
     
-    nav ul li:nth-child(4) {
+    .list-item:nth-child(4) {
         position: relative;
         width: 70px;
         cursor: pointer;
         background: white;
-        border-top: 2px solid #ff613a;
-        border-bottom: 2px solid #ff613a;
+        border-top: 2px solid #ff613a !important;
+        border-bottom: 2px solid #ff613a !important;
     }
 
-    nav ul li:nth-child(1):after { 
+    .list-item:nth-child(1):after { 
         content: none;
     }
     
-    nav ul li:nth-child(2):after {
+    .list-item:nth-child(2):after {
         content: none;
     }
     
-    nav ul li:nth-child(3):after { 
-        content: none;
-    }
-    nav ul li:nth-child(4):after { 
+    .list-item:nth-child(3):after { 
         content: none;
     }
 
-    nav ul li.active{
+    .list-item:nth-child(4):after { 
+        content: none;
+    }
+
+    .list-item.active{
         transform: none;
     }
     
-    nav ul li.active:after {
+    .list-item.active:after {
         opacity: 0;
         transform: none;
     }

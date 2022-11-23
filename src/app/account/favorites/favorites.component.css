@@ -5,6 +5,7 @@
     flex-wrap: wrap;
     align-items: center;
     gap: 2rem;
+    margin-top: 10px;
     font-family: 'Dosis', sans-serif;
 }
 
@@ -111,4 +112,10 @@ p {
 
 .favorite:hover > .red-span {
     display: inline;
+}
+
+@media only screen and (max-width: 750px) {
+    .cards {
+        padding: 1rem;
+    }
 }
