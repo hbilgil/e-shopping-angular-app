@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FavoriteItemsService } from 'src/app/Services/favoriteItems.service';
 import { ProductsService } from 'src/app/Services/products.service';
+import Swal from 'sweetalert2/dist/sweetalert2.js';
 
 @Component({
   selector: 'app-favorites',
@@ -18,8 +19,25 @@ export class FavoritesComponent implements OnInit {
   }
 
   removeItem(item: any) {
-    this.service.removeFromFavorites(item);
-    this.service2.removeItemFromFavs(item);
-    this.service.saveInFavoriteItemsServicesData
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire(
+          'Deleted!',
+          item.name + ' was removed',
+          'success'
+        )
+        this.service.removeFromFavorites(item);
+        this.service2.removeItemFromFavs(item);
+        this.service.saveInFavoriteItemsServicesData;
+      }
+  })
   }
 }
