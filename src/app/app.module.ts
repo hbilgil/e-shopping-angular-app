@@ -3,6 +3,7 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { AccordionModule } from "primeng/accordion";
+import { ShortenTextPipe } from './Services/shortenText.pipe';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
@@ -81,6 +82,7 @@ import { WelcomeComponent } from './account/welcome/welcome.component';
     ForgotPasswordComponent,
     VerifyEmailComponent,
     WelcomeComponent,
+    ShortenTextPipe,
   ],
   imports: [
     BrowserModule,
