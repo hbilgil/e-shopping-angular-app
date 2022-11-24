@@ -3,6 +3,7 @@ export class OrderedItems {
 orderedItems: any = [];
 totalQuantity: any = [];
 totalPrice: number = 0;
+shippingPrice: number = 20;
 
 addOrderedItemToAccount(items: any) {
     items.forEach((item: any)=> {
@@ -25,5 +26,6 @@ removeItem(item: any) {
             this.orderedItems.splice(index, 1);
         }
     });
+    this.totalPrice -= (item.price)*(item.quantity);
 }
 }
