@@ -13,6 +13,7 @@ export class OrdersComponent implements OnInit {
   orderedProducts: any;
   totalPrice: number = 0;
   totalQuantity: any;
+  shippingPrice: number = 20;
 
   constructor(private service: OrderedItems, private service2: ProductsService) { 
     

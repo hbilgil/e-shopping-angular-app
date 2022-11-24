@@ -141,8 +141,10 @@ lord-icon {
     width: 100%;
 }
 
+.sub-total,
+.shipping,
 .total {
-    width: 90%;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     font-weight: 800;

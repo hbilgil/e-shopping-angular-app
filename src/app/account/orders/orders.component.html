@@ -38,9 +38,29 @@
         </div>
         <div class="total-price">
             <h3>ORDER TOTAL</h3>
+            <div class="sub-total">
+                <p>Subtotal</p>
+                <div>€ {{(totalPrice).toFixed(2)}}</div>
+            </div>
+            <div class="shipping">
+                <p>Shipping <span *ngIf="totalPrice<=100"> {{'(free shipping on orders over €100)'}} </span></p>
+                <div *ngIf="totalPrice>100; else shipping">
+                    FREE
+                </div>
+                <ng-template #shipping>
+                    <div>
+                        € {{shippingPrice}}
+                    </div>
+                </ng-template>
+            </div>
             <div class="total">
                 <p>Total (VAT included)</p>
-                <div>€ {{(totalPrice).toFixed(2)}}</div>
+                <div *ngIf="totalPrice>100; else shippingAdded">
+                    € {{ totalPrice.toFixed(2) }}
+                </div>
+                <ng-template #shippingAdded>
+                    <div>€ {{ (totalPrice + shippingPrice).toFixed(2) }}</div>
+                </ng-template>
             </div>
         </div>
     </ul>
