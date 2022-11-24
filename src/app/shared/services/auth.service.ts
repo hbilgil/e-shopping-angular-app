@@ -7,6 +7,7 @@ import {
   AngularFirestoreDocument,
 } from '@angular/fire/compat/firestore';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2/dist/sweetalert2.js';
 
 @Injectable({
   providedIn: 'root',
@@ -45,7 +46,12 @@ export class AuthService {
         });
       })
       .catch((error) => {
-        window.alert(error.message);
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Something went wrong!',
+          footer: error.message,
+        })
       });
   }
   // Sign up with email/password
@@ -59,7 +65,12 @@ export class AuthService {
         this.SetUserData(result.user);
       })
       .catch((error) => {
-        window.alert(error.message);
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Something went wrong!',
+          footer: error.message,
+        })
       });
   }
   // Send email verification when new user sign up
@@ -75,10 +86,19 @@ export class AuthService {
     return this.afAuth
       .sendPasswordResetEmail(passwordResetEmail)
       .then(() => {
-        window.alert('Password reset email sent, check your inbox.');
+        Swal.fire(
+          'Good job!' , 
+          'Password reset email sent, check your inbox.', 
+          'success'
+        )
       })
       .catch((error) => {
-        window.alert(error);
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Something went wrong!',
+          footer: error.message,
+        })
       });
   }
   // Returns true when user is looged in and email is verified
@@ -101,7 +121,12 @@ export class AuthService {
         this.SetUserData(result.user);
       })
       .catch((error) => {
-        window.alert(error);
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Something went wrong!',
+          footer: error.message,
+        })
       });
   }
   /* Setting up user data when sign in with username/password, 
