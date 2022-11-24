@@ -15,11 +15,11 @@ export class FavoritesComponent implements OnInit {
   constructor(private service: FavoriteItemsService, private service2: ProductsService) { }
 
   ngOnInit(): void {
-    this.favoriteItems = this.service.items;
+    this.favoriteItems = this.service.items; //favorite items is provided by a service data imported
   }
 
-  removeItem(item: any) {
-    Swal.fire({
+  removeItem(item: any) { // a function to remove a favorite item
+    Swal.fire({ //an async function provided by an imported file
       title: 'Are you sure?',
       text: "You won't be able to revert this!",
       icon: 'warning',
@@ -27,16 +27,16 @@ export class FavoritesComponent implements OnInit {
       confirmButtonColor: '#3085d6',
       cancelButtonColor: '#d33',
       confirmButtonText: 'Yes, delete it!'
-    }).then((result) => {
+    }).then((result) => { //if approved, the result is triggered
       if (result.isConfirmed) {
         Swal.fire(
           'Deleted!',
           item.name + ' was removed',
           'success'
         )
-        this.service.removeFromFavorites(item);
-        this.service2.removeItemFromFavs(item);
-        this.service.saveInFavoriteItemsServicesData;
+        this.service.removeFromFavorites(item); //a function declared in favoriteItems service data is called back
+        this.service2.removeItemFromFavs(item); //a function declared in Products service data is called back
+        //this.service.saveInFavoriteItemsServicesData;
       }
   })
   }

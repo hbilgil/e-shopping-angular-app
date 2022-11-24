@@ -2,7 +2,7 @@
     padding: 2rem;
     display: grid;
     grid-column-gap: 20px;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);/* grid structure is used in equally sized columns*/
     justify-content: center;
     align-items: center;
     list-style: none;
@@ -63,14 +63,14 @@ p {
     margin-bottom: 10px;
 }
 
-@media only screen and (max-width: 850px) {
+@media only screen and (max-width: 850px) {/*responsive design styling*/
     .cards {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr); /*column numbers are diminished into 2*/
     }
 }
 
 @media only screen and (max-width: 570px) {
     .cards {
-        grid-template-columns: repeat(1, 1fr);
+        grid-template-columns: repeat(1, 1fr); /*column number is diminished into 1*/
     }
 }

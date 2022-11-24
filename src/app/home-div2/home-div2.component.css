@@ -21,7 +21,7 @@ h1 {
     height: 70%;
     flex: 1 1;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, 1fr);/*grid template structure with 4 equally sized columns*/
     gap: 2rem;
     padding: 4rem 2rem;
 }
@@ -74,9 +74,9 @@ p {
     opacity: 1;
 }
 
-@media only screen and (max-width: 850px) {
+@media only screen and (max-width: 850px) {/*responsive design styling*/
     .cards {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr); /*diminished into 2 equally sized column*/
     }
 
     .card,
@@ -87,7 +87,7 @@ p {
 
 @media only screen and (max-width: 450px) {
     .cards {
-        grid-template-columns: repeat(1, 1fr);
+        grid-template-columns: repeat(1, 1fr);/*diminished into 1 equally sized column*/
     }
     
     .card,

@@ -1,5 +1,6 @@
 <div class="container">
     <div class="welcome-message">
+        <!--if there is no userData, span is not displayed-->
         <h3>Hello <span *ngIf="authService.userData as user">{{(user.displayName) ? user.displayName : 'User'}}</span></h3>
         <p class="welcome">Welcome to <span> FashionGuru</span></p>
     </div>

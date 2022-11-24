@@ -10,6 +10,7 @@
     <div class="main">
         <div class="left">
             <div class="product-img">
+                <!--image sources is dynamically assigned by hover effect-->
                 <img [src]="product.src || product.image1"
                 (mouseover)="product.src = product.image2"
                 (mouseout)="product.src = product.image1" alt={{product.name}} />
@@ -17,7 +18,8 @@
         </div>
         <div class="right">
             <h1>{{product.name}}</h1>
-            <p-accordion [multiple]="true">
+            <!--accordion type details section is used for better UI-->
+            <p-accordion [multiple]="true"><!--multiple true as all sections can be opened without closing the other one-->
                 <p-accordionTab header="Description">
                     <p align="justify">
                         {{product.description}}
@@ -25,13 +27,16 @@
                 </p-accordionTab>
                 <p-accordionTab header="Tech Details">
                     <p align="justify">
+                        <!--product Tech Details are derived by an array formed by a split method-->
                         <li *ngFor="let item of productDetails">
                             <img src="../../assets/tech.png"/>{{item}}
                         </li>
                     </p>
                 </p-accordionTab>
+                <!--no care details is provided for sneakers, so it will not be displayed when a product in sneaker category is selected-->
                 <p-accordionTab *ngIf="product.category !== 'Sneakers'" header="Care Instructions">
                     <p align="justify">
+                        <!--product Care Details are derived by an array formed by a split method-->
                         <li *ngFor="let item of productCare">
                             <img src="../../assets/care.png"/>{{item}}
                         </li>
@@ -39,25 +44,32 @@
                 </p-accordionTab>
             </p-accordion>
             <div class="favorites">
+                <!--if it is not a favorite item, this image is displayed-->
                 <lord-icon (click)="addToFavorites(product)" *ngIf="product.fav === false"
                     src="https://cdn.lordicon.com/rjzlnunf.json"
                     trigger="hover"
                     style="width:40px;height:40px">
                 </lord-icon>
+                <!--if it is a favorite item, this image is displayed-->
                 <lord-icon (click)="removeFromFavorites(product)" *ngIf="product.fav === true"
                     src="https://cdn.lordicon.com/iwaotjbp.json"
                     trigger="hover"
                     style="width:40px;height:40px">
                 </lord-icon>
+                <!--if it is not a favorite item, this text is displayed-->
                 <span class="green-span" *ngIf="product.fav === false">Add to your favorites</span>
+                <!--if it is a favorite item, this text is displayed-->
                 <span class="red-span" *ngIf="product.fav === true">It is in your favorites!</span>
             </div>
             <h3>
                 € {{product.price}} <p>VAT included</p>
             </h3>
-            <select *ngIf="product.category === 'Sneakers'; else nonSneakersSelection" 
+            <!--if the product category is sneakers, it is displayed-->
+            <!--ngModel for two way data binding to decided selected size-->
+            <select *ngIf="product.category === 'Sneakers'; else nonSneakersSelection"
             [(ngModel)]="selectedSizeButtonValue" ngDefaultControl>
                 <option value="" disabled selected name="size">-- Select Size --</option>
+                <!--option is disabled when the stock level is 0 for that size-->
                 <option [disabled]="product.stockB.num1 === 0" value="37" name="size">EU - 37</option>
                 <option [disabled]="product.stockB.num2 === 0" value="38" name="size">EU - 38</option>
                 <option [disabled]="product.stockB.num3 === 0" value="39" name="size">EU - 39</option>
@@ -69,10 +81,13 @@
                 <option [disabled]="product.stockB.num9 === 0" value="45" name="size">EU - 45</option>
                 <option [disabled]="product.stockB.num10 === 0" value="46" name="size">EU - 46</option>
             </select>
+            <!--ng-template when the ngIf expression is falsified-->
             <ng-template #nonSneakersSelection>
+                <!--ngModel for two way data binding to decided selected size-->
                 <select
                 [(ngModel)]="selectedSizeButtonValue" ngDefaultControl>
                     <option value="" disabled selected name="size">-- Select Size --</option>
+                    <!--option is disabled when the stock level is 0 for that size-->
                     <option [disabled]="product.stockA.S === 0" value="S" name="size">EU - S</option>
                     <option [disabled]="product.stockA.M === 0" value="M" name="size">EU - M</option>
                     <option [disabled]="product.stockA.L === 0" value="L" name="size">EU - L</option>
@@ -80,6 +95,7 @@
                 </select>
             </ng-template>
             <div class="ng-container">
+                <!--ngSwitch is used to dynamically change based on size value-->
                 <div [ngSwitch]="selectedSizeButtonValue">
                     <p *ngSwitchCase="'S'"><span *ngIf="product.stockA.S === 1" class="red1">Hurry up! Only 1 item remained for size '{{selectedSizeButtonValue}}'</span></p>
                     <p *ngSwitchCase="'M'"><span *ngIf="product.stockA.M === 1" class="red1">Hurry up! Only 1 item remained for size '{{selectedSizeButtonValue}}'</span></p>
@@ -96,10 +112,12 @@
                     <p *ngSwitchCase="'45'"><span *ngIf="product.stockB.num9 === 1" class="red1">Hurry up! Only 1 item remained for size '{{selectedSizeButtonValue}}'</span></p>
                     <p *ngSwitchCase="'46'"><span *ngIf="product.stockB.num10 === 1" class="red1">Hurry up! Only 1 item remained for size '{{selectedSizeButtonValue}}'</span></p>
                 </div>
+                <!--if the there is no stock for ALL sizes, it is not displayed-->
                 <button *ngIf="stockTotal!== 0; else notifyMe" (click)="handleAddToCart($event, selectedSizeButtonValue)">
                     Add to cart
                 </button>
             </div>
+            <!--ng-template when the ngIf expression is falsified-->
             <ng-template #notifyMe>
                 <p class="red2">All sizes are out of stock!</p>
                 <button class="red-button" (click)="addToFavoritesByNotifyButton($event, product)">Notify Me</button>

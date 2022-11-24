@@ -10,8 +10,8 @@
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr); /* 4 equal sized columns template*/
+    grid-template-rows: repeat(3, 1fr); /*3 equal sized rows template*/
     gap: 4rem;
     max-width: 60rem;
 }
@@ -34,8 +34,8 @@ p:hover {
 }
 
 .text1 {
-    grid-row: 1 / 2;
-    grid-column: 1 / 4;
+    grid-row: 1 / 2; /* allocation in grid template of rows*/
+    grid-column: 1 / 4; /* allocation in grid template of columns*/
     background-color: #f5a7a7;
     box-shadow: #5f3232 12px 12px 0 2px;
 }
@@ -45,8 +45,8 @@ p:hover {
 }
 
 .text2 {
-    grid-row: 2 / 3;
-    grid-column: 2 / 5;
+    grid-row: 2 / 3; /* allocation in grid template of rows*/
+    grid-column: 2 / 5; /* allocation in grid template of columns*/
     background-color: #fad7b0;
     box-shadow: #684c2b 12px 12px 0 2px;
 }
@@ -56,8 +56,8 @@ p:hover {
 }
 
 .text3 {
-    grid-row: 3 / 4;
-    grid-column: 1 / 4;
+    grid-row: 3 / 4; /* allocation in grid template of rows*/
+    grid-column: 1 / 4; /* allocation in grid template of columns*/
     background-color: #b0d3fa;
     box-shadow: #2b425c 12px 12px 0 2px;
 }
@@ -66,9 +66,9 @@ p:hover {
     box-shadow: #2b425cb7 18px 18px 5px 2px;
 }
 
-@media only screen and (max-width: 750px) {
+@media only screen and (max-width: 750px) { /*responsive design style declarations*/
     
-    .grid {
+    .grid { /*grid template removed and flex structure is used*/
         display: flex;
         flex-direction: column;
     }

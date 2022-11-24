@@ -1,8 +1,10 @@
 <div class="shop">
+    <!--app-categories functions are imported-->
     <app-categories
     (genderFilterButtonSelectionChanged)="onFilterButtonGenderChanged($event)"
     (categoryFilterButtonSelectionChanged)="onFilterButtonCategoryChanged($event)"
     (searchTextChanged)="onSearchTextChanged($event)"></app-categories>
+    <!--app-cart functions are imported or values and functions of parent component are exported-->
     <app-card
     [genderSelectionResult]="getGenderSelection()"
     [categorySelectionResult]="getCategorySelection()"

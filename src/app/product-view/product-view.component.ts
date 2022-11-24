@@ -40,10 +40,11 @@ export class ProductViewComponent implements OnInit  {
               private service3: FavoriteItemsService) {}
 
   ngOnInit(): void {
-    this.productId = this.activatedRoute.snapshot.paramMap.get('id');
-    this.product = this.service.products.find((element: any) => element.id == this.productId);
-    this.productDetails = this.product.details.split(".");
-    this.productCare = this.product.care.split(".");
+    this.productId = this.activatedRoute.snapshot.paramMap.get('id');//productId is gathered by ID with a snapshot in page 
+    this.product = this.service.products.find((element: any) => element.id == this.productId);//productId is found by a method
+    this.productDetails = this.product.details.split("."); //tech details string with lots of sentences are returned into an array of items splitted by a dot.
+    this.productCare = this.product.care.split("."); //care details string with lots of sentences are returned into an array of items splitted by a dot.
+    //stock levels are derived from product service data imported
     this.stockS = this.product.stockA.S;
     this.stockM = this.product.stockA.M;
     this.stockL = this.product.stockA.L;
@@ -58,6 +59,7 @@ export class ProductViewComponent implements OnInit  {
     this.stock8 = this.product.stockB.num8;
     this.stock9 = this.product.stockB.num9;
     this.stock10 = this.product.stockB.num10;
+    //total stock level is decided by summing all stock levels in sizes
     this.stockTotal = this.stockS + 
                       this.stockM + 
                       this.stockL + 
@@ -74,43 +76,44 @@ export class ProductViewComponent implements OnInit  {
                       this.stock10;
   }
 
-  selectedSizeButtonValue: string = "";
+  selectedSizeButtonValue: string = ""; //initial empty string value for selected size
 
-  addToFavorites(item: any) {
-    Swal.fire({ //a special embedded function to have a customized alert box with better UI and styling
+  addToFavorites(item: any) { // a function to add an item into favorite items
+    Swal.fire({ //an async function provided by an imported file
       position: 'top-end',
       icon: 'success',
       title: item.name + ' was added to your favorites',
       showConfirmButton: false,
       timer: 1500
    })
-    this.service.addItemToFavs(item);
-    this.service3.addToFavorites(item);
+    this.service.addItemToFavs(item); //a function declared in products service data is called back
+    this.service3.addToFavorites(item);//a function declared in favorite Items service data is called back
   }
 
-  removeFromFavorites(item: any) {
-    this.service3.removeFromFavorites(item);
-    this.service.removeItemFromFavs(item);
+  removeFromFavorites(item: any) {// a function to remove an item into favorite items
+    this.service3.removeFromFavorites(item);//a function declared in favorite items service data is called back
+    this.service.removeItemFromFavs(item);//a function declared in products service data is called back
   }
 
-  addToFavoritesByNotifyButton(e: any, item: any) {
-    Swal.fire({ //a special embedded function to have a customized alert box with better UI and styling
+  addToFavoritesByNotifyButton(e: any, item: any) {// a function to add an item with all sizes are out of stock into favorite items when notifyMe button is clicked
+    Swal.fire({ //an async function provided by an imported file
       position: 'top-end',
       icon: 'success',
       title: `We will inform you  when ${item.name} arrived in our store`,
       showConfirmButton: false,
       timer: 1500
    })
-    this.service.addItemToFavs(item);
-    this.service3.addToFavorites(item);
-    this.onChangeButtonColor (e);
+    this.service.addItemToFavs(item);//a function declared in products service data is called back
+    this.service3.addToFavorites(item);//a function declared in favorite items service data is called back
+    this.onChangeButtonColor(e); //button color is changed for a while for a better UI and UX
   }
 
-  handleAddToCart(e: any, value: string) {
-    if(value === '') return;
-    this.service.removeProduct(value, this.product);
-    const { v4: uuidv4 } = require('uuid');
-    let item: ChosenProduct = {
+  handleAddToCart(e: any, value: string) {// a function to add an item with chosen size into shopping cart
+    if(value === '') return; //if size is not chosen, returns..
+    this.service.removeProduct(value, this.product);//a function declared in products service data is called back
+    
+    const { v4: uuidv4 } = require('uuid');//a uniq id is assigned as it will be used while removing without a problem as some products will have the same name, id, size etc.
+    let item: ChosenProduct = { //a new object is created based on ChosenProduct interface to assign size, quantity
       uniqId: uuidv4(),
       id : this.product.id,
       name : this.product.name,
@@ -137,19 +140,19 @@ export class ProductViewComponent implements OnInit  {
         num10: this.product.stockB.num10,
       },
     };
-    this.service2.addChosenItemToCart(item)
-    this.stockTotal--;
-    Swal.fire({ //a special embedded function to have a customized alert box with better UI and styling
+    this.service2.addChosenItemToCart(item)//a function declared in chosenItems service data is called back
+    this.stockTotal--; //stockTotal is diminished here as well
+    Swal.fire({ //an async function provided by an imported file
       position: 'top-end',
       icon: 'success',
       title: this.product.name + ' was added to your shopping cart',
       showConfirmButton: false,
       timer: 1500
    })
-    this.onChangeButtonColor(e);
+    this.onChangeButtonColor(e);//button color is changed for a while for a better UI and UX
   }
 
-  onChangeButtonColor (e: any) {
+  onChangeButtonColor (e: any) { //a function to change button background color for a while when clicked 
     e.target.classList.add('active');
      setTimeout(() => {
        e.target.classList.remove("active");

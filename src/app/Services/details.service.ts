@@ -1,4 +1,4 @@
-export class DetailsService {
+export class DetailsService {//a service data to be used in components for product details
     details = [
         {   id: 1,
             description: `A CASUAL TEE FOR EVERYDAY COMFORT.

@@ -2,11 +2,12 @@
     <div class="displayTableCell">
       <div class="authBlock">
         <h3>Thank You for Registering</h3>
+        <!--if there is no userData, the info is not displayed-->
         <div class="formGroup" *ngIf="authService.userData as user">
           <p class="text-center">We have sent a confirmation email to <strong>{{user.email}}</strong>.</p>
           <p class="text-center">Please check your email and click on the link to verify your email address.</p>
         </div>
-        <!-- Calling SendVerificationMail() method using authService Api -->
+        <!--calling SendVerificationMail function from authService data-->
         <div class="formGroup">
           <button type="button" class="btn btnPrimary" (click)="authService.SendVerificationMail()">
             Resend Verification Email

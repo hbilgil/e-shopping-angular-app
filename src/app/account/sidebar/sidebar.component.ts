@@ -14,8 +14,8 @@ export class SidebarComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  logOut() {
-    Swal.fire({
+  logOut() {// a function to end session as a logged in user
+    Swal.fire({ //an async function provided by an imported file
       title: 'Are you sure?',
       text: "You will be logged out!",
       icon: 'warning',
@@ -23,16 +23,15 @@ export class SidebarComponent implements OnInit {
       confirmButtonColor: '#3085d6',
       cancelButtonColor: '#d33',
       confirmButtonText: 'Yes, please!'
-    }).then((result) => {
+    }).then((result) => { //if approved, the result is triggered
       if (result.isConfirmed) {
         Swal.fire(
           'Logged out!',
           'Thank you for visiting us',
           'success'
         )
-        this.authService.SignOut();
+        this.authService.SignOut(); //a function declared in authentication service data is called back
       }
-  })
+    })
   }
-
 }

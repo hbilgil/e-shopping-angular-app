@@ -1,13 +1,13 @@
-export class ChosenItemsService {
+export class ChosenItemsService {//a service data to be used in components for chosen Items
     items : any = [];
     totalQuantity: any = [];
     totalPrice: any = 0;
 
-    addChosenItemToCart(item: any) {
+    addChosenItemToCart(item: any) {//a function to be called back by components for adding chosenItem into service data
         let isInCart = false;
         if (this.items.length > 0)
         this.items.forEach((x: any) => {
-            if (x.name === item.name && x.size === item.size) {
+            if (x.name === item.name && x.size === item.size) { //if there is another chosenItem with the same size, the quantity will be increase without pushing a new item into chosen items array
                 x.quantity += 1;
                 isInCart = true;
                 switch(x.size) {
@@ -56,19 +56,19 @@ export class ChosenItemsService {
             }
         });
         if (!isInCart) {
-        this.items.push(item);
+        this.items.push(item);//if the chosen Item is not included in array before, it is pushed by a method
         }
-        this.totalQuantity.push("x");
-        this.totalPrice += item.price;
+        this.totalQuantity.push("x"); //another array for using to show total number of items with equal or different sizes is used
+        this.totalPrice += item.price; //total price is dynamically increased by item price
     }
 
-    removeAllItems(chosenItems: any) {
+    removeAllItems(chosenItems: any) {//a function to remove all items when ordered
         this.totalPrice = 0;
         this.items.splice(0, chosenItems.length);
         this.totalQuantity.splice(0, this.totalQuantity.length);
     }
 
-    removeItem(item: any) {
+    removeItem(item: any) {//a function to remove the item from chosen items array
         this.items.map((a: any, index: any) => {
             if(item.uniqId == a.uniqId) {
                 this.items.splice(index, 1);
@@ -78,13 +78,13 @@ export class ChosenItemsService {
         this.totalPrice -= (item.quantity)*(item.price);
     }
 
-    decreaseQuantity(item: any) {
+    decreaseQuantity(item: any) {//a function to decrease quantity of a chosenItem without going back to shop
         item.quantity -= 1;
         this.totalQuantity.pop();
         this.totalPrice -= item.price;
     }
 
-    increaseQuantity(item: any) {
+    increaseQuantity(item: any) {//a function to increase quantity of a chosenItem without going back to shop
         item.quantity += 1;
         this.totalQuantity.push('x');
         this.totalPrice += item.price;    

@@ -1,16 +1,17 @@
 <div class="cards">
-    <div class="empty-cart" *ngIf="favoriteItems.length == 0; else favoriteProducts">
+    <div class="empty-cart" *ngIf="favoriteItems.length == 0; else favoriteProducts"><!--if there is no item, it is not displayed-->
         <p>Your have not liked any products, yet</p>
         <p>Let's create a wishlist for you with our collection!</p>
         <a [routerLink]="['/Shop']">Shop</a>
     </div>
-    <ng-template #favoriteProducts>
-    <div class="card" *ngFor="let favorite of favoriteItems">
+    <ng-template #favoriteProducts><!--template is for using when ngIf expression is falsified-->
+    <div class="card" *ngFor="let favorite of favoriteItems"><!--cards data will be provided by favorite Items data-->
         <a routerLink="/Shop/Product/{{favorite.id}}">
             <div class="image-container">
                 <img [src]="favorite.src || favorite.image1"
                     (mouseover)="favorite.src = favorite.image2"
                     (mouseout)="favorite.src = favorite.image1" alt={{favorite.name}}/>
+                <!--image source is dynamically changed by hovering mouse-->
             </div>
             <p class="name">{{favorite.name}}</p>
         </a>

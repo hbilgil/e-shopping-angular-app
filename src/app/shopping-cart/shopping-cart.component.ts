@@ -21,24 +21,24 @@ export class ShoppingCartComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.chosenItems = this.service2.items;
-    this.totalQuantity = this.service2.totalQuantity;
-    this.orderedItems = this.service3.orderedItems;
+    this.chosenItems = this.service2.items;//chosen items are imported from chosenItems service data
+    this.totalQuantity = this.service2.totalQuantity;//total quantity is imported from chosenItems service data
+    this.orderedItems = this.service3.orderedItems;//ordered items are imported from orderedItems service data
   }
 
-  addItemsToOrderedItems() {
-    Swal.fire(
+  addItemsToOrderedItems() {//a function to add chosen Items to Ordered Items in account
+    Swal.fire(//an async function provided by an imported file
         'Good job!',
         'Your items were added to your account!',
         'success'
     )
-    this.service3.addOrderedItemToAccount(this.chosenItems)
-    this.service2.removeAllItems(this.chosenItems)
+    this.service3.addOrderedItemToAccount(this.chosenItems)//a function to be called back from orderedItems service data
+    this.service2.removeAllItems(this.chosenItems)//a function to be called back from chosenItems service data
     this.totalPrice = 0;
   }
 
-  removeItem(item: any) {
-    Swal.fire({
+  removeItem(item: any) {//a function to remove an item from shopping cart
+    Swal.fire({//an async function provided by an imported file
         title: 'Are you sure?',
         text: "You won't be able to revert this!",
         icon: 'warning',
@@ -46,23 +46,23 @@ export class ShoppingCartComponent implements OnInit {
         confirmButtonColor: '#3085d6',
         cancelButtonColor: '#d33',
         confirmButtonText: 'Yes, delete it!'
-      }).then((result) => {
+      }).then((result) => {//if approved
         if (result.isConfirmed) {
           Swal.fire(
             'Deleted!',
             item.name + ' was removed',
             'success'
           )
-        this.service2.removeItem(item);
-        this.service.addItemQuantityToStock(item);
+        this.service2.removeItem(item);//a function to be called back from chosenItems service data
+        this.service.addItemQuantityToStock(item);//a function to be called back from products service data
         this.totalPrice -= (item.quantity)*(item.price);
         }
     })
   }
 
-  decreaseQuantity(item: any, itemSize: any) {
-    this.service2.decreaseQuantity(item);
-    this.service.addItemSizeToStock(item);
+  decreaseQuantity(item: any, itemSize: any) {//a function to decrease quantity of a chosen Item if there are more than 1 quantity
+    this.service2.decreaseQuantity(item);//a function to be called back from chosenItems service data
+    this.service.addItemSizeToStock(item);//a function to be called back from products service data
       switch(itemSize) {
           case 'S':
               item.stockA.S++;
@@ -109,9 +109,9 @@ export class ShoppingCartComponent implements OnInit {
     this.totalPrice -= item.price;
   }
 
-  increaseQuantity(item: any, itemSize: any) {
-    this.service2.increaseQuantity(item);
-    this.service.removeItemSizeFromStock(item);
+  increaseQuantity(item: any, itemSize: any) {//a function to increase quantity of a chosen Item
+    this.service2.increaseQuantity(item);//a function to be called back from chosenItems service data
+    this.service.removeItemSizeFromStock(item);//a function to be called back from products service data
     switch(itemSize) {
       case 'S':
           item.stockA.S--;

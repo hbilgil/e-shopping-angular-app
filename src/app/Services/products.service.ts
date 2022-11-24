@@ -1,8 +1,8 @@
-import { DetailsService } from "./details.service";
-import { Injectable } from "@angular/core";
+import { DetailsService } from "./details.service"; //details are imported from another service data
+import { Injectable } from "@angular/core"; //details data are injected
 
 @Injectable()
-export class ProductsService {
+export class ProductsService {//a service data to be used in components for ALL products defined here
 
     constructor(private service: DetailsService){}
 
@@ -13,19 +13,19 @@ export class ProductsService {
     }
     product: any;
 
-    addItemToFavs(item: any) {
+    addItemToFavs(item: any) {//a function to be called back to change fav boolean value as true for a product liked
         let productId = item.id
         this.product = this.products.find((element: any) => element.id == productId);
         this.product.fav = true;
     };
 
-    removeItemFromFavs(item: any) {
+    removeItemFromFavs(item: any) {//a function to be called back to change fav boolean value as false for a product disliked
         let productId = item.id
         this.product = this.products.find((element: any) => element.id == productId);
         this.product.fav = false;
     };
 
-    removeProduct(value: any, product: any) {
+    removeProduct(value: any, product: any) {//a function to be called back to remove product and return back to the stock 
         switch(value) {
             case 'S':
                 product.stockA.S--;
@@ -71,7 +71,7 @@ export class ProductsService {
         }
     }
 
-    addItemQuantityToStock(item: any) {
+    addItemQuantityToStock(item: any) {//a function to be called back to return back an item with multiple quantities to the stock 
         let productId = item.id
         this.product = this.products.find((element: any) => element.id == productId);
             switch(item.size) {
@@ -119,7 +119,7 @@ export class ProductsService {
             }
     }
 
-    addItemSizeToStock(item: any) {
+    addItemSizeToStock(item: any) {//a function to be called back to return back an item with 1 quantity to the stock 
         let productId = item.id
         this.product = this.products.find((element: any) => element.id == productId);
             switch(item.size) {
@@ -167,7 +167,7 @@ export class ProductsService {
             }
     }
 
-    removeItemSizeFromStock(item: any) {
+    removeItemSizeFromStock(item: any) {// a function to be called back to remove an item from stock when chosen or ordered
         let productId = item.id
         this.product = this.products.find((element: any) => element.id == productId);
             switch(item.size) {

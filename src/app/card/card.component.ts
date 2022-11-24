@@ -17,12 +17,12 @@ export class CardComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.products = this.service.products;
-    this.productId = this.activatedRoute.snapshot.paramMap.get('id');
-    this.product = this.service.products.find((element: any) => element.id == this.productId);
+    this.products = this.service.products; //products are provided by a service data imported
+    this.productId = this.activatedRoute.snapshot.paramMap.get('id'); //productId is gathered by ID with a snapshot in page 
+    this.product = this.service.products.find((element: any) => element.id == this.productId); //productId is found by a method
   }
 
-  @Input() genderSelectionResult: string = '';
-  @Input() categorySelectionResult: string = '';
-  @Input() searchValueResult: string = '';
+  @Input() genderSelectionResult: string = ''; //data is imported by input directive from parent component(shop)
+  @Input() categorySelectionResult: string = ''; //data is imported by input directive from parent component(shop)
+  @Input() searchValueResult: string = ''; //data is imported by input directive from parent component(shop)
 }

@@ -6,13 +6,13 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class AuthGuard implements CanActivate {
+export class AuthGuard implements CanActivate { //authGuard class to be used routing user into signing if not logged in
   constructor(
     public authService: AuthService,
     public router: Router
   ){ }
 
-  canActivate(
+  canActivate(//a function to be called back to check whether user logged in or not and saving routes which user can not see without logging in
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
     if(this.authService.isLoggedIn !== true) {

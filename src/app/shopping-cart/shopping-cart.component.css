@@ -222,7 +222,7 @@ lord-icon {
     font-weight: 800;
 }
 
-@media only screen and (max-width: 850px) {
+@media only screen and (max-width: 850px) {/*responsive design styling*/
     .shopping-cart {
         padding: 1rem;
     }

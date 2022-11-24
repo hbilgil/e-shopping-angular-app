@@ -3,6 +3,7 @@
     <div class="cards">
         <div class="card">
           <a routerLink="/Shop/Product/3">
+             <!--image sourced is dynamically changed by hover effect-->
             <img [src]="products[2].src || products[2].image1"
             (mouseover)="products[2].src = products[2].image2"
             (mouseout)="products[2].src = products[2].image1" alt="{{products[2].name}}" />
@@ -11,6 +12,7 @@
         </div>
         <div class="card">
             <a routerLink="/Shop/Product/15">
+               <!--image sourced is dynamically changed by hover effect-->
               <img [src]="products[14].src || products[14].image1"
               (mouseover)="products[14].src = products[14].image2"
               (mouseout)="products[14].src = products[14].image1" alt="{{products[14].name}}"/>
@@ -19,6 +21,7 @@
         </div>
         <div class="card">
             <a routerLink="/Shop/Product/29">
+               <!--image sourced is dynamically changed by hover effect-->
               <img [src]="products[28].src || products[28].image1"
               (mouseover)="products[28].src = products[28].image2"
               (mouseout)="products[28].src = products[28].image1" alt="{{products[28].name}}" />
@@ -27,6 +30,7 @@
         </div>
         <div class="card">
             <a routerLink="/Shop/Product/38">
+               <!--image sourced is dynamically changed by hover effect-->
               <img [src]="products[37].src || products[37].image1"
               (mouseover)="products[37].src = products[37].image2"
               (mouseout)="products[37].src = products[37].image1" alt="{{products[37].name}}" />

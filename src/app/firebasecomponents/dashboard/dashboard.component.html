@@ -1,9 +1,12 @@
 <div class="info-container">
     <div class="info-card">
         <h1 class="h2">YOUR PROFILE</h1>
+        <!--if there is no userData, the info page is not displayed-->
         <div class="user-div" *ngIf="authService.userData as user">
+            <!--if there is no userImage provided, image is not displayed and a dummy image is displayed instead-->
             <img src="{{(user.photoURL) ? user.photoURL : 'assets/dummy-user.png'}}" alt="{{user.displayName}}">
             <div class="media-body">
+                <!--if there is no userName provided, p is not displayed and a default "user" string is displayed instead-->
                   <p>User Name: <strong>{{(user.displayName) ? user.displayName : 'User'}}</strong></p>
                   <p>User ID: <strong>{{user.uid}}</strong></p>
                   <p>Email: <strong>{{user.email}}</strong></p>

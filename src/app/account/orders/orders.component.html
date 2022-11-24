@@ -1,20 +1,23 @@
 <div class="order-cart">
+    <!--if there is no item, it is not displayed-->
     <div class="empty-cart" *ngIf="orderedProducts.length == 0; else orderedItems">
         <p>Your have not ordered any products, yet</p>
         <p>Let's have a look at our collection!</p>
         <a [routerLink]="['/Shop']">Shop</a>
     </div>
-    <ng-template #orderedItems>
+    <ng-template #orderedItems><!--template is for using when ngIf expression is falsified-->
     <ul>
+        <!--if there is just 1 item, it is not displayed-->
         <h1 *ngIf="orderedProducts.length>1; else onlyOne">
             You ordered: ( <span> {{ totalQuantity.length }} </span> ) items
         </h1>
-        <ng-template #onlyOne>
+        <ng-template #onlyOne><!--template is for using when ngIf expression is falsified-->
             <h1>
                 You ordered: ( <span> {{ totalQuantity.length }} </span> ) item
             </h1>
         </ng-template>
         <div class="card-container">
+            <!--orders data will be provided by ordered Items data-->
             <li *ngFor="let item of orderedProducts">
                 <a routerLink="/Shop/Product/{{item.id}}">
                     <img src="{{item.image}}" alt="{{item.name}}" />
@@ -43,10 +46,12 @@
                 <div>€ {{(totalPrice).toFixed(2)}}</div>
             </div>
             <div class="shipping">
+                <!--if there are items cost less than EU 100, it is not displayed-->
                 <p>Shipping <span *ngIf="totalPrice<=100"> {{'(free shipping on orders over €100)'}} </span></p>
                 <div *ngIf="totalPrice>100; else shipping">
                     FREE
                 </div>
+                <!--template is for using when ngIf expression is falsified-->
                 <ng-template #shipping>
                     <div>
                         € {{shippingPrice}}
@@ -55,9 +60,11 @@
             </div>
             <div class="total">
                 <p>Total (VAT included)</p>
+                <!--if there are items cost more than EU 100, it is not displayed-->
                 <div *ngIf="totalPrice>100; else shippingAdded">
                     € {{ totalPrice.toFixed(2) }}
                 </div>
+                <!--template is for using when ngIf expression is falsified-->
                 <ng-template #shippingAdded>
                     <div>€ {{ (totalPrice + shippingPrice).toFixed(2) }}</div>
                 </ng-template>

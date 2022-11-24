@@ -37,7 +37,7 @@ img {
     width: 100%;
     transform: scale(1.05);
     transition: transform 1000ms;
-    z-index: -1;
+    z-index: -1; /*image is sent back inside the div*/
 }
 
 div:hover > img {
@@ -70,7 +70,7 @@ a[href="https://vecteezy.com"]:active {
     text-decoration: none;
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 800px) {/*responsive design styling*/
     .copy-right {
         padding-top: 0;
     }

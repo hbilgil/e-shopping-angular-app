@@ -19,6 +19,7 @@ import { VerifyEmailComponent } from './firebasecomponents/verify-email/verify-e
 import { AuthGuard } from './shared/guard/auth.guard';
 import { WelcomeComponent } from './account/welcome/welcome.component';
 
+//Routes to be used in website
 const routes: Routes = [
   
   { path: '', redirectTo: '/sign-in', pathMatch: 'full' },
@@ -26,15 +27,14 @@ const routes: Routes = [
   { path: 'register-user', component: SignUpComponent },
   { path: 'forgot-password', component: ForgotPasswordComponent },
   { path: 'verify-email-address', component: VerifyEmailComponent },
-
-  //{path: "", component: HomeComponent},
-  {path: "Home", component: HomeComponent},
-  {path: "Shop", component: ShopComponent, canActivate: [AuthGuard]},
-  {path: "About", component: AboutComponent},
-  {path: "ShoppingCart", component: ShoppingCartComponent, canActivate: [AuthGuard]},
-  {path: "ErrorPage", component: ErrorPageComponent},
-  {path: "Shop/Product/:id", component: ProductViewComponent, canActivate: [AuthGuard]},
-  {path: "Account", component: AccountComponent, canActivate: [AuthGuard],
+  { path: "Home", component: HomeComponent },
+  { path: "Shop", component: ShopComponent, canActivate: [AuthGuard] },
+  { path: "About", component: AboutComponent },
+  { path: "ShoppingCart", component: ShoppingCartComponent, canActivate: [AuthGuard] },
+  { path: "ErrorPage", component: ErrorPageComponent },
+  { path: "Shop/Product/:id", component: ProductViewComponent, canActivate: [AuthGuard] },
+  { path: "Account", component: AccountComponent, canActivate: [AuthGuard],
+  //child routes declared for Account route
    children: [
     {
       path: 'Welcome', component: WelcomeComponent,
@@ -49,7 +49,7 @@ const routes: Routes = [
       path: 'Info', component: DashboardComponent,
     },
   ]},
-  {path: "**", component: ErrorNotFoundComponent},
+  { path: "**", component: ErrorNotFoundComponent }, //wildcard route for errorNotFound component
 ];
 
 @NgModule({

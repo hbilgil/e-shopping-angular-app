@@ -1,5 +1,6 @@
 <div class="top">
   <div class="genders">
+    <!--ngModel will be used to get gender value in two way data binding-->
     <input name="gender" type="radio" value="Men" label="Men" 
     [(ngModel)]="selectedGenderButtonValue"
     (change)="onButtonSelectionGenderChanged()"/>
@@ -9,6 +10,7 @@
   </div>
   <div class="categories">
     <div class="category-buttons">
+      <!--ngModel will be used to get category value in two way data binding-->
       <input name="category" type="radio" value="T-shirts" label="T-shirts" 
       [(ngModel)]="selectedCategoryButtonValue"
       (change)="onButtonSelectionCategoryChanged()"/>
@@ -19,6 +21,7 @@
       [(ngModel)]="selectedCategoryButtonValue"
       (change)="onButtonSelectionCategoryChanged()"/>
     </div>
+    <!--ngModel will be used to get searched value in two way data binding-->
     <input
       type="text"
       class="search"

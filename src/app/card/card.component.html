@@ -1,10 +1,15 @@
 <div class="cards">
+    <!--cards data will be provided by products data-->
     <ng-container *ngFor="let product of products">
+        <!--if there is no item with selected gender, it is not displayed-->
         <div class="product-container" *ngIf="genderSelectionResult === product.gender">
+            <!--if there is no item with selected category, it is not displayed-->
             <div *ngIf="categorySelectionResult === product.category">
+                <!--if there is no item with searched name, it is not displayed-->
                 <div *ngIf="searchValueResult === '' || product.name.toLowerCase().includes(searchValueResult)">
                     <a routerLink="/Shop/Product/{{product.id}}">
                         <div class="image-container">
+                            <!--image sourced is dynamically changed by hover effect-->
                             <img [src]="product.src || product.image1"
                             (mouseover)="product.src = product.image2"
                             (mouseout)="product.src = product.image1" alt={{product.name}}/>
@@ -12,6 +17,7 @@
                         <p class="price">€ {{product.price}}</p>
                         <p class="name">{{product.name}}</p>
                     </a>
+                    <!--if the description has more than 15 words, it is shortened by imported pipe-->
                     <p class="grey" align="justify" [innerHTML]="product.description | shortenText:15">
                         {{product.description}}
                     </p>

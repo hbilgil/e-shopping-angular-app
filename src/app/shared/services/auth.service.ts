@@ -12,16 +12,16 @@ import Swal from 'sweetalert2/dist/sweetalert2.js';
 @Injectable({
   providedIn: 'root',
 })
-export class AuthService {
-  userData: any; // Save logged in user data
+export class AuthService {//authservice to be used in authentication of users during login and signup sessions
+  userData: any; //Save logged in user data
   constructor(
-    public afs: AngularFirestore, // Inject Firestore service
+    public afs: AngularFirestore, // Inject FireStore service
     public afAuth: AngularFireAuth, // Inject Firebase auth service
     public router: Router,
     public ngZone: NgZone // NgZone service to remove outside scope warning
   ) {
-    /* Saving user data in localstorage when 
-    logged in and setting up null when logged out */
+    /* Saving user data in localStorage when 
+    logged in and setting up null when logged out*/
     this.afAuth.authState.subscribe((user) => {
       if (user) {
         this.userData = user;
@@ -46,7 +46,7 @@ export class AuthService {
         });
       })
       .catch((error) => {
-        Swal.fire({
+        Swal.fire({//a special message with an imported function
           icon: 'error',
           title: 'Oops...',
           text: 'Something went wrong!',
@@ -59,13 +59,13 @@ export class AuthService {
     return this.afAuth
       .createUserWithEmailAndPassword(email, password)
       .then((result) => {
-        /* Call the SendVerificaitonMail() function when new user sign 
+        /* Call the SendVerificationMail function when new user sign 
         up and returns promise */
         this.SendVerificationMail();
         this.SetUserData(result.user);
       })
       .catch((error) => {
-        Swal.fire({
+        Swal.fire({//a special message with an imported function
           icon: 'error',
           title: 'Oops...',
           text: 'Something went wrong!',
@@ -86,14 +86,14 @@ export class AuthService {
     return this.afAuth
       .sendPasswordResetEmail(passwordResetEmail)
       .then(() => {
-        Swal.fire(
+        Swal.fire(//a special message with an imported function
           'Good job!' , 
           'Password reset email sent, check your inbox.', 
           'success'
         )
       })
       .catch((error) => {
-        Swal.fire({
+        Swal.fire({//a special message with an imported function
           icon: 'error',
           title: 'Oops...',
           text: 'Something went wrong!',
@@ -121,7 +121,7 @@ export class AuthService {
         this.SetUserData(result.user);
       })
       .catch((error) => {
-        Swal.fire({
+        Swal.fire({//a special message with an imported function
           icon: 'error',
           title: 'Oops...',
           text: 'Something went wrong!',
@@ -131,7 +131,7 @@ export class AuthService {
   }
   /* Setting up user data when sign in with username/password, 
   sign up with username/password and sign in with social auth  
-  provider in Firestore database using AngularFirestore + AngularFirestoreDocument service */
+  provider in FireStore database using AngularFireStore + AngularFireStoreDocument service */
   async SetUserData(user: any) {
     const userRef: AngularFirestoreDocument<any> = this.afs.doc(
       `users/${user.uid}`

@@ -1,4 +1,4 @@
-export interface ChosenProduct {
+export interface ChosenProduct { //an object model to be used in chosenItems when size is decided and sent to shopping-cart
     uniqId: string;
     id: number;
     name: string;

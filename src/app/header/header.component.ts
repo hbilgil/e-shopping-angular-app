@@ -12,13 +12,11 @@ export class HeaderComponent implements OnInit {
   chosenItems: any;
   chosenItemsTotalQuantity: any;
   
-
   constructor(private service: ChosenItemsService) { 
   }
   
-
   ngOnInit(): void {
-    this.chosenItemsTotalQuantity = this.service.totalQuantity;
-    this.chosenItems = this.service.items;
+    this.chosenItemsTotalQuantity = this.service.totalQuantity; //totalQuantity are provided by a service data imported
+    this.chosenItems = this.service.items; //chosenItems are provided by a service data imported
   }
 }

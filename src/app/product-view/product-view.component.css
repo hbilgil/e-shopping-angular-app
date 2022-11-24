@@ -191,9 +191,9 @@ p-accordionTab li > img {
     margin-right: 10px;
 }
 
-@media only screen and (max-width: 933px) {
+@media only screen and (max-width: 933px) {/*responsive design styling*/
     .main {
-        flex-direction: column-reverse;
+        flex-direction: column-reverse; /*column reverse styling*/
         gap: 0;
         padding: 1rem 2rem;
         padding-bottom: 3rem;

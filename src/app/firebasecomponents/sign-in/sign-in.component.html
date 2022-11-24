@@ -8,14 +8,14 @@
         <div class="formGroup">
           <input type="password" class="formControl" placeholder="Password" #userPassword required>
         </div>
-        <!-- Calling SignIn Api from AuthService -->
+        <!--calling SignIn function from authService data-->
         <div class="formGroup">
           <input type="button" class="btn btnPrimary" value="Log in" (click)="authService.SignIn(userName.value, userPassword.value)">
         </div>
         <div class="formGroup">
           <span class="or"><span class="orInner">Or</span></span>
         </div>
-        <!-- Calling GoogleAuth Api from AuthService -->
+        <!-- Calling GoogleAuth function from authService data-->
         <div class="formGroup">
           <button type="button" class="btn googleBtn" (click)="authService.GoogleAuth()">
             Log in with Google

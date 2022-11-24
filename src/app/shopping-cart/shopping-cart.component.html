@@ -2,21 +2,26 @@
     <a [routerLink]="['/Shop']" class="left-arrow">
         {{"< Go to Shop"}}
     </a>
+    <!--if there is no chosenItem, it will be shown-->
     <div class="empty-cart" *ngIf="chosenItems.length == 0; else proceedCheckOut">
         <p>Your cart is empty</p>
         <p>Fill it up with our collection!</p>
         <a [routerLink]="['/Shop']">Shop</a>
     </div>
+    <!--ng-template when ngIf expression is falsified-->
     <ng-template #proceedCheckOut>
     <ul>
+        <!--if there is more than 1 item in shopping cart, it will be shown-->
         <h1 *ngIf="totalQuantity.length>1; else onlyOne">
             Your shopping cart: ( <span> {{ totalQuantity.length }} </span> ) items
         </h1>
+        <!--ng-template when ngIf expression is falsified-->
         <ng-template #onlyOne>
             <h1>
                 Your shopping cart: ( <span> {{ totalQuantity.length }} </span> ) item
             </h1>
         </ng-template>
+        <!--chosen items data will be provided by chosenItems data-->
         <li *ngFor="let item of chosenItems">
             <a routerLink="/Shop/Product/{{item.id}}">
                 <img src="{{item.image}}" alt="{{item.name}}" />
@@ -34,10 +39,12 @@
                 </lord-icon>
             </div>
             <div class="add-and-remove">
+                <!--button is disabled when there is just 1 quantity of chosen item-->
                 <button [disabled]="item.quantity == 1" (click)="decreaseQuantity(item, item.size)">
                   -
                 </button>
                 <p class="bold">{{item.quantity}}</p>
+                <!--ngSwitch is used to disable button and increase quantity when there is an item in stocks for a chosen size-->
                 <div [ngSwitch]="item.size">
                     <button *ngSwitchCase="'S'" [disabled]="item.stockA.S == 0" (click)="increaseQuantity(item, item.size)">
                         +
@@ -91,10 +98,13 @@
                 <div>{{ totalPrice.toFixed(2) }}</div>
             </div>
             <div class="shipping">
+                <!--if total prices is less than 100, it will be shown-->
                 <p>Shipping <span *ngIf="totalPrice<=100"> {{'(free shipping on orders over €100)'}} </span></p>
+                <!--if total prices is more than 100, it will be shown-->
                 <div *ngIf="totalPrice>100; else shipping">
                     FREE
                 </div>
+                <!--ng-template when the total price is less than 100-->
                 <ng-template #shipping>
                     <div>
                         {{shippingPrice}}
@@ -103,9 +113,11 @@
             </div>
             <div class="total">
                 <p>Total (VAT included)</p>
+                <!--if total prices is more than 100, it will be shown-->
                 <div *ngIf="totalPrice>100; else shippingAdded">
                     € {{ totalPrice.toFixed(2) }}
                 </div>
+                <!--ng-template when the total price is less than 100-->
                 <ng-template #shippingAdded>
                     <div>€ {{ (totalPrice + shippingPrice).toFixed(2) }}</div>
                 </ng-template>

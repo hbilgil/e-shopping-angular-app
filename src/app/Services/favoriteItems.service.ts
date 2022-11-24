@@ -1,11 +1,11 @@
-export class FavoriteItemsService {
+export class FavoriteItemsService {//a service data to be used in components for favorite items liked
     items : any = [];
 
-    addToFavorites(item: any) {
+    addToFavorites(item: any) {//a function to be called back to add an item into favorites 
         let isInCart = false;
         if (this.items.length > 0)
         this.items.forEach((x: any) => {
-            if (x.name === item.name) {
+            if (x.name === item.name) { //if the selected item is liked before, the function returns
                 isInCart = true;
             }
         });
@@ -14,7 +14,7 @@ export class FavoriteItemsService {
         }
     }
 
-    removeFromFavorites(item: any) {
+    removeFromFavorites(item: any) {//a function to be called back to remove an item into favorites 
         this.items.map((a: any, index: any) => {
             if(item.id == a.id) {
                 this.items.splice(index, 1);

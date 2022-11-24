@@ -1,10 +1,10 @@
 .cards {
-    justify-content: center;
-    padding: 2rem;
     display: flex;
-    flex-wrap: wrap;
+    justify-content: center;
     align-items: center;
+    flex-wrap: wrap; /*cards will be allocated into another row when the total width is not enough*/
     gap: 2rem;
+    padding: 2rem;
     margin-top: 10px;
     font-family: 'Dosis', sans-serif;
 }
@@ -31,7 +31,7 @@
     width: 23rem;
 }
 
-.empty-cart a {
+.empty-cart a { /* it is styled as a button*/
     margin-top: 1rem;
     text-decoration: none;
     color: white;
@@ -114,7 +114,7 @@ p {
     display: inline;
 }
 
-@media only screen and (max-width: 750px) {
+@media only screen and (max-width: 750px) { /*responsive design styling*/
     .cards {
         padding: 1rem;
     }

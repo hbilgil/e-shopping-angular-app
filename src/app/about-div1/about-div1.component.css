@@ -8,7 +8,7 @@
     align-items: flex-end;
     justify-content: center;
     color: white;
-    overflow: hidden;
+    overflow: hidden; /*if content is larger than div. it will be hidden*/
     transition: 1000ms;
 }
 
@@ -29,7 +29,7 @@
 
 img {
     position: absolute;
-    object-fit: cover;
+    object-fit: cover; /*image covers whole background of the div*/
     top: 0;
     left: 0;
     height: 100%;
@@ -42,7 +42,7 @@ img {
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    z-index: 2;
+    z-index: 2; /*the text is in front of the main div*/
     max-width: 35rem;
 }
       
@@ -60,7 +60,7 @@ h3 {
     text-shadow: black 0 0 10px;
 }
 
-@media only screen and (max-width: 450px) {
+@media only screen and (max-width: 450px) { /*responsive design style declarations*/
     h1 {
         font-size: 3rem;
     }
