@@ -12,6 +12,9 @@
                         <p class="price">€ {{product.price}}</p>
                         <p class="name">{{product.name}}</p>
                     </a>
+                    <p class="grey" align="justify" [innerHTML]="product.description | shortenText:15">
+                        {{product.description}}
+                    </p>
                 </div>
             </div>
         </div>

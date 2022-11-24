@@ -57,6 +57,12 @@ p {
     height: 2.5rem;
 }
 
+.grey {
+    color: gainsboro;
+    margin-top: -15px;
+    margin-bottom: 10px;
+}
+
 @media only screen and (max-width: 850px) {
     .cards {
         grid-template-columns: repeat(2, 1fr);
