@@ -172,6 +172,25 @@ lord-icon {
     display: inline-block;
 }
 
+p-accordionTab:nth-of-type(2),
+p-accordionTab:nth-of-type(3) {
+    line-height: 1.5;
+}
+
+p-accordionTab li {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    align-items:baseline;
+}
+
+p-accordionTab li > img {
+    margin: 2px;
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
 @media only screen and (max-width: 933px) {
     .main {
         flex-direction: column-reverse;

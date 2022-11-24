@@ -25,12 +25,16 @@
                 </p-accordionTab>
                 <p-accordionTab header="Tech Details">
                     <p>
-                       {{product.details}}
+                        <li *ngFor="let item of productDetails">
+                            <img src="../../assets/tech.png"/>{{item}}
+                        </li>
                     </p>
                 </p-accordionTab>
                 <p-accordionTab *ngIf="product.category !== 'Sneakers'" header="Care Instructions">
                     <p>
-                        {{product.care}}
+                        <li *ngFor="let item of productCare">
+                            <img src="../../assets/care.png"/>{{item}}
+                        </li>
                     </p>
                 </p-accordionTab>
             </p-accordion>

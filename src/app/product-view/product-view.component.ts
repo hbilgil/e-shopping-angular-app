@@ -31,6 +31,8 @@ export class ProductViewComponent implements OnInit  {
   stock9: any;
   stock10: any;
   stockTotal: any;
+  productDetails: any;
+  productCare: any;
   
   constructor(private activatedRoute: ActivatedRoute, 
               private service: ProductsService, 
@@ -40,6 +42,8 @@ export class ProductViewComponent implements OnInit  {
   ngOnInit(): void {
     this.productId = this.activatedRoute.snapshot.paramMap.get('id');
     this.product = this.service.products.find((element: any) => element.id == this.productId);
+    this.productDetails = this.product.details.split(".");
+    this.productCare = this.product.care.split(".");
     this.stockS = this.product.stockA.S;
     this.stockM = this.product.stockA.M;
     this.stockL = this.product.stockA.L;
