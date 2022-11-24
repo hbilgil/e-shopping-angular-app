@@ -181,7 +181,7 @@ p-accordionTab li {
     list-style: none;
     display: flex;
     flex-direction: row;
-    align-items:baseline;
+    align-items: center;
 }
 
 p-accordionTab li > img {

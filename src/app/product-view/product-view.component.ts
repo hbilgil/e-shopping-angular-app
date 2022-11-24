@@ -93,12 +93,18 @@ export class ProductViewComponent implements OnInit  {
     this.service.removeItemFromFavs(item);
   }
 
-  onChangeButtonColor (e: any) {
-   e.target.classList.add('active');
-    setTimeout(() => {
-      e.target.classList.remove("active");
-    }, 1500);
-  };
+  addToFavoritesByNotifyButton(e: any, item: any) {
+    Swal.fire({ //a special embedded function to have a customized alert box with better UI and styling
+      position: 'top-end',
+      icon: 'success',
+      title: `We will inform you  when ${item.name} arrived in our store`,
+      showConfirmButton: false,
+      timer: 1500
+   })
+    this.service.addItemToFavs(item);
+    this.service3.addToFavorites(item);
+    this.onChangeButtonColor (e);
+  }
 
   handleAddToCart(e: any, value: string) {
     if(value === '') return;
@@ -142,4 +148,11 @@ export class ProductViewComponent implements OnInit  {
    })
     this.onChangeButtonColor(e);
   }
+
+  onChangeButtonColor (e: any) {
+    e.target.classList.add('active');
+     setTimeout(() => {
+       e.target.classList.remove("active");
+     }, 1500);
+   };
 }

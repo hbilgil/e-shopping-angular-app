@@ -19,19 +19,19 @@
             <h1>{{product.name}}</h1>
             <p-accordion [multiple]="true">
                 <p-accordionTab header="Description">
-                    <p>
+                    <p align="justify">
                         {{product.description}}
                     </p>
                 </p-accordionTab>
                 <p-accordionTab header="Tech Details">
-                    <p>
+                    <p align="justify">
                         <li *ngFor="let item of productDetails">
                             <img src="../../assets/tech.png"/>{{item}}
                         </li>
                     </p>
                 </p-accordionTab>
                 <p-accordionTab *ngIf="product.category !== 'Sneakers'" header="Care Instructions">
-                    <p>
+                    <p align="justify">
                         <li *ngFor="let item of productCare">
                             <img src="../../assets/care.png"/>{{item}}
                         </li>
@@ -102,7 +102,7 @@
             </div>
             <ng-template #notifyMe>
                 <p class="red2">All sizes are out of stock!</p>
-                <button class="red-button" (click)="onChangeButtonColor($event)">Notify Me</button>
+                <button class="red-button" (click)="addToFavoritesByNotifyButton($event, product)">Notify Me</button>
             </ng-template>
         </div>
     </div>
