@@ -14,7 +14,7 @@ export class DetailsService {
             care:`Do not bleach.
             Tumble dry low heat.
             Do not dry clean.
-            Touch up with warm iron
+            Touch up with warm iron.
             Machine wash cold`
         },
         {   id: 2,
@@ -602,6 +602,5 @@ export class DetailsService {
             Wide shape provides a more stable ride, helping release energy with every step`,
             care:``,
         },
-
     ]
 }
