@@ -11,6 +11,7 @@ export class ProductsService {//a service data to be used in components for ALL 
     saveInProductsServicesData() {
         localStorage.setItem(this.LOCAL_STORAGE_LIST_KEY, JSON.stringify(this.products))
     }
+    
     product: any;
 
     addItemToFavs(item: any) {//a function to be called back to change fav boolean value as true for a product liked
