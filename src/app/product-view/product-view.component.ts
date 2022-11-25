@@ -109,47 +109,90 @@ export class ProductViewComponent implements OnInit  {
   }
 
   handleAddToCart(e: any, value: string) {// a function to add an item with chosen size into shopping cart
-    if(value === '') return; //if size is not chosen, returns..
-    this.service.removeProduct(value, this.product);//a function declared in products service data is called back
-    
-    const { v4: uuidv4 } = require('uuid');//a uniq id is assigned as it will be used while removing without a problem as some products will have the same name, id, size etc.
-    let item: ChosenProduct = { //a new object is created based on ChosenProduct interface to assign size, quantity
-      uniqId: uuidv4(),
-      id : this.product.id,
-      name : this.product.name,
-      price: this.product.price,
-      image: this.product.image1,
-      size: value,
-      quantity: 1,
-      stockA: {
-        S: this.product.stockA.S,
-        M: this.product.stockA.M,
-        L: this.product.stockA.L,
-        XL: this.product.stockA.XL,
-      },
-      stockB: {
-        num1: this.product.stockB.num1,
-        num2: this.product.stockB.num2,
-        num3: this.product.stockB.num3,
-        num4: this.product.stockB.num4,
-        num5: this.product.stockB.num5,
-        num6: this.product.stockB.num6,
-        num7: this.product.stockB.num7,
-        num8: this.product.stockB.num8,
-        num9: this.product.stockB.num9,
-        num10: this.product.stockB.num10,
-      },
-    };
-    this.service2.addChosenItemToCart(item)//a function declared in chosenItems service data is called back
-    this.stockTotal--; //stockTotal is diminished here as well
-    Swal.fire({ //an async function provided by an imported file
-      position: 'top-end',
-      icon: 'success',
-      title: this.product.name + ' was added to your shopping cart',
-      showConfirmButton: false,
-      timer: 1500
-   })
-    this.onChangeButtonColor(e);//button color is changed for a while for a better UI and UX
+    if(value === '') {
+      return; //if size is not chosen, returns..
+    } else {
+      if(this.isItemOver(value)) {
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Something went wrong!',
+          footer: `There is no ${this.product.name} in our stocks for size '${value}'`
+        })
+      } else { 
+        this.service.removeProduct(value, this.product);//a function declared in products service data is called back
+        const { v4: uuidv4 } = require('uuid');//a uniq id is assigned as it will be used while removing without a problem as some products will have the same name, id, size etc.
+        let item: ChosenProduct = { //a new object is created based on ChosenProduct interface to assign size, quantity
+          uniqId: uuidv4(),
+          id : this.product.id,
+          name : this.product.name,
+          price: this.product.price,
+          image: this.product.image1,
+          size: value,
+          quantity: 1,
+          stockA: {
+          S: this.product.stockA.S,
+          M: this.product.stockA.M,
+          L: this.product.stockA.L,
+          XL: this.product.stockA.XL,
+          },
+          stockB: {
+          num1: this.product.stockB.num1,
+          num2: this.product.stockB.num2,
+          num3: this.product.stockB.num3,
+          num4: this.product.stockB.num4,
+          num5: this.product.stockB.num5,
+          num6: this.product.stockB.num6,
+          num7: this.product.stockB.num7,
+          num8: this.product.stockB.num8,
+          num9: this.product.stockB.num9,
+          num10: this.product.stockB.num10,
+          },
+        };
+        this.service2.addChosenItemToCart(item)//a function declared in chosenItems service data is called back
+        this.stockTotal--; //stockTotal is diminished here as well
+        Swal.fire({ //an async function provided by an imported file
+        position: 'top-end',
+        icon: 'success',
+        title: this.product.name + ' was added to your shopping cart',
+        showConfirmButton: false,
+        timer: 1500
+        })
+        this.onChangeButtonColor(e);//button color is changed for a while for a better UI and UX
+      }   
+    }
+  }
+
+  isItemOver(size: any) {//a function to return comparison value to check stocks for sizes
+    if(size === 'S') {
+      return this.product.stockA.S === 0;
+     } else if (size === 'M') {
+      return this.product.stockA.M === 0;
+     } else if (size === 'L') {
+      return this.product.stockA.L === 0;
+     } else if (size === 'XL') {
+      return this.product.stockA.XL === 0;
+     } else if (size === '37') {
+      return this.product.stockB.num1 === 0;
+     } else if (size === '38') {
+      return this.product.stockB.num2 === 0;
+     } else if (size === '39') {
+      return this.product.stockB.num3 === 0;
+     } else if (size === '40') {
+      return this.product.stockB.num4 === 0;
+     } else if(size === '41') {
+      return this.product.stockB.num5 === 0;
+     } else if(size === '42') {
+      return this.product.stockB.num6 === 0;
+     } else if(size === '43') {
+      return this.product.stockB.num7 === 0;
+     } else if(size === '44') {
+      return this.product.stockB.num8 === 0;
+     } else if(size === '45') {
+      return this.product.stockB.num9 === 0;
+     } else {
+      return this.product.stockB.num10 === 0;
+     }
   }
 
   onChangeButtonColor (e: any) { //a function to change button background color for a while when clicked 
