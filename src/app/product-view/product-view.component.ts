@@ -82,7 +82,7 @@ export class ProductViewComponent implements OnInit  {
     Swal.fire({ //an async function provided by an imported file
       position: 'top-end',
       icon: 'success',
-      title: item.name + ' was added to your favorites',
+      title: `${item.name} was added to your favorites`,
       showConfirmButton: false,
       timer: 1500
    })
@@ -96,13 +96,11 @@ export class ProductViewComponent implements OnInit  {
   }
 
   addToFavoritesByNotifyButton(e: any, item: any) {// a function to add an item with all sizes are out of stock into favorite items when notifyMe button is clicked
-    Swal.fire({ //an async function provided by an imported file
-      position: 'top-end',
-      icon: 'success',
-      title: `We will inform you  when ${item.name} arrived in our store`,
-      showConfirmButton: false,
-      timer: 1500
-   })
+    Swal.fire(//an async function provided by an imported file
+      'Thank you for your interest!',
+      `We will inform you  when </br>${item.name} arrived in our store`,
+      'success'
+    )
     this.service.addItemToFavs(item);//a function declared in products service data is called back
     this.service3.addToFavorites(item);//a function declared in favorite items service data is called back
     this.onChangeButtonColor(e); //button color is changed for a while for a better UI and UX
@@ -117,7 +115,7 @@ export class ProductViewComponent implements OnInit  {
           icon: 'error',
           title: 'Oops...',
           text: 'Something went wrong!',
-          footer: `There is no ${this.product.name} in our stocks for size '${value}'`
+          footer: `There is no ${this.product.name} </br>in our stocks for size '${value}'`
         })
       } else { 
         this.service.removeProduct(value, this.product);//a function declared in products service data is called back
@@ -154,7 +152,7 @@ export class ProductViewComponent implements OnInit  {
         Swal.fire({ //an async function provided by an imported file
         position: 'top-end',
         icon: 'success',
-        title: this.product.name + ' was added to your shopping cart',
+        title: `${this.product.name} was added to your shopping cart`,
         showConfirmButton: false,
         timer: 1500
         })
@@ -198,7 +196,7 @@ export class ProductViewComponent implements OnInit  {
   onChangeButtonColor (e: any) { //a function to change button background color for a while when clicked 
     e.target.classList.add('active');
      setTimeout(() => {
-       e.target.classList.remove("active");
-     }, 1500);
-   };
+      e.target.classList.remove("active");
+    }, 1500);
+  };
 }
