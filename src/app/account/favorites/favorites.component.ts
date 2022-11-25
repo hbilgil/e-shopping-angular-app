@@ -31,7 +31,7 @@ export class FavoritesComponent implements OnInit {
       if (result.isConfirmed) {
         Swal.fire(
           'Deleted!',
-          item.name + ' was removed',
+          `${item.name} </br>was removed from your favorites`,
           'success'
         )
         this.service.removeFromFavorites(item); //a function declared in favoriteItems service data is called back
