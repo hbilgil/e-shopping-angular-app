@@ -28,8 +28,8 @@ export class ShoppingCartComponent implements OnInit {
 
   addItemsToOrderedItems() {//a function to add chosen Items to Ordered Items in account
     Swal.fire(//an async function provided by an imported file
-        'Good job!',
-        'Your items were added to your account!',
+        'Thank you for your order!',
+        'Your ordered items were added to your account!',
         'success'
     )
     this.service3.addOrderedItemToAccount(this.chosenItems)//a function to be called back from orderedItems service data
@@ -50,7 +50,7 @@ export class ShoppingCartComponent implements OnInit {
         if (result.isConfirmed) {
           Swal.fire(
             'Deleted!',
-            item.name + ' was removed',
+            `${item.name} </br>was removed from your chosen items`,
             'success'
           )
         this.service2.removeItem(item);//a function to be called back from chosenItems service data
