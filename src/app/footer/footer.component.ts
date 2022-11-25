@@ -23,7 +23,7 @@ export class FooterComponent implements OnInit {
       );
   }
   
-  subscribeToNewsletter() {// a function to subscribe to the weekly newsletter
+  subscribeToNewsletter(e: any) {// a function to subscribe to the weekly newsletter
     if(this.validateEmail(this.enteredSearchValue)) { //if the provided email is valid
       Swal.fire(//an async function provided by an imported file
         'Thank you for subscribing!',
@@ -38,5 +38,6 @@ export class FooterComponent implements OnInit {
         footer: 'Please provide a valid e-mail address!'
       })
     }
+    e.target.previousElementSibling.value = '';//clears the written text in input element
   }
 }
