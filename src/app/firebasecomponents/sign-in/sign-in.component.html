@@ -3,21 +3,41 @@
       <div class="authBlock">
         <h3>Sign In</h3>
         <div class="formGroup">
-          <input type="text" class="formControl" placeholder="Username" #userName required>
+          <input 
+            type="text" 
+            class="formControl" 
+            placeholder="Username" 
+            #userName 
+            required
+          />
         </div>
         <div class="formGroup">
-          <input type="password" class="formControl" placeholder="Password" #userPassword required>
+          <input 
+            type="password" 
+            class="formControl" 
+            placeholder="Password" 
+            #userPassword 
+            required/>
         </div>
         <!--calling SignIn function from authService data-->
         <div class="formGroup">
-          <input type="button" class="btn btnPrimary" value="Log in" (click)="authService.SignIn(userName.value, userPassword.value)">
+          <input 
+            type="button" 
+            class="btn btnPrimary" 
+            value="Log in" 
+            (click)="authService.SignIn(userName.value, userPassword.value)"
+          />
         </div>
         <div class="formGroup">
           <span class="or"><span class="orInner">Or</span></span>
         </div>
         <!-- Calling GoogleAuth function from authService data-->
         <div class="formGroup">
-          <button type="button" class="btn googleBtn" (click)="authService.GoogleAuth()">
+          <button 
+            type="button" 
+            class="btn googleBtn" 
+            (click)="authService.GoogleAuth()"
+          >
             Log in with Google
           </button>
         </div>
