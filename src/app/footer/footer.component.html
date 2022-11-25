@@ -3,8 +3,12 @@
         <h2>Join the FashionGuru Family</h2>
         <p>Get your weekly FashionGuru newsletter to your mailbox</p>
         <div class="form">
-            <input type="text" id="email" placeholder="Enter your email" />
-            <button>Subscribe</button>
+            <input 
+                type="text" 
+                id="email"
+                placeholder="Enter your email"
+                [(ngModel)]="enteredSearchValue"/>
+            <button (click)="subscribeToNewsletter()">Subscribe</button>
         </div>
     </div>
     <div class="fashionGuru">
