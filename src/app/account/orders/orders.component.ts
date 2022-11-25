@@ -40,7 +40,7 @@ export class OrdersComponent implements OnInit {
       if (result.isConfirmed) { //if approved, the result is triggered
       Swal.fire(
         'Deleted!',
-        'Your ordered item was removed.',
+        `${item.name} </br>was removed from your order`,
         'success'
       )
       this.service.removeItem(item); //a function declared in orderedItems service data is called back
