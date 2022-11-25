@@ -55,6 +55,11 @@ h3 {
     font-weight: 800;
 }
 
+.links-div {
+    display: flex;
+    justify-content: space-between;
+}
+
 .fashionGuru > p {
     display: flex;
     gap: 1rem;
@@ -86,18 +91,21 @@ a:hover {
 @media only screen and (max-width: 640px) { /*responsive design styling*/
 
     footer {
-        grid-template-columns: repeat(2, 1fr); /*returned to 2 equally sized column template*/
-        grid-template-rows: repeat(2, 1fr); /*returned to 2 equally sized rows template*/
+        display: flex; /*column allocation is structured again by flex option*/
+        flex-direction: column;
         height: auto;
         align-items: center;
     }
 
     .subscribe {
-        grid-column: 1 / 3; /*column allocation is structured again*/
-        text-align: center;
-        display: flex;
+        display: flex; /*column allocation is structured again by flex option*/
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        margin-bottom: 20px;
+    }
+
+    .links-div {
+        gap: 9rem;
     }
 }
