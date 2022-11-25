@@ -29,23 +29,8 @@
 }
 
 img {
-    position: absolute;
-    object-fit:cover;
-    top: 2rem;
-    left: 0;
-    height: 90%;
-    width: 100%;
-    transform: scale(1.05);
-    transition: transform 1000ms;
-    z-index: -1; /*image is sent back inside the div*/
-}
-
-div:hover > img {
-    transform: scale(1);
-}
-
-.copy-right {
-    padding-top: 20rem;
+    width: 60%;
+    height: auto;
 }
 
 a[href="https://vecteezy.com"] {
@@ -68,10 +53,4 @@ a[href="https://vecteezy.com"]:hover {
   
 a[href="https://vecteezy.com"]:active { 
     text-decoration: none;
-}
-
-@media only screen and (max-width: 800px) {/*responsive design styling*/
-    .copy-right {
-        padding-top: 0;
-    }
 }
