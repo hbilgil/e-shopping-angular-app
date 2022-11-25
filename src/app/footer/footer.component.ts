@@ -25,13 +25,11 @@ export class FooterComponent implements OnInit {
   
   subscribeToNewsletter() {// a function to subscribe to the weekly newsletter
     if(this.validateEmail(this.enteredSearchValue)) { //if the provided email is valid
-      Swal.fire({ //an async function provided by an imported file
-        position: 'top-end',
-        icon: 'success',
-        title: `Hi, </br> We will sent our weekly newsletter to ${this.enteredSearchValue}!`,
-        showConfirmButton: false,
-        timer: 1500
-      })
+      Swal.fire(//an async function provided by an imported file
+        'Thank you for subscribing!',
+        `We will sent our weekly newsletter to </br> ${this.enteredSearchValue}`,
+        'success'
+      )
     } else {
       Swal.fire({
         icon: 'error',
