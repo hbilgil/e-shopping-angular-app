@@ -1,5 +1,9 @@
 export class FavoriteItemsService {//a service data to be used in components for favorite items liked
-    items : any = [];
+    items2 : any = [];
+
+    FAVORITE_ITEMS_LIST_KEY: string = 'favorites.list' //all favorite items are kept in local store
+
+    items: any = JSON.parse(localStorage.getItem(this.FAVORITE_ITEMS_LIST_KEY)) || this.items2;
 
     addToFavorites(item: any) {//a function to be called back to add an item into favorites 
         let isInCart = false;
@@ -12,6 +16,7 @@ export class FavoriteItemsService {//a service data to be used in components for
         if (!isInCart) {
         this.items.push(item);
         }
+        this.saveInFavoriteItemsServicesData();
     }
 
     removeFromFavorites(item: any) {//a function to be called back to remove an item into favorites 
@@ -20,14 +25,10 @@ export class FavoriteItemsService {//a service data to be used in components for
                 this.items.splice(index, 1);
             }
         })
+       this.saveInFavoriteItemsServicesData();
     }
-
-    FAVORITE_ITEMS_LIST_KEY: string = 'favorites.list' //all products are kept in local store
 
     saveInFavoriteItemsServicesData() {
-        localStorage.setItem(this.FAVORITE_ITEMS_LIST_KEY, JSON.stringify(this.favorites))
+        localStorage.setItem(this.FAVORITE_ITEMS_LIST_KEY, JSON.stringify(this.items))
     }
-
-    favorites = JSON.parse(`${localStorage.getItem(this.FAVORITE_ITEMS_LIST_KEY || this.items)}`);
-
 }
