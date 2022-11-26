@@ -51,7 +51,6 @@ export class OrdersComponent implements OnInit {
       this.totalQuantity.splice(this.totalQuantity.length-item.quantity, item.quantity);//total quantity length is decreased by the size of total quantity of item ordered
       this.totalPrice -= (item.quantity)*(item.price);//total price is diminished by the value of total price multiplied by the quantity of the item ordered
       this.saveInLocalStorageData();
-      localStorage.clear();
     } else if ( //if canceled a message is thrown ensuring that ordered item is still in place
           result.dismiss === Swal.DismissReason.cancel
       ) {
