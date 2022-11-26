@@ -46,22 +46,6 @@ export class ProductViewComponent implements OnInit  {
   stock10: number = JSON.parse(localStorage.getItem(this.LOCAL_STORAGE_46_SIZE_STOCK));
   stockTotal: number = JSON.parse(localStorage.getItem(this.LOCAL_STORAGE_TOTAL_STOCK));
 
-  /*stockS: number;
-  stockM: number;
-  stockL: number;
-  stockXL: number;
-  stock1: number;
-  stock2: number;
-  stock3: number;
-  stock4: number;
-  stock5: number;
-  stock6: number;
-  stock7: number;
-  stock8: number;
-  stock9: number;
-  stock10: number;
-  stockTotal: number;*/
-
   product: any;
   productId: any;
   productDetails: any;
