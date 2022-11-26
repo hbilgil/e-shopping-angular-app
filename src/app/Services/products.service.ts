@@ -6,24 +6,20 @@ export class ProductsService {//a service data to be used in components for ALL 
 
     constructor(private service: DetailsService){}
 
-    LOCAL_STORAGE_LIST_KEY: string = 'product.list' //all products are kept in local store
-
-    saveInProductsServicesData() {
-        localStorage.setItem(this.LOCAL_STORAGE_LIST_KEY, JSON.stringify(this.products))
-    }
-    
     product: any;
 
     addItemToFavs(item: any) {//a function to be called back to change fav boolean value as true for a product liked
         let productId = item.id
         this.product = this.products.find((element: any) => element.id == productId);
         this.product.fav = true;
+        this.saveInProductsServicesData();
     };
 
     removeItemFromFavs(item: any) {//a function to be called back to change fav boolean value as false for a product disliked
         let productId = item.id
         this.product = this.products.find((element: any) => element.id == productId);
         this.product.fav = false;
+        this.saveInProductsServicesData();
     };
 
     removeProduct(value: any, product: any) {//a function to be called back to remove product and return back to the stock 
@@ -70,6 +66,7 @@ export class ProductsService {//a service data to be used in components for ALL 
             case '46':
                 product.stockB.num10--;
         }
+        this.saveInProductsServicesData();
     }
 
     addItemQuantityToStock(item: any) {//a function to be called back to return back an item with multiple quantities to the stock 
@@ -118,6 +115,7 @@ export class ProductsService {//a service data to be used in components for ALL 
                 case '46':
                     this.product.stockB.num10 += item.quantity;
             }
+       this.saveInProductsServicesData();
     }
 
     addItemSizeToStock(item: any) {//a function to be called back to return back an item with 1 quantity to the stock 
@@ -166,6 +164,7 @@ export class ProductsService {//a service data to be used in components for ALL 
                 case '46':
                     this.product.stockB.num10++;
             }
+        this.saveInProductsServicesData();
     }
 
     removeItemSizeFromStock(item: any) {// a function to be called back to remove an item from stock when chosen or ordered
@@ -214,6 +213,7 @@ export class ProductsService {//a service data to be used in components for ALL 
                 case '46':
                     this.product.stockB.num10--;
             }
+        this.saveInProductsServicesData();
     }
 
     products2 = [
@@ -1561,6 +1561,11 @@ export class ProductsService {//a service data to be used in components for ALL 
         },
     ];
 
-products = this.products2 || JSON.parse(`${localStorage.getItem(this.LOCAL_STORAGE_LIST_KEY)}`)
+    LOCAL_STORAGE_LIST_KEY: string = 'product.list' //all products are kept in local store
+    
+    products: any = JSON.parse(localStorage.getItem(this.LOCAL_STORAGE_LIST_KEY)) || this.products2;
 
+    saveInProductsServicesData() {
+        localStorage.setItem(this.LOCAL_STORAGE_LIST_KEY, JSON.stringify(this.products))
+    }
 }
