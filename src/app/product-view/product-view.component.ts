@@ -14,23 +14,56 @@ import Swal from 'sweetalert2/dist/sweetalert2.js';
 
 export class ProductViewComponent implements OnInit  {
 
+  LOCAL_STORAGE_S_SIZE_STOCK: string = 's-size.stock' //all ordered items are kept in local store
+  LOCAL_STORAGE_M_SIZE_STOCK: string = 's-size.stock' //all ordered items are kept in local store
+  LOCAL_STORAGE_L_SIZE_STOCK: string = 's-size.stock' //all ordered items are kept in local store
+  LOCAL_STORAGE_XL_SIZE_STOCK: string = 's-size.stock' //all ordered items are kept in local store
+  LOCAL_STORAGE_37_SIZE_STOCK: string = 's-size.stock' //all ordered items are kept in local store
+  LOCAL_STORAGE_38_SIZE_STOCK: string = 's-size.stock' //all ordered items are kept in local store
+  LOCAL_STORAGE_39_SIZE_STOCK: string = 's-size.stock' //all ordered items are kept in local store
+  LOCAL_STORAGE_40_SIZE_STOCK: string = 's-size.stock' //all ordered items are kept in local store
+  LOCAL_STORAGE_41_SIZE_STOCK: string = 's-size.stock' //all ordered items are kept in local store
+  LOCAL_STORAGE_42_SIZE_STOCK: string = 's-size.stock' //all ordered items are kept in local store
+  LOCAL_STORAGE_43_SIZE_STOCK: string = 's-size.stock' //all ordered items are kept in local store
+  LOCAL_STORAGE_44_SIZE_STOCK: string = 's-size.stock' //all ordered items are kept in local store
+  LOCAL_STORAGE_45_SIZE_STOCK: string = 's-size.stock' //all ordered items are kept in local store
+  LOCAL_STORAGE_46_SIZE_STOCK: string = 's-size.stock' //all ordered items are kept in local store
+  LOCAL_STORAGE_TOTAL_STOCK: string = 's-size.stock' //all ordered items are kept in local store
+
+  stockS: number = JSON.parse(localStorage.getItem(this.LOCAL_STORAGE_S_SIZE_STOCK));
+  stockM: number = JSON.parse(localStorage.getItem(this.LOCAL_STORAGE_M_SIZE_STOCK));
+  stockL: number = JSON.parse(localStorage.getItem(this.LOCAL_STORAGE_L_SIZE_STOCK));
+  stockXL: number = JSON.parse(localStorage.getItem(this.LOCAL_STORAGE_XL_SIZE_STOCK));
+  stock1: number = JSON.parse(localStorage.getItem(this.LOCAL_STORAGE_37_SIZE_STOCK));
+  stock2: number = JSON.parse(localStorage.getItem(this.LOCAL_STORAGE_38_SIZE_STOCK));
+  stock3: number = JSON.parse(localStorage.getItem(this.LOCAL_STORAGE_39_SIZE_STOCK));
+  stock4: number = JSON.parse(localStorage.getItem(this.LOCAL_STORAGE_40_SIZE_STOCK));
+  stock5: number = JSON.parse(localStorage.getItem(this.LOCAL_STORAGE_41_SIZE_STOCK));
+  stock6: number = JSON.parse(localStorage.getItem(this.LOCAL_STORAGE_42_SIZE_STOCK));
+  stock7: number = JSON.parse(localStorage.getItem(this.LOCAL_STORAGE_43_SIZE_STOCK));
+  stock8: number = JSON.parse(localStorage.getItem(this.LOCAL_STORAGE_44_SIZE_STOCK));
+  stock9: number = JSON.parse(localStorage.getItem(this.LOCAL_STORAGE_45_SIZE_STOCK));
+  stock10: number = JSON.parse(localStorage.getItem(this.LOCAL_STORAGE_46_SIZE_STOCK));
+  stockTotal: number = JSON.parse(localStorage.getItem(this.LOCAL_STORAGE_TOTAL_STOCK));
+
+  /*stockS: number;
+  stockM: number;
+  stockL: number;
+  stockXL: number;
+  stock1: number;
+  stock2: number;
+  stock3: number;
+  stock4: number;
+  stock5: number;
+  stock6: number;
+  stock7: number;
+  stock8: number;
+  stock9: number;
+  stock10: number;
+  stockTotal: number;*/
+
   product: any;
   productId: any;
-  stockS: any;
-  stockM: any;
-  stockL: any;
-  stockXL: any;
-  stock1: any;
-  stock2: any;
-  stock3: any;
-  stock4: any;
-  stock5: any;
-  stock6: any;
-  stock7: any;
-  stock8: any;
-  stock9: any;
-  stock10: any;
-  stockTotal: any;
   productDetails: any;
   productCare: any;
   
@@ -44,8 +77,9 @@ export class ProductViewComponent implements OnInit  {
     this.product = this.service.products.find((element: any) => element.id == this.productId);//productId is found by a method
     this.productDetails = this.product.details.split("."); //tech details string with lots of sentences are returned into an array of items splitted by a dot.
     this.productCare = this.product.care.split("."); //care details string with lots of sentences are returned into an array of items splitted by a dot.
+    
     //stock levels are derived from product service data imported
-    this.stockS = this.product.stockA.S;
+    this.stockS =  this.product.stockA.S;
     this.stockM = this.product.stockA.M;
     this.stockL = this.product.stockA.L;
     this.stockXL = this.product.stockA.XL;
@@ -117,7 +151,7 @@ export class ProductViewComponent implements OnInit  {
           text: 'Something went wrong!',
           footer: `There is no ${this.product.name} </br>in our stocks for size '${value}'`
         })
-      } else { 
+      } else {
         this.service.removeProduct(value, this.product);//a function declared in products service data is called back
         const { v4: uuidv4 } = require('uuid');//a uniq id is assigned as it will be used while removing without a problem as some products will have the same name, id, size etc.
         let item: ChosenProduct = { //a new object is created based on ChosenProduct interface to assign size, quantity
@@ -157,6 +191,7 @@ export class ProductViewComponent implements OnInit  {
         timer: 1500
         })
         this.onChangeButtonColor(e);//button color is changed for a while for a better UI and UX
+        this.saveInStocksData() ;
       }   
     }
   }
@@ -199,4 +234,22 @@ export class ProductViewComponent implements OnInit  {
       e.target.classList.remove("active");
     }, 1500);
   };
+
+  saveInStocksData() {
+      localStorage.setItem(this.LOCAL_STORAGE_S_SIZE_STOCK, JSON.stringify(this.stockS))
+      localStorage.setItem(this.LOCAL_STORAGE_M_SIZE_STOCK, JSON.stringify(this.stockM))
+      localStorage.setItem(this.LOCAL_STORAGE_L_SIZE_STOCK, JSON.stringify(this.stockL))
+      localStorage.setItem(this.LOCAL_STORAGE_XL_SIZE_STOCK, JSON.stringify(this.stockXL))
+      localStorage.setItem(this.LOCAL_STORAGE_37_SIZE_STOCK, JSON.stringify(this.stock1))
+      localStorage.setItem(this.LOCAL_STORAGE_38_SIZE_STOCK, JSON.stringify(this.stock2))
+      localStorage.setItem(this.LOCAL_STORAGE_39_SIZE_STOCK, JSON.stringify(this.stock3))
+      localStorage.setItem(this.LOCAL_STORAGE_40_SIZE_STOCK, JSON.stringify(this.stock4))
+      localStorage.setItem(this.LOCAL_STORAGE_41_SIZE_STOCK, JSON.stringify(this.stock5))
+      localStorage.setItem(this.LOCAL_STORAGE_42_SIZE_STOCK, JSON.stringify(this.stock6))
+      localStorage.setItem(this.LOCAL_STORAGE_43_SIZE_STOCK, JSON.stringify(this.stock7))
+      localStorage.setItem(this.LOCAL_STORAGE_44_SIZE_STOCK, JSON.stringify(this.stock8))
+      localStorage.setItem(this.LOCAL_STORAGE_45_SIZE_STOCK, JSON.stringify(this.stock9))
+      localStorage.setItem(this.LOCAL_STORAGE_46_SIZE_STOCK, JSON.stringify(this.stock10))
+      localStorage.setItem(this.LOCAL_STORAGE_TOTAL_STOCK, JSON.stringify(this.stockTotal))
+  }
 }
