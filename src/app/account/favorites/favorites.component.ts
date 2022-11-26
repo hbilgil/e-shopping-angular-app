@@ -36,7 +36,6 @@ export class FavoritesComponent implements OnInit {
         )
         this.service.removeFromFavorites(item); //a function declared in favoriteItems service data is called back
         this.service2.removeItemFromFavs(item); //a function declared in Products service data is called back
-        //this.service.saveInFavoriteItemsServicesData;
       }
   })
   }
