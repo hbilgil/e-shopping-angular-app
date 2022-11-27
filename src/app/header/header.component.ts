@@ -19,4 +19,5 @@ export class HeaderComponent implements OnInit {
     this.chosenItemsTotalQuantity = this.service.totalQuantity; //totalQuantity are provided by a service data imported
     this.chosenItems = this.service.items; //chosenItems are provided by a service data imported
   }
+  
 }
