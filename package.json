@@ -24,6 +24,7 @@
     "@sweetalert2/ngx-sweetalert2": "^12.0.2",
     "bootstrap": "^5.2.3",
     "firebase": "^9.14.0",
+    "loader-utils": "^3.2.1",
     "lord-icon-element": "^4.0.0",
     "lottie-web": "^5.9.6",
     "primeicons": "^6.0.1",
