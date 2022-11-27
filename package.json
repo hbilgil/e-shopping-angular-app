@@ -23,6 +23,7 @@
     "@ngx-pwa/local-storage": "^13.0.5",
     "@sweetalert2/ngx-sweetalert2": "^12.0.2",
     "bootstrap": "^5.2.3",
+    "engine.io": "^6.2.1",
     "firebase": "^9.14.0",
     "loader-utils": "^3.2.1",
     "lord-icon-element": "^4.0.0",
