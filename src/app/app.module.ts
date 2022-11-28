@@ -13,6 +13,7 @@ import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { environment } from '../environments/environment';
+import { APP_BASE_HREF } from '@angular/common';
 
 //Imported services and packages
 import { ProductsService } from './Services/products.service';
@@ -107,6 +108,7 @@ import { WelcomeComponent } from './account/welcome/welcome.component';
     FavoriteItemsService,
     DetailsService,
     AuthService,
+    { provide: APP_BASE_HREF, useValue: '/e-shopping-angular-app/' },
   ],
   bootstrap: [
     AppComponent
