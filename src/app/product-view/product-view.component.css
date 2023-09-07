@@ -160,12 +160,12 @@ lord-icon {
 
 .green-span {
     display: none;
-    color:forestgreen;
+    color: forestgreen;
 }
 
 .red-span {
     display: none;
-    color:deeppink;
+    color: deeppink;
 }
 
 .favorites:hover span {

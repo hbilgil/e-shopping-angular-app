@@ -16,8 +16,7 @@
             "allowedCommonJsDependencies": [
               "lottie-web"
            ],
-            "baseHref": "/",
-            "outputPath": "docs",
+            "outputPath": "dist",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
